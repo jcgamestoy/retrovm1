@@ -69,6 +69,8 @@
 		884DBC4B185B0C9600B43FF0 /* NSView+AutolayoutExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 884DBC4A185B0C9600B43FF0 /* NSView+AutolayoutExtension.m */; };
 		884E27B81A08FB00004608DA /* rvmCSWDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 884E27B61A08FB00004608DA /* rvmCSWDecoder.h */; };
 		884E27B91A08FB00004608DA /* rvmCSWDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 884E27B71A08FB00004608DA /* rvmCSWDecoder.m */; };
+		884FAC682696154D00C27BEB /* zuops.h in Headers */ = {isa = PBXBuildFile; fileRef = 884FAC662696154D00C27BEB /* zuops.h */; };
+		884FAC692696154D00C27BEB /* z.c in Sources */ = {isa = PBXBuildFile; fileRef = 884FAC672696154D00C27BEB /* z.c */; };
 		8852317219793B9E00B515FB /* rvmImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 88825EFB189A595E00D27E60 /* rvmImageView.h */; };
 		8854C5131891993600A1E154 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8854C5121891993600A1E154 /* QuartzCore.framework */; };
 		885660A71C8991AF00469353 /* rvmBufferChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 885660A51C8991AF00469353 /* rvmBufferChain.h */; };
@@ -142,7 +144,6 @@
 		888A8FAA19993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888A8FA719993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.xib */; };
 		888D402419ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 888D402219ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.h */; };
 		888D402519ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 888D402319ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.m */; };
-		888E859A191AA4AF004520B1 /* z.c in Sources */ = {isa = PBXBuildFile; fileRef = 888E8598191AA4AF004520B1 /* z.c */; };
 		888EB56019A9114500156F17 /* rvmButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 888EB55E19A9114500156F17 /* rvmButton.h */; };
 		888EB56119A9114500156F17 /* rvmButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 888EB55F19A9114500156F17 /* rvmButton.m */; };
 		888F3C4218C674D2009B076F /* rvmOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F3C4118C674D2009B076F /* rvmOverlayWindow.m */; };
@@ -374,6 +375,8 @@
 		884DBC4A185B0C9600B43FF0 /* NSView+AutolayoutExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+AutolayoutExtension.m"; sourceTree = "<group>"; };
 		884E27B61A08FB00004608DA /* rvmCSWDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmCSWDecoder.h; sourceTree = "<group>"; };
 		884E27B71A08FB00004608DA /* rvmCSWDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmCSWDecoder.m; sourceTree = "<group>"; };
+		884FAC662696154D00C27BEB /* zuops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zuops.h; path = src/zuops.h; sourceTree = "<group>"; };
+		884FAC672696154D00C27BEB /* z.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = z.c; path = src/z.c; sourceTree = "<group>"; };
 		8854C5121891993600A1E154 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		885660A51C8991AF00469353 /* rvmBufferChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmBufferChain.h; sourceTree = "<group>"; };
 		885660A61C8991AF00469353 /* rvmBufferChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmBufferChain.m; sourceTree = "<group>"; };
@@ -474,8 +477,6 @@
 		888A8FA719993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmZxSpectrum48kKeyboardConfigViewController.xib; sourceTree = "<group>"; };
 		888D402219ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrum128kKeyboardView.h; sourceTree = "<group>"; };
 		888D402319ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrum128kKeyboardView.m; sourceTree = "<group>"; };
-		888E8598191AA4AF004520B1 /* z.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = z.c; path = src/build/osx/z.c; sourceTree = "<group>"; };
-		888E8599191AA4AF004520B1 /* zuops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zuops.h; path = src/build/osx/zuops.h; sourceTree = "<group>"; };
 		888EB55E19A9114500156F17 /* rvmButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmButton.h; sourceTree = "<group>"; };
 		888EB55F19A9114500156F17 /* rvmButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmButton.m; sourceTree = "<group>"; };
 		888F3C4018C674D2009B076F /* rvmOverlayWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmOverlayWindow.h; sourceTree = "<group>"; };
@@ -1295,8 +1296,8 @@
 		88EFF08A1854F7050066DF6B /* z80 */ = {
 			isa = PBXGroup;
 			children = (
-				888E8598191AA4AF004520B1 /* z.c */,
-				888E8599191AA4AF004520B1 /* zuops.h */,
+				884FAC672696154D00C27BEB /* z.c */,
+				884FAC662696154D00C27BEB /* zuops.h */,
 				88EFF08B1854F7210066DF6B /* z80.c */,
 				88EFF08C1854F7210066DF6B /* z80.h */,
 			);
@@ -1418,6 +1419,7 @@
 				88FDC26E1AE7C18700A2E5EB /* rvmShaderLayer.h in Headers */,
 				887827A91986F825001485B1 /* rvmFddDriveView.h in Headers */,
 				88ACFE781A6901F600B64D4A /* rvmSnapshotListViewController.h in Headers */,
+				884FAC682696154D00C27BEB /* zuops.h in Headers */,
 				881F9ADB1C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.h in Headers */,
 				8879706A1AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.h in Headers */,
 				88E19D9A1C8DEE7000CC0822 /* rvmNSImage+Extensions.h in Headers */,
@@ -1641,7 +1643,6 @@
 				88D744E21A7F8D090093F912 /* rvmOutlineView.m in Sources */,
 				88DFAAE21A56CD03006303A5 /* rvmAudioMixer.m in Sources */,
 				88AFA09019B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.m in Sources */,
-				888E859A191AA4AF004520B1 /* z.c in Sources */,
 				887D7D931A4462F400AB7929 /* NSData+Gzip.m in Sources */,
 				88FDC2661AE7BC8200A2E5EB /* rvmAboutWindowController.m in Sources */,
 				883A9AC819AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.m in Sources */,
@@ -1715,6 +1716,7 @@
 				88840A18196E75BE001B5E5D /* rvmSelectMediaWindowController.m in Sources */,
 				88EFF07A1854F5A50066DF6B /* rvmGLTexture.m in Sources */,
 				88FDC26B1AE7BFDE00A2E5EB /* rvmShaderView.m in Sources */,
+				884FAC692696154D00C27BEB /* z.c in Sources */,
 				88B97BFC19150F0600F5C87B /* rvmMachineItemViewController.m in Sources */,
 				88C5063118A8C27B00147DDA /* rvmArchitecture.m in Sources */,
 				8808A1781873548B00013279 /* rvmTZXDecoder.m in Sources */,
