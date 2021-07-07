@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="rvmMachineItemViewController">
+            <connections>
+                <outlet property="background" destination="Hz6-mo-xeY" id="4bw-1z-WT8"/>
+                <outlet property="image" destination="PqL-2a-jzC" id="6k9-br-LcL"/>
+                <outlet property="label" destination="fbZ-jy-Pp1" id="p0m-wp-37G"/>
+                <outlet property="titleField" destination="fbZ-jy-Pp1" id="BQ4-QT-UNf"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView autoresizesSubviews="NO" canDrawConcurrently="YES" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" id="Hz6-mo-xeY" customClass="rvmBackgroundView">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="203"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="PqL-2a-jzC" customClass="rvmImageView">
+                    <rect key="frame" x="6" y="65" width="128" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="1BX-Ud-y84"/>
+                        <constraint firstAttribute="width" constant="128" id="p2n-wl-8rM"/>
+                    </constraints>
+                </customView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbZ-jy-Pp1">
+                    <rect key="frame" x="18" y="7" width="104" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="VJ1-lh-x3G"/>
+                        <constraint firstAttribute="height" constant="50" id="cMJ-hr-R2z"/>
+                    </constraints>
+                    <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" id="Ccg-5S-fgV">
+                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="fbZ-jy-Pp1" firstAttribute="top" secondItem="PqL-2a-jzC" secondAttribute="bottom" constant="8" id="0V4-nH-gSF"/>
+                <constraint firstAttribute="bottom" secondItem="fbZ-jy-Pp1" secondAttribute="bottom" constant="7" id="Pnz-Bj-gho"/>
+                <constraint firstAttribute="centerX" secondItem="fbZ-jy-Pp1" secondAttribute="centerX" id="YvK-Xa-2ew"/>
+                <constraint firstItem="PqL-2a-jzC" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="bad-9e-1Yw"/>
+                <constraint firstAttribute="centerX" secondItem="PqL-2a-jzC" secondAttribute="centerX" id="mEE-jg-Sbq"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="78.5" y="337.5"/>
+        </customView>
+    </objects>
+</document>

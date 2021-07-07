@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7531"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="rvmZxSpectrum48kKeyboardConfigViewController">
+            <connections>
+                <outlet property="keyClickedPopover" destination="4ps-a9-cgW" id="vQf-DE-1Pd"/>
+                <outlet property="macKeyboard" destination="NFF-E1-ipm" id="qUE-jL-ftM"/>
+                <outlet property="machineKeyboard" destination="OhA-kI-fus" id="uAY-hR-Qn7"/>
+                <outlet property="popoverLabel" destination="HUb-Qx-5dd" id="SU1-ju-iCh"/>
+                <outlet property="view" destination="LGZ-Bo-mRa" id="ljx-gs-7pg"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="ysX-VI-y8H">
+            <rect key="frame" x="0.0" y="0.0" width="469" height="33"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUb-Qx-5dd">
+                    <rect key="frame" x="7" y="11" width="311" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="OZ9-y8-4kF">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nP9-78-5DR">
+                    <rect key="frame" x="325" y="0.0" width="82" height="32"/>
+                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1n1-IH-M24">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onCancel:" target="-2" id="iJQ-D8-Qug"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jum-ja-jD5">
+                    <rect key="frame" x="407" y="0.0" width="58" height="32"/>
+                    <buttonCell key="cell" type="push" title="Ok" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="i1y-aA-97Y">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onOk:" target="-2" id="MbI-Dq-2xS"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="1127.5" y="926.5"/>
+        </customView>
+        <viewController id="8EF-kC-wAk" userLabel="Popover View Controller">
+            <connections>
+                <outlet property="view" destination="ysX-VI-y8H" id="39X-Yf-Fkn"/>
+            </connections>
+        </viewController>
+        <popover id="4ps-a9-cgW">
+            <connections>
+                <outlet property="contentViewController" destination="8EF-kC-wAk" id="dx2-02-4Hu"/>
+            </connections>
+        </popover>
+        <customView autoresizesSubviews="NO" wantsLayer="YES" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" id="LGZ-Bo-mRa" customClass="rvmBackgroundView">
+            <rect key="frame" x="0.0" y="0.0" width="703" height="624"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cGp-Sh-uvC">
+                    <rect key="frame" x="30" y="532" width="644" height="86"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Configure Keyboard" id="yJP-c0-oYn">
+                        <font key="font" metaFont="system" size="72"/>
+                        <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="OhA-kI-fus" customClass="rvmZxSpectrumPlus2AKeyboardView">
+                    <rect key="frame" x="39" y="10" width="625" height="248"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="OhA-kI-fus" secondAttribute="height" multiplier="1795:712" id="4Kc-I4-DdR"/>
+                    </constraints>
+                </customView>
+                <customView horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="NFF-E1-ipm" customClass="rvmMacKeyboardView">
+                    <rect key="frame" x="84" y="276" width="534" height="248"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="NFF-E1-ipm" secondAttribute="height" multiplier="753:350" id="7QU-hT-6at"/>
+                    </constraints>
+                </customView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MHr-g1-ZQ8">
+                    <rect key="frame" x="613" y="13" width="76" height="32"/>
+                    <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OKP-Zx-RUU">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onClose:" target="-2" id="bVW-Hf-sPv"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="MHr-g1-ZQ8" secondAttribute="trailing" constant="20" id="454-xH-WSl"/>
+                <constraint firstAttribute="centerX" secondItem="OhA-kI-fus" secondAttribute="centerX" id="6SR-hU-IBJ"/>
+                <constraint firstAttribute="bottom" secondItem="MHr-g1-ZQ8" secondAttribute="bottom" constant="20" id="8yh-Hn-xHs"/>
+                <constraint firstAttribute="bottom" secondItem="OhA-kI-fus" secondAttribute="bottom" constant="10" id="BOp-6t-tci"/>
+                <constraint firstAttribute="centerX" secondItem="cGp-Sh-uvC" secondAttribute="centerX" constant="-0.5" id="Vco-nD-Ugs"/>
+                <constraint firstItem="NFF-E1-ipm" firstAttribute="top" secondItem="cGp-Sh-uvC" secondAttribute="bottom" constant="8" id="aZc-gE-Vvt"/>
+                <constraint firstAttribute="centerX" secondItem="NFF-E1-ipm" secondAttribute="centerX" id="elF-Gk-sSA"/>
+                <constraint firstItem="OhA-kI-fus" firstAttribute="top" secondItem="NFF-E1-ipm" secondAttribute="bottom" constant="18" id="eoC-X2-gTg"/>
+                <constraint firstItem="cGp-Sh-uvC" firstAttribute="top" secondItem="LGZ-Bo-mRa" secondAttribute="top" constant="6" id="lki-5m-6z4"/>
+                <constraint firstItem="NFF-E1-ipm" firstAttribute="height" secondItem="OhA-kI-fus" secondAttribute="height" id="rIC-GL-For"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                    <color key="value" red="0.16078431369999999" green="0.27058823529999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor2">
+                    <color key="value" red="0.2491756339" green="0.41934435949999999" blue="0.71713962929999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="1331.5" y="-75"/>
+        </customView>
+    </objects>
+</document>

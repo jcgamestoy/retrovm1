@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="rvmMainWindowController">
+            <connections>
+                <outlet property="backgroundView" destination="se5-gp-TjO" id="caC-E7-MYG"/>
+                <outlet property="copyright" destination="Ftg-ry-hbj" id="uhU-Mp-fei"/>
+                <outlet property="logoView" destination="RpS-wU-JpU" id="AxG-PJ-ej6"/>
+                <outlet property="machines" destination="gVp-yg-lk1" id="jAu-TU-5CP"/>
+                <outlet property="navigation" destination="uEo-Kn-alS" id="7m3-Gs-u4P"/>
+                <outlet property="titleImage" destination="uob-ib-ghX" id="4cQ-1o-MRZ"/>
+                <outlet property="toolbarTitle" destination="HYU-Gd-Xtt" id="IVl-n5-3oP"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" appearanceType="aqua" animationBehavior="default" toolbarStyle="expanded" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <rect key="contentRect" x="258" y="118" width="800" height="600"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
+            <value key="minSize" type="size" width="800" height="600"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO" customClass="rvmBackgroundView">
+                <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ftg-ry-hbj">
+                        <rect key="frame" x="18" y="20" width="294" height="15"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="©2013-18 Juan Carlos González Amestoy" id="E5b-fV-9FM">
+                            <font key="font" size="13" name="Menlo-Bold"/>
+                            <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <customView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RpS-wU-JpU" customClass="rvmImageView">
+                        <rect key="frame" x="132" y="50" width="550" height="530"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="mainLogo"/>
+                        </userDefinedRuntimeAttributes>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Ftg-ry-hbj" secondAttribute="bottom" constant="20" id="4SN-T4-mFb"/>
+                    <constraint firstItem="Ftg-ry-hbj" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="Gxm-oI-QpO"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="vibrance" value="NO"/>
+                    <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                        <color key="value" white="0.15208675986842105" alpha="1" colorSpace="calibratedWhite"/>
+                    </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="color" keyPath="backColor2">
+                        <color key="value" white="0.29680456613239486" alpha="1" colorSpace="calibratedWhite"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="6D281864-4B7F-4FDB-8608-2901DA70E144" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="hou-vI-TKt">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="o9V-ll-pwR"/>
+                    <toolbarItem implicitItemIdentifier="7957A745-6B8A-4370-ACEF-0093F0E9DA17" label="" paletteLabel="Back" tag="-1" id="oLJ-fo-7uh">
+                        <size key="minSize" width="32" height="32"/>
+                        <size key="maxSize" width="32" height="32"/>
+                        <connections>
+                            <action selector="popViewController:" target="uEo-Kn-alS" id="fsg-z8-eip"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="03D1D062-5546-4C41-B697-E6A087E0FCC5" label="" paletteLabel="Custom View" tag="-1" id="HYU-Gd-Xtt">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="300" height="30"/>
+                        <size key="maxSize" width="300" height="30"/>
+                        <customView key="view" wantsLayer="YES" id="uob-ib-ghX" customClass="rvmImageView">
+                            <rect key="frame" x="0.0" y="14" width="300" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="uob-ib-ghX" secondAttribute="height" multiplier="10:1" id="PRw-xV-MVZ"/>
+                                <constraint firstAttribute="height" constant="30" id="fWQ-03-IkV"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="Logo1"/>
+                            </userDefinedRuntimeAttributes>
+                        </customView>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="WAr-6w-hCx"/>
+                    <toolbarItem implicitItemIdentifier="0109B795-0015-4143-9EC5-933D6C1B8626" label="Add" paletteLabel="Toolbar Item" tag="-1" image="NSAddTemplate" autovalidates="NO" id="HzX-jt-Kv5">
+                        <size key="minSize" width="33.5" height="28"/>
+                        <size key="maxSize" width="33.5" height="28"/>
+                        <connections>
+                            <action selector="onAddItem:" target="gVp-yg-lk1" id="TKx-Ns-0TR"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="oLJ-fo-7uh"/>
+                    <toolbarItem reference="WAr-6w-hCx"/>
+                    <toolbarItem reference="HYU-Gd-Xtt"/>
+                    <toolbarItem reference="WAr-6w-hCx"/>
+                    <toolbarItem reference="HzX-jt-Kv5"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="136" y="99"/>
+        </window>
+        <viewController id="uEo-Kn-alS" customClass="rvmNavigationViewController">
+            <connections>
+                <outlet property="nav" destination="oLJ-fo-7uh" id="5nd-8G-E8C"/>
+                <outlet property="view" destination="se5-gp-TjO" id="MyG-Nq-5rU"/>
+            </connections>
+        </viewController>
+        <viewController nibName="rvmMachinesCollectionViewController" id="gVp-yg-lk1" customClass="rvmMachinesCollectionViewController"/>
+    </objects>
+    <resources>
+        <image name="Logo1" width="560" height="78"/>
+        <image name="NSAddTemplate" width="14" height="13"/>
+        <image name="mainLogo" width="1120" height="1078"/>
+    </resources>
+</document>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6185.11" systemVersion="14A298i" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6185.11"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="rvmNewDiskWindowsController">
+            <connections>
+                <outlet property="formatGroup" destination="9ts-k2-XON" id="rDN-3v-7Az"/>
+                <outlet property="selector40" destination="hqZ-B0-pEG" id="p7F-AJ-iaP"/>
+                <outlet property="selector80" destination="LFi-Dt-hv8" id="azG-9c-nXJ"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="oN3-f8-7Ow"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="423" height="377"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="423" height="377"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bDr-Lx-WEN" customClass="rvmImageView">
+                        <rect key="frame" x="64" y="277" width="64" height="80"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="DiskEDsk40"/>
+                        </userDefinedRuntimeAttributes>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydv-Va-6ig" customClass="rvmImageView">
+                        <rect key="frame" x="243" y="277" width="80" height="80"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="DiskEDsk80"/>
+                        </userDefinedRuntimeAttributes>
+                    </customView>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqZ-B0-pEG">
+                        <rect key="frame" x="18" y="248" width="153" height="18"/>
+                        <buttonCell key="cell" type="check" title="40-Track Single Side" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="HKq-Sl-My6">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onTypeSelected:" target="-2" id="vAJ-ne-5om"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LFi-Dt-hv8">
+                        <rect key="frame" x="203" y="248" width="160" height="18"/>
+                        <buttonCell key="cell" type="check" title="80-Track Double Side" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zOW-yH-tix">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onTypeSelected:" target="-2" id="zMl-YJ-ih3"/>
+                        </connections>
+                    </button>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="DHk-rn-zdd">
+                        <rect key="frame" x="0.0" y="230" width="755" height="5"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MAD-m9-wdD">
+                        <rect key="frame" x="18" y="197" width="73" height="21"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Format:" id="9Ot-k4-dng">
+                            <font key="font" metaFont="system" size="17"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EhM-NA-BCG">
+                        <rect key="frame" x="237" y="15" width="81" height="32"/>
+                        <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hii-fY-aZg">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onOk:" target="-2" id="ftA-yb-S5L"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6E6-Gh-FyO">
+                        <rect key="frame" x="318" y="15" width="82" height="32"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K8q-XS-t5G">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onCancel:" target="-2" id="CUB-9c-nuD"/>
+                        </connections>
+                    </button>
+                    <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ts-k2-XON">
+                        <rect key="frame" x="20" y="31" width="210" height="158"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="204" height="18"/>
+                        <size key="intercellSpacing" width="4" height="2"/>
+                        <buttonCell key="prototype" type="radio" title="PCW 9000 CF2 (80T / 706k)" imagePosition="left" alignment="left" inset="2" id="Qgr-aK-izo">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="radio" title="PCW 8256 CF2 (40T / 173Kb)" imagePosition="left" alignment="left" tag="1" inset="2" id="rp1-fV-32q">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <buttonCell type="radio" title="CPC System (40T / 169k)" imagePosition="left" alignment="left" tag="2" inset="2" id="OIn-uy-Yrz">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <buttonCell type="radio" title="CPC Data (40T / 173k)" imagePosition="left" alignment="left" tag="3" inset="2" id="B0U-Dn-wHw">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <buttonCell type="radio" title="IBM Format (40T / 154k)" imagePosition="left" alignment="left" tag="4" inset="2" id="PA3-uc-B0M">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <buttonCell type="radio" title="Standar XCF2 (40T / 192k)" imagePosition="left" alignment="left" tag="5" inset="2" id="B8k-pq-7tF">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <buttonCell type="radio" title="PCW 9000 CF2 (80T / 706k)" imagePosition="left" alignment="left" enabled="NO" tag="6" inset="2" id="7mc-nR-bel">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <buttonCell type="radio" title="Standar XCF2DD (80T / 784k)" imagePosition="left" alignment="left" enabled="NO" tag="7" inset="2" id="thH-rX-ssa">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <buttonCell type="radio" title="Unformatted" imagePosition="left" alignment="left" state="on" inset="2" id="TF7-Pm-vKY">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                    </matrix>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="347.5" y="319.5"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="DiskEDsk40" width="332" height="415"/>
+        <image name="DiskEDsk80" width="330" height="345"/>
+    </resources>
+</document>

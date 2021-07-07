@@ -1,0 +1,1952 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8800B86F19253FCF00ED7606 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 8800B86E19253FCF00ED7606 /* Resources */; };
+		8808A1781873548B00013279 /* rvmTZXDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808A1771873548B00013279 /* rvmTZXDecoder.m */; };
+		881BD7EE1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 881BD7EB1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.h */; };
+		881BD7EF1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881BD7EC1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.m */; };
+		881BD7F01BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881BD7ED1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.xib */; };
+		881F7EA718BBBAED008F96E2 /* rvmRoundedButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 881F7EA618BBBAED008F96E2 /* rvmRoundedButtonCell.m */; };
+		881F9AD51C7A2E7E00B9E4AC /* rvmZxSpectrum128kSpaKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 881F9AD31C7A2E7E00B9E4AC /* rvmZxSpectrum128kSpaKeyboardView.h */; };
+		881F9AD61C7A2E7E00B9E4AC /* rvmZxSpectrum128kSpaKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881F9AD41C7A2E7E00B9E4AC /* rvmZxSpectrum128kSpaKeyboardView.m */; };
+		881F9AD81C7A2F9400B9E4AC /* rvmZxSpectrum128kSpaKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881F9AD71C7A2F9400B9E4AC /* rvmZxSpectrum128kSpaKeyboardViewController.xib */; };
+		881F9ADB1C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 881F9AD91C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.h */; };
+		881F9ADC1C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881F9ADA1C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.m */; };
+		881F9ADE1C7A31F700B9E4AC /* rvmZxSpectrumPlusSpaKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881F9ADD1C7A31F700B9E4AC /* rvmZxSpectrumPlusSpaKeyboardViewController.xib */; };
+		881F9AE11C7A323500B9E4AC /* rvmZXSpectrumPlusSpa.h in Headers */ = {isa = PBXBuildFile; fileRef = 881F9ADF1C7A323500B9E4AC /* rvmZXSpectrumPlusSpa.h */; };
+		881F9AE21C7A323500B9E4AC /* rvmZXSpectrumPlusSpa.m in Sources */ = {isa = PBXBuildFile; fileRef = 881F9AE01C7A323500B9E4AC /* rvmZXSpectrumPlusSpa.m */; };
+		8824BA1A1BAF55F000F84D99 /* rvmDeviceConfigViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8824BA171BAF55F000F84D99 /* rvmDeviceConfigViewController.h */; };
+		8824BA1B1BAF55F000F84D99 /* rvmDeviceConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8824BA181BAF55F000F84D99 /* rvmDeviceConfigViewController.m */; };
+		8824BA1C1BAF55F000F84D99 /* rvmDeviceConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8824BA191BAF55F000F84D99 /* rvmDeviceConfigViewController.xib */; };
+		882AA130185662B50037F4A3 /* rvmSoundQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 882AA12F185662B50037F4A3 /* rvmSoundQueue.m */; };
+		882AEF9D186093430026CD79 /* rvmConsoleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 882AEF9C186093430026CD79 /* rvmConsoleView.m */; };
+		882B78D71AD53085008036F5 /* rvmOSDLastSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 882B78D41AD53085008036F5 /* rvmOSDLastSnapshot.h */; };
+		882B78D81AD53085008036F5 /* rvmOSDLastSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B78D51AD53085008036F5 /* rvmOSDLastSnapshot.m */; };
+		882B78D91AD53085008036F5 /* rvmOSDLastSnapshot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882B78D61AD53085008036F5 /* rvmOSDLastSnapshot.xib */; };
+		882C020C1C7EF3B1005E7AF3 /* rvmZXSpectrumInves.h in Headers */ = {isa = PBXBuildFile; fileRef = 882C020A1C7EF3B1005E7AF3 /* rvmZXSpectrumInves.h */; };
+		882C020D1C7EF3B1005E7AF3 /* rvmZXSpectrumInves.m in Sources */ = {isa = PBXBuildFile; fileRef = 882C020B1C7EF3B1005E7AF3 /* rvmZXSpectrumInves.m */; };
+		882C02101C7EF4BE005E7AF3 /* spectrumInves.h in Headers */ = {isa = PBXBuildFile; fileRef = 882C020E1C7EF4BE005E7AF3 /* spectrumInves.h */; };
+		882C02111C7EF4BE005E7AF3 /* spectrumInves.m in Sources */ = {isa = PBXBuildFile; fileRef = 882C020F1C7EF4BE005E7AF3 /* spectrumInves.m */; };
+		882CDD90189119E900C8A70E /* rvmTripleBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 882CDD8F189119E900C8A70E /* rvmTripleBuffer.m */; };
+		88300D7D18C604B50041DF86 /* rvmOSDControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88300D7B18C604B50041DF86 /* rvmOSDControlViewController.m */; };
+		88300D7E18C604B50041DF86 /* rvmOSDControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88300D7C18C604B50041DF86 /* rvmOSDControlViewController.xib */; };
+		8833E1F11871EFDF001C936F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8833E1F01871EFDF001C936F /* IOKit.framework */; };
+		88363C2919030C1500A46BFB /* normalFS.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 88363C2819030C1500A46BFB /* normalFS.glsl */; };
+		883763E71AED5EE1009CFD35 /* tap.icns in Resources */ = {isa = PBXBuildFile; fileRef = 883763E61AED5EE1009CFD35 /* tap.icns */; };
+		883763E91AED6197009CFD35 /* tzx.icns in Resources */ = {isa = PBXBuildFile; fileRef = 883763E81AED6197009CFD35 /* tzx.icns */; };
+		883763EB1AED61BA009CFD35 /* pzx.icns in Resources */ = {isa = PBXBuildFile; fileRef = 883763EA1AED61BA009CFD35 /* pzx.icns */; };
+		883763ED1AED6200009CFD35 /* csw.icns in Resources */ = {isa = PBXBuildFile; fileRef = 883763EC1AED6200009CFD35 /* csw.icns */; };
+		883763EF1AED6235009CFD35 /* disk.icns in Resources */ = {isa = PBXBuildFile; fileRef = 883763EE1AED6235009CFD35 /* disk.icns */; };
+		883763F11AED62D6009CFD35 /* documents.icns in Resources */ = {isa = PBXBuildFile; fileRef = 883763F01AED62D6009CFD35 /* documents.icns */; };
+		883763F31AED659A009CFD35 /* z80.icns in Resources */ = {isa = PBXBuildFile; fileRef = 883763F21AED659A009CFD35 /* z80.icns */; };
+		883763F51AED65A1009CFD35 /* sna.icns in Resources */ = {isa = PBXBuildFile; fileRef = 883763F41AED65A1009CFD35 /* sna.icns */; };
+		883A9AC719AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 883A9AC519AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.h */; };
+		883A9AC819AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 883A9AC619AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.m */; };
+		883B37F4185EF27F00AA1546 /* NSColor+rvmNSColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 883B37F3185EF27F00AA1546 /* NSColor+rvmNSColors.m */; };
+		883E36021871B59400518381 /* rvmOSDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 883E36001871B59400518381 /* rvmOSDViewController.m */; };
+		883E36031871B59400518381 /* rvmOSDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 883E36011871B59400518381 /* rvmOSDViewController.xib */; };
+		88416AF21BAFE26200846360 /* rvmMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 88416AF01BAFE26200846360 /* rvmMachine.h */; };
+		88416AF31BAFE26200846360 /* rvmMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 88416AF11BAFE26200846360 /* rvmMachine.m */; };
+		884174F41ACC140400A2E0B3 /* rvmPs3GamepadView.h in Headers */ = {isa = PBXBuildFile; fileRef = 884174F21ACC140400A2E0B3 /* rvmPs3GamepadView.h */; };
+		884174F51ACC140400A2E0B3 /* rvmPs3GamepadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 884174F31ACC140400A2E0B3 /* rvmPs3GamepadView.m */; };
+		8842BE0D191D6BFF00CB02ED /* rvmZxSpectrumPlus2ASpa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8842BE0C191D6BFF00CB02ED /* rvmZxSpectrumPlus2ASpa.m */; };
+		884724F71898496500E5129B /* rvmCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 884724F61898496500E5129B /* rvmCollectionView.m */; };
+		8847B5121873003300C2BDC8 /* rvmStandarBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8847B5111873003300C2BDC8 /* rvmStandarBlock.m */; };
+		884A13651855CEEA00DF17AF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884A13641855CEEA00DF17AF /* AudioToolbox.framework */; };
+		884A227F1A88A9FC00CCCC73 /* rvmSNADecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 884A227D1A88A9FC00CCCC73 /* rvmSNADecoder.h */; };
+		884A22801A88A9FC00CCCC73 /* rvmSNADecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 884A227E1A88A9FC00CCCC73 /* rvmSNADecoder.m */; };
+		884CECA418F81C190025E14D /* rvmZXSpectrum48k.m in Sources */ = {isa = PBXBuildFile; fileRef = 884CECA318F81C190025E14D /* rvmZXSpectrum48k.m */; };
+		884CECA718F820EB0025E14D /* rvmZXSpectrum16k.m in Sources */ = {isa = PBXBuildFile; fileRef = 884CECA618F820EB0025E14D /* rvmZXSpectrum16k.m */; };
+		884CECAA18F821AD0025E14D /* rvmZXSpectrum128k.m in Sources */ = {isa = PBXBuildFile; fileRef = 884CECA918F821AD0025E14D /* rvmZXSpectrum128k.m */; };
+		884DAAAB1A7FEFC2006CC42E /* rvmTableRow.h in Headers */ = {isa = PBXBuildFile; fileRef = 884DAAA91A7FEFC2006CC42E /* rvmTableRow.h */; };
+		884DAAAC1A7FEFC2006CC42E /* rvmTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 884DAAAA1A7FEFC2006CC42E /* rvmTableRow.m */; };
+		884DBC4B185B0C9600B43FF0 /* NSView+AutolayoutExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 884DBC4A185B0C9600B43FF0 /* NSView+AutolayoutExtension.m */; };
+		884E27B81A08FB00004608DA /* rvmCSWDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 884E27B61A08FB00004608DA /* rvmCSWDecoder.h */; };
+		884E27B91A08FB00004608DA /* rvmCSWDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 884E27B71A08FB00004608DA /* rvmCSWDecoder.m */; };
+		8852317219793B9E00B515FB /* rvmImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 88825EFB189A595E00D27E60 /* rvmImageView.h */; };
+		8854C5131891993600A1E154 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8854C5121891993600A1E154 /* QuartzCore.framework */; };
+		885660A71C8991AF00469353 /* rvmBufferChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 885660A51C8991AF00469353 /* rvmBufferChain.h */; };
+		885660A81C8991AF00469353 /* rvmBufferChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 885660A61C8991AF00469353 /* rvmBufferChain.m */; };
+		885A63F718B3DF830052AE97 /* rvmSnowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A63F618B3DF830052AE97 /* rvmSnowLayer.m */; };
+		885B6B1819729E8800B43498 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885B6B1719729E8800B43498 /* AVFoundation.framework */; };
+		885EE4AC1862E6150067AEAC /* rvmTAPDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 885EE4AB1862E6150067AEAC /* rvmTAPDecoder.m */; };
+		8862702F19FA4C25000F56B8 /* rvmTapeBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 8862702D19FA4C25000F56B8 /* rvmTapeBlocks.h */; };
+		8862703019FA4C25000F56B8 /* rvmTapeBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 8862702E19FA4C25000F56B8 /* rvmTapeBlocks.m */; };
+		8863DDC118FC380700C5BB1D /* rvmVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863DDBF18FC380700C5BB1D /* rvmVideoViewController.m */; };
+		8863DDC218FC380700C5BB1D /* rvmVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8863DDC018FC380700C5BB1D /* rvmVideoViewController.xib */; };
+		8863DDC418FC3D0D00C5BB1D /* crtFS.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 8863DDC318FC3D0D00C5BB1D /* crtFS.glsl */; };
+		8864DD94185C9C9A00C971F7 /* rvmBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 8864DD93185C9C9A00C971F7 /* rvmBox.m */; };
+		88662D581A571330009331BF /* rvmAudioLeds.h in Headers */ = {isa = PBXBuildFile; fileRef = 88662D561A571330009331BF /* rvmAudioLeds.h */; };
+		88662D591A571330009331BF /* rvmAudioLeds.m in Sources */ = {isa = PBXBuildFile; fileRef = 88662D571A571330009331BF /* rvmAudioLeds.m */; };
+		8866AB0D1858A06B00FD3EAC /* rvmMonitorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8866AB0B1858A06B00FD3EAC /* rvmMonitorWindowController.m */; };
+		8866AB0E1858A06B00FD3EAC /* rvmMonitorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8866AB0C1858A06B00FD3EAC /* rvmMonitorWindowController.xib */; };
+		88675D1E196ABAAD00ABD12A /* rvmPlus3FddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88675D1D196ABAAD00ABD12A /* rvmPlus3FddViewController.xib */; };
+		886875881892FB890046461B /* rvmAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 886875861892FB890046461B /* rvmAudioViewController.m */; };
+		886875891892FB890046461B /* rvmAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 886875871892FB890046461B /* rvmAudioViewController.xib */; };
+		8868D7D718B606FB00574BC9 /* whiteNoise.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 8868D7D618B606FB00574BC9 /* whiteNoise.glsl */; };
+		8868D7D918B6307500574BC9 /* rvmShaders.c in Sources */ = {isa = PBXBuildFile; fileRef = 8868D7D818B6307500574BC9 /* rvmShaders.c */; };
+		886A1DFD197D40B2006272D6 /* rvmDiskView.h in Headers */ = {isa = PBXBuildFile; fileRef = 886A1DFB197D40B2006272D6 /* rvmDiskView.h */; };
+		886A1DFE197D40B2006272D6 /* rvmDiskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 886A1DFC197D40B2006272D6 /* rvmDiskView.m */; };
+		886E6F9418FB1BD9001B9131 /* rvmZxSpectrumPlus2Spa.m in Sources */ = {isa = PBXBuildFile; fileRef = 886E6F9318FB1BD9001B9131 /* rvmZxSpectrumPlus2Spa.m */; };
+		886E6F9718FB1C37001B9131 /* rvmZXSpectrumPlus2Fr.m in Sources */ = {isa = PBXBuildFile; fileRef = 886E6F9618FB1C37001B9131 /* rvmZXSpectrumPlus2Fr.m */; };
+		886F26E619239945009A39C1 /* rvmPlus2DatacorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 886F26E319239945009A39C1 /* rvmPlus2DatacorderViewController.xib */; };
+		886F26E719239945009A39C1 /* rvmPlus2DatacorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 886F26E519239945009A39C1 /* rvmPlus2DatacorderViewController.m */; };
+		886F26EA19239974009A39C1 /* rvmPlus2DatacorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 886F26E919239974009A39C1 /* rvmPlus2DatacorderView.m */; };
+		88709FC51876031A00802150 /* rvmPureToneBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 88709FC41876031A00802150 /* rvmPureToneBlock.m */; };
+		88709FC81876063F00802150 /* rvmPulsesBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 88709FC71876063F00802150 /* rvmPulsesBlock.m */; };
+		88709FCB1876083900802150 /* rvmPureDataBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 88709FCA1876083900802150 /* rvmPureDataBlock.m */; };
+		887150E4199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 887150E1199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.h */; };
+		887150E5199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 887150E2199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.m */; };
+		887150E6199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887150E3199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.xib */; };
+		887351B818F4141C00855F0C /* rvmDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 887351B718F4141C00855F0C /* rvmDevice.m */; };
+		887351BB18F415FF00855F0C /* rvmAY3819X.m in Sources */ = {isa = PBXBuildFile; fileRef = 887351BA18F415FF00855F0C /* rvmAY3819X.m */; };
+		8876BC7B1A6BEEA900EB7C6A /* rvmRemovableTableCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8876BC791A6BEEA900EB7C6A /* rvmRemovableTableCellView.h */; };
+		8876BC7C1A6BEEA900EB7C6A /* rvmRemovableTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8876BC7A1A6BEEA900EB7C6A /* rvmRemovableTableCellView.m */; };
+		8876EDCF19881FF100D00318 /* rvmNewDiskWindowsController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8876EDCD19881FF100D00318 /* rvmNewDiskWindowsController.h */; };
+		8876EDD019881FF100D00318 /* rvmNewDiskWindowsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8876EDCE19881FF100D00318 /* rvmNewDiskWindowsController.m */; };
+		8876EDD21988200A00D00318 /* rvmNewDiskWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8876EDD11988200A00D00318 /* rvmNewDiskWindowController.xib */; };
+		887827A91986F825001485B1 /* rvmFddDriveView.h in Headers */ = {isa = PBXBuildFile; fileRef = 887827A71986F825001485B1 /* rvmFddDriveView.h */; };
+		887827AA1986F825001485B1 /* rvmFddDriveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 887827A81986F825001485B1 /* rvmFddDriveView.m */; };
+		88788E301ACDAC750093E0E1 /* rvmInputManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 88788E2E1ACDAC750093E0E1 /* rvmInputManager.h */; };
+		88788E311ACDAC750093E0E1 /* rvmInputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88788E2F1ACDAC750093E0E1 /* rvmInputManager.m */; };
+		88788E341ACDAC860093E0E1 /* rvmGamepad.h in Headers */ = {isa = PBXBuildFile; fileRef = 88788E321ACDAC860093E0E1 /* rvmGamepad.h */; };
+		88788E351ACDAC860093E0E1 /* rvmGamepad.m in Sources */ = {isa = PBXBuildFile; fileRef = 88788E331ACDAC860093E0E1 /* rvmGamepad.m */; };
+		8879706A1AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.h in Headers */ = {isa = PBXBuildFile; fileRef = 887970681AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.h */; };
+		8879706B1AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 887970691AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.m */; };
+		8879706E1AC76F2A00B3A1F2 /* rvmZXSpectrumPlusKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8879706C1AC76F2A00B3A1F2 /* rvmZXSpectrumPlusKeyboardView.h */; };
+		8879706F1AC76F2A00B3A1F2 /* rvmZXSpectrumPlusKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8879706D1AC76F2A00B3A1F2 /* rvmZXSpectrumPlusKeyboardView.m */; };
+		887BA2C9189984E200125854 /* rvmNewMachineWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 887BA2C7189984E200125854 /* rvmNewMachineWindowController.m */; };
+		887BA2CA189984E200125854 /* rvmNewMachineWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887BA2C8189984E200125854 /* rvmNewMachineWindowController.xib */; };
+		887D7D921A4462F400AB7929 /* NSData+Gzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 887D7D901A4462F400AB7929 /* NSData+Gzip.h */; };
+		887D7D931A4462F400AB7929 /* NSData+Gzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D7D911A4462F400AB7929 /* NSData+Gzip.m */; };
+		8881A83918C65F6700811CE1 /* rvmTexturedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8881A83818C65F6700811CE1 /* rvmTexturedButton.m */; };
+		88825EFD189A595E00D27E60 /* rvmImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88825EFC189A595E00D27E60 /* rvmImageView.m */; };
+		88840A18196E75BE001B5E5D /* rvmSelectMediaWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88840A16196E75BE001B5E5D /* rvmSelectMediaWindowController.m */; };
+		88840A19196E75BE001B5E5D /* rvmSelectMediaWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88840A17196E75BE001B5E5D /* rvmSelectMediaWindowController.xib */; };
+		88842A5A19ED59A900BD015F /* rvmPZXDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 88842A5819ED59A900BD015F /* rvmPZXDecoder.h */; };
+		88842A5B19ED59A900BD015F /* rvmPZXDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 88842A5919ED59A900BD015F /* rvmPZXDecoder.m */; };
+		8885554119321AB2002AA219 /* rvmPlus2ADatacorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8885553F19321AB2002AA219 /* rvmPlus2ADatacorderViewController.m */; };
+		8885554219321AB2002AA219 /* rvmPlus2ADatacorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8885554019321AB2002AA219 /* rvmPlus2ADatacorderViewController.xib */; };
+		8885554519321E16002AA219 /* rvmPlus2ADatacorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8885554419321E16002AA219 /* rvmPlus2ADatacorderView.m */; };
+		88899194193BA91900E09008 /* rvmTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88899193193BA91900E09008 /* rvmTransitionViewController.m */; };
+		888A8F9F19993133004080F0 /* rvmMacKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 888A8F9D19993133004080F0 /* rvmMacKeyboardView.h */; };
+		888A8FA019993133004080F0 /* rvmMacKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 888A8F9E19993133004080F0 /* rvmMacKeyboardView.m */; };
+		888A8FA819993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 888A8FA519993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.h */; };
+		888A8FA919993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888A8FA619993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.m */; };
+		888A8FAA19993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888A8FA719993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.xib */; };
+		888D402419ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 888D402219ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.h */; };
+		888D402519ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 888D402319ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.m */; };
+		888E859A191AA4AF004520B1 /* z.c in Sources */ = {isa = PBXBuildFile; fileRef = 888E8598191AA4AF004520B1 /* z.c */; };
+		888EB56019A9114500156F17 /* rvmButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 888EB55E19A9114500156F17 /* rvmButton.h */; };
+		888EB56119A9114500156F17 /* rvmButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 888EB55F19A9114500156F17 /* rvmButton.m */; };
+		888F3C4218C674D2009B076F /* rvmOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F3C4118C674D2009B076F /* rvmOverlayWindow.m */; };
+		888FD7321934C05A00E1354F /* rvmRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888FD7301934C05A00E1354F /* rvmRecorderViewController.m */; };
+		888FD7331934C05A00E1354F /* rvmRecorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888FD7311934C05A00E1354F /* rvmRecorderViewController.xib */; };
+		888FD7361934C17700E1354F /* rvmRecorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 888FD7351934C17700E1354F /* rvmRecorderView.m */; };
+		888FE40C19EBC8C200447B64 /* NSFileWrapper+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 888FE40A19EBC8C200447B64 /* NSFileWrapper+Extension.h */; };
+		888FE40D19EBC8C200447B64 /* NSFileWrapper+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 888FE40B19EBC8C200447B64 /* NSFileWrapper+Extension.m */; };
+		8892D0DD1ADB1D43003B255B /* rvmX360Gamepad.h in Headers */ = {isa = PBXBuildFile; fileRef = 8892D0DB1ADB1D43003B255B /* rvmX360Gamepad.h */; };
+		8892D0DE1ADB1D43003B255B /* rvmX360Gamepad.m in Sources */ = {isa = PBXBuildFile; fileRef = 8892D0DC1ADB1D43003B255B /* rvmX360Gamepad.m */; };
+		8892D0E21ADB25F5003B255B /* rvmGamepadWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8892D0DF1ADB25F5003B255B /* rvmGamepadWindowController.h */; };
+		8892D0E31ADB25F5003B255B /* rvmGamepadWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8892D0E01ADB25F5003B255B /* rvmGamepadWindowController.m */; };
+		8892D0E41ADB25F5003B255B /* rvmGamepadWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8892D0E11ADB25F5003B255B /* rvmGamepadWindowController.xib */; };
+		8892D0E71ADB37A7003B255B /* rvmPS3Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = 8892D0E51ADB37A7003B255B /* rvmPS3Controller.h */; };
+		8892D0E81ADB37A7003B255B /* rvmPS3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8892D0E61ADB37A7003B255B /* rvmPS3Controller.m */; };
+		8898C34719857EDF00D9FD14 /* rvmZXSpectrumPlus2Av41.h in Headers */ = {isa = PBXBuildFile; fileRef = 8898C34519857EDF00D9FD14 /* rvmZXSpectrumPlus2Av41.h */; };
+		8898C34819857EDF00D9FD14 /* rvmZXSpectrumPlus2Av41.m in Sources */ = {isa = PBXBuildFile; fileRef = 8898C34619857EDF00D9FD14 /* rvmZXSpectrumPlus2Av41.m */; };
+		8898C34B1985820F00D9FD14 /* rvmZxSpectrumPlus2Av41Spa.h in Headers */ = {isa = PBXBuildFile; fileRef = 8898C3491985820F00D9FD14 /* rvmZxSpectrumPlus2Av41Spa.h */; };
+		8898C34C1985820F00D9FD14 /* rvmZxSpectrumPlus2Av41Spa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8898C34A1985820F00D9FD14 /* rvmZxSpectrumPlus2Av41Spa.m */; };
+		8898C34F1985826800D9FD14 /* rvmZxSpectrumPlus3v41.h in Headers */ = {isa = PBXBuildFile; fileRef = 8898C34D1985826800D9FD14 /* rvmZxSpectrumPlus3v41.h */; };
+		8898C3501985826800D9FD14 /* rvmZxSpectrumPlus3v41.m in Sources */ = {isa = PBXBuildFile; fileRef = 8898C34E1985826800D9FD14 /* rvmZxSpectrumPlus3v41.m */; };
+		8898C353198582A900D9FD14 /* rvmZxSpectrumPlus3Spa.h in Headers */ = {isa = PBXBuildFile; fileRef = 8898C351198582A900D9FD14 /* rvmZxSpectrumPlus3Spa.h */; };
+		8898C354198582A900D9FD14 /* rvmZxSpectrumPlus3Spa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8898C352198582A900D9FD14 /* rvmZxSpectrumPlus3Spa.m */; };
+		8898C357198582E800D9FD14 /* rvmZxSpectrumPlus3v41Spa.h in Headers */ = {isa = PBXBuildFile; fileRef = 8898C355198582E800D9FD14 /* rvmZxSpectrumPlus3v41Spa.h */; };
+		8898C358198582E800D9FD14 /* rvmZxSpectrumPlus3v41Spa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8898C356198582E800D9FD14 /* rvmZxSpectrumPlus3v41Spa.m */; };
+		8898C35B1985832000D9FD14 /* rvmZxSpectrumPlus3E.h in Headers */ = {isa = PBXBuildFile; fileRef = 8898C3591985832000D9FD14 /* rvmZxSpectrumPlus3E.h */; };
+		8898C35C1985832000D9FD14 /* rvmZxSpectrumPlus3E.m in Sources */ = {isa = PBXBuildFile; fileRef = 8898C35A1985832000D9FD14 /* rvmZxSpectrumPlus3E.m */; };
+		8898CB0E196092F8008C747B /* rvmUpd765.m in Sources */ = {isa = PBXBuildFile; fileRef = 8898CB0D196092F8008C747B /* rvmUpd765.m */; };
+		889A7BF01A5E8ED800ECF623 /* rvmAudioViewControllerZx128.h in Headers */ = {isa = PBXBuildFile; fileRef = 889A7BED1A5E8ED800ECF623 /* rvmAudioViewControllerZx128.h */; };
+		889A7BF11A5E8ED800ECF623 /* rvmAudioViewControllerZx128.m in Sources */ = {isa = PBXBuildFile; fileRef = 889A7BEE1A5E8ED800ECF623 /* rvmAudioViewControllerZx128.m */; };
+		889A7BF21A5E8ED800ECF623 /* rvmAudioViewControllerZx128.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889A7BEF1A5E8ED800ECF623 /* rvmAudioViewControllerZx128.xib */; };
+		889E102218FD6775002F5441 /* rvmGLFloatTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 889E102118FD6775002F5441 /* rvmGLFloatTexture.m */; };
+		88A4CBCA19202B39009DB394 /* rvmZXSpectrumPlus2E.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4CBC919202B39009DB394 /* rvmZXSpectrumPlus2E.m */; };
+		88A504AE1969CE7F00F798DE /* rvmPlus3FddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A504AD1969CE7F00F798DE /* rvmPlus3FddView.m */; };
+		88A504B21969D18C00F798DE /* rvmPlus3FddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A504B01969D18C00F798DE /* rvmPlus3FddViewController.m */; };
+		88AB78081A14A6D900511268 /* rvmPlus2DatacorderView2.h in Headers */ = {isa = PBXBuildFile; fileRef = 88AB78061A14A6D900511268 /* rvmPlus2DatacorderView2.h */; };
+		88AB78091A14A6D900511268 /* rvmPlus2DatacorderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AB78071A14A6D900511268 /* rvmPlus2DatacorderView2.m */; };
+		88ACFE781A6901F600B64D4A /* rvmSnapshotListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 88ACFE751A6901F600B64D4A /* rvmSnapshotListViewController.h */; };
+		88ACFE791A6901F600B64D4A /* rvmSnapshotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ACFE761A6901F600B64D4A /* rvmSnapshotListViewController.m */; };
+		88ACFE7A1A6901F600B64D4A /* rvmSnapshotListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88ACFE771A6901F600B64D4A /* rvmSnapshotListViewController.xib */; };
+		88AFA08F19B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 88AFA08D19B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.h */; };
+		88AFA09019B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AFA08E19B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.m */; };
+		88AFA09219B6239A00F50AAB /* rvmZxSpectrumPlus2AKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88AFA09119B6239A00F50AAB /* rvmZxSpectrumPlus2AKeyboardViewController.xib */; };
+		88AFA09519B6298800F50AAB /* rvmZxSpectrumPlus3KeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 88AFA09319B6298800F50AAB /* rvmZxSpectrumPlus3KeyboardView.h */; };
+		88AFA09619B6298800F50AAB /* rvmZxSpectrumPlus3KeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AFA09419B6298800F50AAB /* rvmZxSpectrumPlus3KeyboardView.m */; };
+		88AFA09819B62A2800F50AAB /* rvmZxSpectrumPlus3KeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88AFA09719B62A2800F50AAB /* rvmZxSpectrumPlus3KeyboardViewController.xib */; };
+		88B0E1611A667EA9009ABB46 /* rvmSnapshotViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B0E15E1A667EA9009ABB46 /* rvmSnapshotViewController.h */; };
+		88B0E1621A667EA9009ABB46 /* rvmSnapshotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B0E15F1A667EA9009ABB46 /* rvmSnapshotViewController.m */; };
+		88B0E1631A667EA9009ABB46 /* rvmSnapshotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B0E1601A667EA9009ABB46 /* rvmSnapshotViewController.xib */; };
+		88B16A8518B7826B00C86FBC /* rvmAlphaButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B16A8418B7826B00C86FBC /* rvmAlphaButton.m */; };
+		88B34B9C1969E54F00C6184E /* rvmZXSpectrumPlus3.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B34B9B1969E54F00C6184E /* rvmZXSpectrumPlus3.m */; };
+		88B97BF61914F62300F5C87B /* rvmRecentMachinesHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B97BF41914F62300F5C87B /* rvmRecentMachinesHeaderViewController.m */; };
+		88B97BF71914F62300F5C87B /* rvmRecentMachinesHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B97BF51914F62300F5C87B /* rvmRecentMachinesHeaderViewController.xib */; };
+		88B97BFC19150F0600F5C87B /* rvmMachineItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B97BFA19150F0600F5C87B /* rvmMachineItemViewController.m */; };
+		88B97BFD19150F0600F5C87B /* rvmMachineItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B97BFB19150F0600F5C87B /* rvmMachineItemViewController.xib */; };
+		88B97C0619150F9300F5C87B /* rvmMachinesRunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B97C0419150F9300F5C87B /* rvmMachinesRunningViewController.m */; };
+		88B97C0719150F9300F5C87B /* rvmMachinesRunningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B97C0519150F9300F5C87B /* rvmMachinesRunningViewController.xib */; };
+		88B97C0B1915119F00F5C87B /* rvmRunningMachinesHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B97C091915119F00F5C87B /* rvmRunningMachinesHeaderViewController.m */; };
+		88B97C0C1915119F00F5C87B /* rvmRunningMachinesHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B97C0A1915119F00F5C87B /* rvmRunningMachinesHeaderViewController.xib */; };
+		88BE0A5818E0378600228159 /* rvmMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BE0A5618E0378600228159 /* rvmMainWindowController.m */; };
+		88BE0A5918E0378600228159 /* rvmMainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88BE0A5718E0378600228159 /* rvmMainWindowController.xib */; };
+		88BE0A5D18E0387800228159 /* rvmNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BE0A5B18E0387800228159 /* rvmNavigationViewController.m */; };
+		88BE0A6418E0399500228159 /* rvmNavigationItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BE0A6318E0399500228159 /* rvmNavigationItemViewController.m */; };
+		88BE0A6718E0604C00228159 /* rvmNavButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BE0A6618E0604C00228159 /* rvmNavButtonCell.m */; };
+		88BE0A6B18E08DF300228159 /* rvmMachinesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BE0A6918E08DF300228159 /* rvmMachinesCollectionViewController.m */; };
+		88BE0A6C18E08DF300228159 /* rvmMachinesCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88BE0A6A18E08DF300228159 /* rvmMachinesCollectionViewController.xib */; };
+		88C2E5D71A502EC600401F59 /* rvmTapeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 88C2E5D51A502EC600401F59 /* rvmTapeView.h */; };
+		88C2E5D81A502EC600401F59 /* rvmTapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C2E5D61A502EC600401F59 /* rvmTapeView.m */; };
+		88C5063118A8C27B00147DDA /* rvmArchitecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5062F18A8C27B00147DDA /* rvmArchitecture.m */; };
+		88C5063A18A8FB9200147DDA /* rvmArchitecuresDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5063918A8FB9200147DDA /* rvmArchitecuresDocumentController.m */; };
+		88C537F218965D50004F82B6 /* rvmAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C537F118965D50004F82B6 /* rvmAudioEngine.m */; };
+		88C537F4189664E1004F82B6 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C537F3189664E1004F82B6 /* AudioUnit.framework */; };
+		88C6476518E1A98E00C9A149 /* rvmSimpleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C6476418E1A98E00C9A149 /* rvmSimpleCollectionView.m */; };
+		88C6E9981A9CA40500714A61 /* crtPlus.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 88C6E9971A9CA40500714A61 /* crtPlus.glsl */; };
+		88C745771930D64F0010FEBE /* spectrum16k.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C7456F1930D64F0010FEBE /* spectrum16k.m */; };
+		88C745781930D64F0010FEBE /* spectrum48k.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C745711930D64F0010FEBE /* spectrum48k.m */; };
+		88C745791930D64F0010FEBE /* spectrum48kIssue2.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C745721930D64F0010FEBE /* spectrum48kIssue2.m */; };
+		88C7457A1930D64F0010FEBE /* spectrum128k.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C745741930D64F0010FEBE /* spectrum128k.m */; };
+		88C7457B1930D64F0010FEBE /* spectrumPlus2A.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C745761930D64F0010FEBE /* spectrumPlus2A.m */; };
+		88CA45CB19ABD8A100C74DDA /* rvmZxSpectrum128kKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88CA45CA19ABD8A100C74DDA /* rvmZxSpectrum128kKeyboardViewController.xib */; };
+		88D62B1219AF3A3A007DE2CF /* rvmZxSpectrum+2KeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D62B1019AF3A3A007DE2CF /* rvmZxSpectrum+2KeyboardView.h */; };
+		88D62B1319AF3A3A007DE2CF /* rvmZxSpectrum+2KeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D62B1119AF3A3A007DE2CF /* rvmZxSpectrum+2KeyboardView.m */; };
+		88D62B1519AF44A2007DE2CF /* rvmZxSpectrum+2KeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D62B1419AF44A2007DE2CF /* rvmZxSpectrum+2KeyboardViewController.xib */; };
+		88D727F61A91E070006EDA36 /* rvmZ80Decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D727F41A91E070006EDA36 /* rvmZ80Decoder.h */; };
+		88D727F71A91E070006EDA36 /* rvmZ80Decoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D727F51A91E070006EDA36 /* rvmZ80Decoder.m */; };
+		88D744E11A7F8D090093F912 /* rvmOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D744DF1A7F8D090093F912 /* rvmOutlineView.h */; };
+		88D744E21A7F8D090093F912 /* rvmOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D744E01A7F8D090093F912 /* rvmOutlineView.m */; };
+		88D7495E18FACF5200A403AE /* rvmZXSpectrum128kSpa.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D7495D18FACF5200A403AE /* rvmZXSpectrum128kSpa.m */; };
+		88D7496118FACF8F00A403AE /* rvmZxSpectrumPlus2.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D7496018FACF8F00A403AE /* rvmZxSpectrumPlus2.m */; };
+		88D786D2196D6EC5000E5B3E /* spectrumPlus3.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D786D0196D6EC5000E5B3E /* spectrumPlus3.m */; };
+		88DB921D19E7E76C005C2656 /* rvmBackgroundViewDraw.h in Headers */ = {isa = PBXBuildFile; fileRef = 88DB921B19E7E76C005C2656 /* rvmBackgroundViewDraw.h */; };
+		88DB921E19E7E76C005C2656 /* rvmBackgroundViewDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DB921C19E7E76C005C2656 /* rvmBackgroundViewDraw.m */; };
+		88DC8BC11920E0C80015BD09 /* rvmZXSpectrum48kIssue2.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DC8BC01920E0C80015BD09 /* rvmZXSpectrum48kIssue2.m */; };
+		88DC8BC41920E16F0015BD09 /* rvmZXSpectrum16kIssue2.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DC8BC31920E16F0015BD09 /* rvmZXSpectrum16kIssue2.m */; };
+		88DCC5F61AC770B00059CB48 /* rvmZxSpectrumPlusKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88DCC5F51AC770B00059CB48 /* rvmZxSpectrumPlusKeyboardViewController.xib */; };
+		88DF3E451AED708E0092B234 /* paused.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 88DF3E441AED708E0092B234 /* paused.glsl */; };
+		88DFAAE11A56CD03006303A5 /* rvmAudioMixer.h in Headers */ = {isa = PBXBuildFile; fileRef = 88DFAADF1A56CD03006303A5 /* rvmAudioMixer.h */; };
+		88DFAAE21A56CD03006303A5 /* rvmAudioMixer.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DFAAE01A56CD03006303A5 /* rvmAudioMixer.m */; };
+		88DFE673191D3C7E00F7B05F /* rvmZxSpectrumPlus2A.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DFE672191D3C7E00F7B05F /* rvmZxSpectrumPlus2A.m */; };
+		88E05D771960297500C8465D /* rvmDskDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E05D761960297500C8465D /* rvmDskDecoder.m */; };
+		88E151DC188FF71400489656 /* rvmAbsoluteTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E151DB188FF71400489656 /* rvmAbsoluteTime.m */; };
+		88E19D9A1C8DEE7000CC0822 /* rvmNSImage+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 88E19D981C8DEE7000CC0822 /* rvmNSImage+Extensions.h */; };
+		88E19D9B1C8DEE7000CC0822 /* rvmNSImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E19D991C8DEE7000CC0822 /* rvmNSImage+Extensions.m */; };
+		88E19D9E1C8DF66000CC0822 /* rvmInvesSpectrumPlusKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 88E19D9C1C8DF66000CC0822 /* rvmInvesSpectrumPlusKeyboardView.h */; };
+		88E19D9F1C8DF66000CC0822 /* rvmInvesSpectrumPlusKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E19D9D1C8DF66000CC0822 /* rvmInvesSpectrumPlusKeyboardView.m */; };
+		88E19DA11C8DF70600CC0822 /* rvmInvesSpectrumPlusKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E19DA01C8DF70600CC0822 /* rvmInvesSpectrumPlusKeyboardViewController.xib */; };
+		88E1B7341AD450400073587D /* rvmJumpingButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 88E1B7321AD450400073587D /* rvmJumpingButton.h */; };
+		88E1B7351AD450400073587D /* rvmJumpingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E1B7331AD450400073587D /* rvmJumpingButton.m */; };
+		88EB7719185BD38900DDD575 /* rvmBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB7718185BD38900DDD575 /* rvmBackgroundView.m */; };
+		88ED80811C1C580C00ABE193 /* warp.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 88ED80801C1C580C00ABE193 /* warp.glsl */; };
+		88EFF0311854F5110066DF6B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EFF0301854F5110066DF6B /* Cocoa.framework */; };
+		88EFF03B1854F5110066DF6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88EFF0391854F5110066DF6B /* InfoPlist.strings */; };
+		88EFF03D1854F5110066DF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EFF03C1854F5110066DF6B /* main.m */; };
+		88EFF0411854F5110066DF6B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 88EFF03F1854F5110066DF6B /* Credits.rtf */; };
+		88EFF0441854F5110066DF6B /* rvmAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EFF0431854F5110066DF6B /* rvmAppDelegate.m */; };
+		88EFF0471854F5110066DF6B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88EFF0451854F5110066DF6B /* MainMenu.xib */; };
+		88EFF0491854F5110066DF6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88EFF0481854F5110066DF6B /* Images.xcassets */; };
+		88EFF0791854F5A50066DF6B /* rvmMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EFF0661854F5A50066DF6B /* rvmMatrix.m */; };
+		88EFF07A1854F5A50066DF6B /* rvmGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EFF0691854F5A50066DF6B /* rvmGLTexture.m */; };
+		88EFF07B1854F5A50066DF6B /* compile.lua in Resources */ = {isa = PBXBuildFile; fileRef = 88EFF06B1854F5A50066DF6B /* compile.lua */; };
+		88EFF07D1854F5A50066DF6B /* normalVS.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 88EFF06D1854F5A50066DF6B /* normalVS.glsl */; };
+		88EFF0821854F5A50066DF6B /* rvmMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EFF0781854F5A50066DF6B /* rvmMainView.m */; };
+		88EFF0851854F5C90066DF6B /* rvmGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EFF0841854F5C90066DF6B /* rvmGLProgram.m */; };
+		88EFF0871854F5E60066DF6B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EFF0861854F5E60066DF6B /* OpenGL.framework */; };
+		88EFF0891854F5F00066DF6B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EFF0881854F5F00066DF6B /* CoreVideo.framework */; };
+		88EFF08D1854F7210066DF6B /* z80.c in Sources */ = {isa = PBXBuildFile; fileRef = 88EFF08B1854F7210066DF6B /* z80.c */; };
+		88F3F8B726939BE900D3FCDD /* libz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F3F8B626939BE900D3FCDD /* libz.a */; };
+		88F7AD0A1963EB4700264D2D /* spectrumLua.c in Sources */ = {isa = PBXBuildFile; fileRef = 88F7AD091963EB4700264D2D /* spectrumLua.c */; };
+		88FDC2651AE7BC8200A2E5EB /* rvmAboutWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 88FDC2621AE7BC8200A2E5EB /* rvmAboutWindowController.h */; };
+		88FDC2661AE7BC8200A2E5EB /* rvmAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FDC2631AE7BC8200A2E5EB /* rvmAboutWindowController.m */; };
+		88FDC2671AE7BC8200A2E5EB /* rvmAboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FDC2641AE7BC8200A2E5EB /* rvmAboutWindowController.xib */; };
+		88FDC26A1AE7BFDE00A2E5EB /* rvmShaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 88FDC2681AE7BFDE00A2E5EB /* rvmShaderView.h */; };
+		88FDC26B1AE7BFDE00A2E5EB /* rvmShaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FDC2691AE7BFDE00A2E5EB /* rvmShaderView.m */; };
+		88FDC26E1AE7C18700A2E5EB /* rvmShaderLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 88FDC26C1AE7C18700A2E5EB /* rvmShaderLayer.h */; };
+		88FDC26F1AE7C18700A2E5EB /* rvmShaderLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FDC26D1AE7C18700A2E5EB /* rvmShaderLayer.m */; };
+		88FDC2711AE7D04C00A2E5EB /* plasma.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 88FDC2701AE7D04B00A2E5EB /* plasma.glsl */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		88971E3E1941E3A1006FC156 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8800B86E19253FCF00ED7606 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = "Retro Virtual Machine/Resources"; sourceTree = "<group>"; };
+		8808A1761873548B00013279 /* rvmTZXDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmTZXDecoder.h; sourceTree = "<group>"; };
+		8808A1771873548B00013279 /* rvmTZXDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmTZXDecoder.m; sourceTree = "<group>"; };
+		881BD7EB1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmAmstradCPC464RecorderViewController.h; sourceTree = "<group>"; };
+		881BD7EC1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmAmstradCPC464RecorderViewController.m; sourceTree = "<group>"; };
+		881BD7ED1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmAmstradCPC464RecorderViewController.xib; sourceTree = "<group>"; };
+		881F7EA518BBBAED008F96E2 /* rvmRoundedButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmRoundedButtonCell.h; sourceTree = "<group>"; };
+		881F7EA618BBBAED008F96E2 /* rvmRoundedButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmRoundedButtonCell.m; sourceTree = "<group>"; };
+		881F9AD31C7A2E7E00B9E4AC /* rvmZxSpectrum128kSpaKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrum128kSpaKeyboardView.h; sourceTree = "<group>"; };
+		881F9AD41C7A2E7E00B9E4AC /* rvmZxSpectrum128kSpaKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrum128kSpaKeyboardView.m; sourceTree = "<group>"; };
+		881F9AD71C7A2F9400B9E4AC /* rvmZxSpectrum128kSpaKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmZxSpectrum128kSpaKeyboardViewController.xib; sourceTree = "<group>"; };
+		881F9AD91C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlusSpaKeyboardView.h; sourceTree = "<group>"; };
+		881F9ADA1C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlusSpaKeyboardView.m; sourceTree = "<group>"; };
+		881F9ADD1C7A31F700B9E4AC /* rvmZxSpectrumPlusSpaKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmZxSpectrumPlusSpaKeyboardViewController.xib; sourceTree = "<group>"; };
+		881F9ADF1C7A323500B9E4AC /* rvmZXSpectrumPlusSpa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrumPlusSpa.h; sourceTree = "<group>"; };
+		881F9AE01C7A323500B9E4AC /* rvmZXSpectrumPlusSpa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrumPlusSpa.m; sourceTree = "<group>"; };
+		8824BA171BAF55F000F84D99 /* rvmDeviceConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmDeviceConfigViewController.h; sourceTree = "<group>"; };
+		8824BA181BAF55F000F84D99 /* rvmDeviceConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmDeviceConfigViewController.m; sourceTree = "<group>"; };
+		8824BA191BAF55F000F84D99 /* rvmDeviceConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmDeviceConfigViewController.xib; sourceTree = "<group>"; };
+		8824BA1D1BAF5E4B00F84D99 /* rvmDeviceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rvmDeviceProtocol.h; sourceTree = "<group>"; };
+		882AA12E185662B50037F4A3 /* rvmSoundQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmSoundQueue.h; sourceTree = "<group>"; };
+		882AA12F185662B50037F4A3 /* rvmSoundQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmSoundQueue.m; sourceTree = "<group>"; };
+		882AEF9B186093430026CD79 /* rvmConsoleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmConsoleView.h; sourceTree = "<group>"; };
+		882AEF9C186093430026CD79 /* rvmConsoleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmConsoleView.m; sourceTree = "<group>"; };
+		882B78D41AD53085008036F5 /* rvmOSDLastSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmOSDLastSnapshot.h; sourceTree = "<group>"; };
+		882B78D51AD53085008036F5 /* rvmOSDLastSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmOSDLastSnapshot.m; sourceTree = "<group>"; };
+		882B78D61AD53085008036F5 /* rvmOSDLastSnapshot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmOSDLastSnapshot.xib; sourceTree = "<group>"; };
+		882C020A1C7EF3B1005E7AF3 /* rvmZXSpectrumInves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrumInves.h; sourceTree = "<group>"; };
+		882C020B1C7EF3B1005E7AF3 /* rvmZXSpectrumInves.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrumInves.m; sourceTree = "<group>"; };
+		882C020E1C7EF4BE005E7AF3 /* spectrumInves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spectrumInves.h; sourceTree = "<group>"; };
+		882C020F1C7EF4BE005E7AF3 /* spectrumInves.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spectrumInves.m; sourceTree = "<group>"; };
+		882CDD8E189119E900C8A70E /* rvmTripleBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmTripleBuffer.h; sourceTree = "<group>"; };
+		882CDD8F189119E900C8A70E /* rvmTripleBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmTripleBuffer.m; sourceTree = "<group>"; };
+		88300D7A18C604B50041DF86 /* rvmOSDControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmOSDControlViewController.h; sourceTree = "<group>"; };
+		88300D7B18C604B50041DF86 /* rvmOSDControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmOSDControlViewController.m; sourceTree = "<group>"; };
+		88300D7C18C604B50041DF86 /* rvmOSDControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmOSDControlViewController.xib; sourceTree = "<group>"; };
+		8833E1F01871EFDF001C936F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		88363C2819030C1500A46BFB /* normalFS.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = normalFS.glsl; sourceTree = "<group>"; };
+		883763E61AED5EE1009CFD35 /* tap.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = tap.icns; sourceTree = "<group>"; };
+		883763E81AED6197009CFD35 /* tzx.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = tzx.icns; sourceTree = "<group>"; };
+		883763EA1AED61BA009CFD35 /* pzx.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = pzx.icns; sourceTree = "<group>"; };
+		883763EC1AED6200009CFD35 /* csw.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = csw.icns; sourceTree = "<group>"; };
+		883763EE1AED6235009CFD35 /* disk.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = disk.icns; sourceTree = "<group>"; };
+		883763F01AED62D6009CFD35 /* documents.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = documents.icns; sourceTree = "<group>"; };
+		883763F21AED659A009CFD35 /* z80.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = z80.icns; sourceTree = "<group>"; };
+		883763F41AED65A1009CFD35 /* sna.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = sna.icns; sourceTree = "<group>"; };
+		883A9AC519AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrum48kKeyboardView.h; sourceTree = "<group>"; };
+		883A9AC619AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrum48kKeyboardView.m; sourceTree = "<group>"; };
+		883B37F2185EF27F00AA1546 /* NSColor+rvmNSColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+rvmNSColors.h"; sourceTree = "<group>"; };
+		883B37F3185EF27F00AA1546 /* NSColor+rvmNSColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+rvmNSColors.m"; sourceTree = "<group>"; };
+		883E35FF1871B59400518381 /* rvmOSDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmOSDViewController.h; sourceTree = "<group>"; };
+		883E36001871B59400518381 /* rvmOSDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmOSDViewController.m; sourceTree = "<group>"; };
+		883E36011871B59400518381 /* rvmOSDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmOSDViewController.xib; sourceTree = "<group>"; };
+		88416AF01BAFE26200846360 /* rvmMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmMachine.h; sourceTree = "<group>"; };
+		88416AF11BAFE26200846360 /* rvmMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmMachine.m; sourceTree = "<group>"; };
+		884174F21ACC140400A2E0B3 /* rvmPs3GamepadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPs3GamepadView.h; sourceTree = "<group>"; };
+		884174F31ACC140400A2E0B3 /* rvmPs3GamepadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPs3GamepadView.m; sourceTree = "<group>"; };
+		8842BE0B191D6BFF00CB02ED /* rvmZxSpectrumPlus2ASpa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus2ASpa.h; sourceTree = "<group>"; };
+		8842BE0C191D6BFF00CB02ED /* rvmZxSpectrumPlus2ASpa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus2ASpa.m; sourceTree = "<group>"; };
+		884724F51898496500E5129B /* rvmCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmCollectionView.h; sourceTree = "<group>"; };
+		884724F61898496500E5129B /* rvmCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmCollectionView.m; sourceTree = "<group>"; };
+		8847B5101873003300C2BDC8 /* rvmStandarBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmStandarBlock.h; sourceTree = "<group>"; };
+		8847B5111873003300C2BDC8 /* rvmStandarBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmStandarBlock.m; sourceTree = "<group>"; };
+		884A13621855CED800DF17AF /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		884A13641855CEEA00DF17AF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		884A227D1A88A9FC00CCCC73 /* rvmSNADecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmSNADecoder.h; sourceTree = "<group>"; };
+		884A227E1A88A9FC00CCCC73 /* rvmSNADecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmSNADecoder.m; sourceTree = "<group>"; };
+		884CECA218F81C190025E14D /* rvmZXSpectrum48k.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrum48k.h; sourceTree = "<group>"; };
+		884CECA318F81C190025E14D /* rvmZXSpectrum48k.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrum48k.m; sourceTree = "<group>"; };
+		884CECA518F820EB0025E14D /* rvmZXSpectrum16k.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrum16k.h; sourceTree = "<group>"; };
+		884CECA618F820EB0025E14D /* rvmZXSpectrum16k.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrum16k.m; sourceTree = "<group>"; };
+		884CECA818F821AD0025E14D /* rvmZXSpectrum128k.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrum128k.h; sourceTree = "<group>"; };
+		884CECA918F821AD0025E14D /* rvmZXSpectrum128k.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrum128k.m; sourceTree = "<group>"; };
+		884DAAA91A7FEFC2006CC42E /* rvmTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmTableRow.h; sourceTree = "<group>"; };
+		884DAAAA1A7FEFC2006CC42E /* rvmTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmTableRow.m; sourceTree = "<group>"; };
+		884DBC49185B0C9600B43FF0 /* NSView+AutolayoutExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+AutolayoutExtension.h"; sourceTree = "<group>"; };
+		884DBC4A185B0C9600B43FF0 /* NSView+AutolayoutExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+AutolayoutExtension.m"; sourceTree = "<group>"; };
+		884E27B61A08FB00004608DA /* rvmCSWDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmCSWDecoder.h; sourceTree = "<group>"; };
+		884E27B71A08FB00004608DA /* rvmCSWDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmCSWDecoder.m; sourceTree = "<group>"; };
+		8854C5121891993600A1E154 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		885660A51C8991AF00469353 /* rvmBufferChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmBufferChain.h; sourceTree = "<group>"; };
+		885660A61C8991AF00469353 /* rvmBufferChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmBufferChain.m; sourceTree = "<group>"; };
+		885A63F518B3DF830052AE97 /* rvmSnowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmSnowLayer.h; sourceTree = "<group>"; };
+		885A63F618B3DF830052AE97 /* rvmSnowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmSnowLayer.m; sourceTree = "<group>"; };
+		885B6B1719729E8800B43498 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		885EE4A81862E5C20067AEAC /* rvmTapeDecoderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rvmTapeDecoderProtocol.h; sourceTree = "<group>"; };
+		885EE4AA1862E6150067AEAC /* rvmTAPDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmTAPDecoder.h; sourceTree = "<group>"; };
+		885EE4AB1862E6150067AEAC /* rvmTAPDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmTAPDecoder.m; sourceTree = "<group>"; };
+		8862702D19FA4C25000F56B8 /* rvmTapeBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmTapeBlocks.h; sourceTree = "<group>"; };
+		8862702E19FA4C25000F56B8 /* rvmTapeBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmTapeBlocks.m; sourceTree = "<group>"; };
+		8863DDBE18FC380700C5BB1D /* rvmVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmVideoViewController.h; sourceTree = "<group>"; };
+		8863DDBF18FC380700C5BB1D /* rvmVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmVideoViewController.m; sourceTree = "<group>"; };
+		8863DDC018FC380700C5BB1D /* rvmVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmVideoViewController.xib; sourceTree = "<group>"; };
+		8863DDC318FC3D0D00C5BB1D /* crtFS.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crtFS.glsl; sourceTree = "<group>"; };
+		8864DD92185C9C9A00C971F7 /* rvmBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmBox.h; sourceTree = "<group>"; };
+		8864DD93185C9C9A00C971F7 /* rvmBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmBox.m; sourceTree = "<group>"; };
+		88662D561A571330009331BF /* rvmAudioLeds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmAudioLeds.h; sourceTree = "<group>"; };
+		88662D571A571330009331BF /* rvmAudioLeds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmAudioLeds.m; sourceTree = "<group>"; };
+		8866AB0A1858A06B00FD3EAC /* rvmMonitorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmMonitorWindowController.h; sourceTree = "<group>"; };
+		8866AB0B1858A06B00FD3EAC /* rvmMonitorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmMonitorWindowController.m; sourceTree = "<group>"; };
+		8866AB0C1858A06B00FD3EAC /* rvmMonitorWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmMonitorWindowController.xib; sourceTree = "<group>"; };
+		88675D1D196ABAAD00ABD12A /* rvmPlus3FddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmPlus3FddViewController.xib; sourceTree = "<group>"; };
+		886875851892FB890046461B /* rvmAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmAudioViewController.h; sourceTree = "<group>"; };
+		886875861892FB890046461B /* rvmAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmAudioViewController.m; sourceTree = "<group>"; };
+		886875871892FB890046461B /* rvmAudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmAudioViewController.xib; sourceTree = "<group>"; };
+		8868D7D618B606FB00574BC9 /* whiteNoise.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = whiteNoise.glsl; sourceTree = "<group>"; };
+		8868D7D818B6307500574BC9 /* rvmShaders.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rvmShaders.c; sourceTree = "<group>"; };
+		886A1DFB197D40B2006272D6 /* rvmDiskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmDiskView.h; sourceTree = "<group>"; };
+		886A1DFC197D40B2006272D6 /* rvmDiskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmDiskView.m; sourceTree = "<group>"; };
+		886E6F9218FB1BD9001B9131 /* rvmZxSpectrumPlus2Spa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus2Spa.h; sourceTree = "<group>"; };
+		886E6F9318FB1BD9001B9131 /* rvmZxSpectrumPlus2Spa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus2Spa.m; sourceTree = "<group>"; };
+		886E6F9518FB1C37001B9131 /* rvmZXSpectrumPlus2Fr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrumPlus2Fr.h; sourceTree = "<group>"; };
+		886E6F9618FB1C37001B9131 /* rvmZXSpectrumPlus2Fr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrumPlus2Fr.m; sourceTree = "<group>"; };
+		886EE0641858FB510087B8C7 /* rvmMachineProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rvmMachineProtocol.h; sourceTree = "<group>"; };
+		886F26E319239945009A39C1 /* rvmPlus2DatacorderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmPlus2DatacorderViewController.xib; sourceTree = "<group>"; };
+		886F26E419239945009A39C1 /* rvmPlus2DatacorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPlus2DatacorderViewController.h; sourceTree = "<group>"; };
+		886F26E519239945009A39C1 /* rvmPlus2DatacorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPlus2DatacorderViewController.m; sourceTree = "<group>"; };
+		886F26E819239974009A39C1 /* rvmPlus2DatacorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPlus2DatacorderView.h; sourceTree = "<group>"; };
+		886F26E919239974009A39C1 /* rvmPlus2DatacorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPlus2DatacorderView.m; sourceTree = "<group>"; };
+		88709FC21876022500802150 /* rvmTapeBlockProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rvmTapeBlockProtocol.h; sourceTree = "<group>"; };
+		88709FC31876031A00802150 /* rvmPureToneBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPureToneBlock.h; sourceTree = "<group>"; };
+		88709FC41876031A00802150 /* rvmPureToneBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPureToneBlock.m; sourceTree = "<group>"; };
+		88709FC61876063F00802150 /* rvmPulsesBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPulsesBlock.h; sourceTree = "<group>"; };
+		88709FC71876063F00802150 /* rvmPulsesBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPulsesBlock.m; sourceTree = "<group>"; };
+		88709FC91876083900802150 /* rvmPureDataBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPureDataBlock.h; sourceTree = "<group>"; };
+		88709FCA1876083900802150 /* rvmPureDataBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPureDataBlock.m; sourceTree = "<group>"; };
+		8870B60218B3654A008403CB /* rvmCollectionViewDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rvmCollectionViewDelegateProtocol.h; sourceTree = "<group>"; };
+		887150E1199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrum48kConfigViewController.h; sourceTree = "<group>"; };
+		887150E2199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrum48kConfigViewController.m; sourceTree = "<group>"; };
+		887150E3199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmZxSpectrum48kConfigViewController.xib; sourceTree = "<group>"; };
+		887351B618F4141C00855F0C /* rvmDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmDevice.h; sourceTree = "<group>"; };
+		887351B718F4141C00855F0C /* rvmDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmDevice.m; sourceTree = "<group>"; };
+		887351B918F415FF00855F0C /* rvmAY3819X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmAY3819X.h; sourceTree = "<group>"; };
+		887351BA18F415FF00855F0C /* rvmAY3819X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmAY3819X.m; sourceTree = "<group>"; };
+		8876BC791A6BEEA900EB7C6A /* rvmRemovableTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmRemovableTableCellView.h; sourceTree = "<group>"; };
+		8876BC7A1A6BEEA900EB7C6A /* rvmRemovableTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmRemovableTableCellView.m; sourceTree = "<group>"; };
+		8876EDCD19881FF100D00318 /* rvmNewDiskWindowsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmNewDiskWindowsController.h; sourceTree = "<group>"; };
+		8876EDCE19881FF100D00318 /* rvmNewDiskWindowsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmNewDiskWindowsController.m; sourceTree = "<group>"; };
+		8876EDD11988200A00D00318 /* rvmNewDiskWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmNewDiskWindowController.xib; sourceTree = "<group>"; };
+		887827A71986F825001485B1 /* rvmFddDriveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmFddDriveView.h; sourceTree = "<group>"; };
+		887827A81986F825001485B1 /* rvmFddDriveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmFddDriveView.m; sourceTree = "<group>"; };
+		88788E2E1ACDAC750093E0E1 /* rvmInputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmInputManager.h; sourceTree = "<group>"; };
+		88788E2F1ACDAC750093E0E1 /* rvmInputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmInputManager.m; sourceTree = "<group>"; };
+		88788E321ACDAC860093E0E1 /* rvmGamepad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmGamepad.h; sourceTree = "<group>"; };
+		88788E331ACDAC860093E0E1 /* rvmGamepad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmGamepad.m; sourceTree = "<group>"; };
+		887970681AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrumPlus.h; sourceTree = "<group>"; };
+		887970691AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrumPlus.m; sourceTree = "<group>"; };
+		8879706C1AC76F2A00B3A1F2 /* rvmZXSpectrumPlusKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrumPlusKeyboardView.h; sourceTree = "<group>"; };
+		8879706D1AC76F2A00B3A1F2 /* rvmZXSpectrumPlusKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrumPlusKeyboardView.m; sourceTree = "<group>"; };
+		887BA2C6189984E200125854 /* rvmNewMachineWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmNewMachineWindowController.h; sourceTree = "<group>"; };
+		887BA2C7189984E200125854 /* rvmNewMachineWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmNewMachineWindowController.m; sourceTree = "<group>"; };
+		887BA2C8189984E200125854 /* rvmNewMachineWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmNewMachineWindowController.xib; sourceTree = "<group>"; };
+		887D7D901A4462F400AB7929 /* NSData+Gzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Gzip.h"; sourceTree = "<group>"; };
+		887D7D911A4462F400AB7929 /* NSData+Gzip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Gzip.m"; sourceTree = "<group>"; };
+		8881840F1C8F0834008B253A /* rvmSnapshotDecoderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rvmSnapshotDecoderProtocol.h; sourceTree = "<group>"; };
+		8881A83718C65F6700811CE1 /* rvmTexturedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmTexturedButton.h; sourceTree = "<group>"; };
+		8881A83818C65F6700811CE1 /* rvmTexturedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmTexturedButton.m; sourceTree = "<group>"; };
+		88825EFB189A595E00D27E60 /* rvmImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmImageView.h; sourceTree = "<group>"; };
+		88825EFC189A595E00D27E60 /* rvmImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmImageView.m; sourceTree = "<group>"; };
+		88840A15196E75BE001B5E5D /* rvmSelectMediaWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmSelectMediaWindowController.h; sourceTree = "<group>"; };
+		88840A16196E75BE001B5E5D /* rvmSelectMediaWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmSelectMediaWindowController.m; sourceTree = "<group>"; };
+		88840A17196E75BE001B5E5D /* rvmSelectMediaWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmSelectMediaWindowController.xib; sourceTree = "<group>"; };
+		88840A1A196E8801001B5E5D /* rvmMediaLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rvmMediaLoader.h; sourceTree = "<group>"; };
+		88842A5819ED59A900BD015F /* rvmPZXDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPZXDecoder.h; sourceTree = "<group>"; };
+		88842A5919ED59A900BD015F /* rvmPZXDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPZXDecoder.m; sourceTree = "<group>"; };
+		8885553E19321AB2002AA219 /* rvmPlus2ADatacorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rvmPlus2ADatacorderViewController.h; path = "Retro Virtual Machine/Devices/ViewControllers/rvmPlus2ADatacorderViewController.h"; sourceTree = SOURCE_ROOT; };
+		8885553F19321AB2002AA219 /* rvmPlus2ADatacorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPlus2ADatacorderViewController.m; sourceTree = "<group>"; };
+		8885554019321AB2002AA219 /* rvmPlus2ADatacorderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmPlus2ADatacorderViewController.xib; sourceTree = "<group>"; };
+		8885554319321E16002AA219 /* rvmPlus2ADatacorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPlus2ADatacorderView.h; sourceTree = "<group>"; };
+		8885554419321E16002AA219 /* rvmPlus2ADatacorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPlus2ADatacorderView.m; sourceTree = "<group>"; };
+		88899192193BA91900E09008 /* rvmTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmTransitionViewController.h; sourceTree = "<group>"; };
+		88899193193BA91900E09008 /* rvmTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmTransitionViewController.m; sourceTree = "<group>"; };
+		888A8F9D19993133004080F0 /* rvmMacKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmMacKeyboardView.h; sourceTree = "<group>"; };
+		888A8F9E19993133004080F0 /* rvmMacKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmMacKeyboardView.m; sourceTree = "<group>"; };
+		888A8FA519993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrum48kKeyboardConfigViewController.h; sourceTree = "<group>"; };
+		888A8FA619993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrum48kKeyboardConfigViewController.m; sourceTree = "<group>"; };
+		888A8FA719993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmZxSpectrum48kKeyboardConfigViewController.xib; sourceTree = "<group>"; };
+		888D402219ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrum128kKeyboardView.h; sourceTree = "<group>"; };
+		888D402319ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrum128kKeyboardView.m; sourceTree = "<group>"; };
+		888E8598191AA4AF004520B1 /* z.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = z.c; path = src/build/osx/z.c; sourceTree = "<group>"; };
+		888E8599191AA4AF004520B1 /* zuops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zuops.h; path = src/build/osx/zuops.h; sourceTree = "<group>"; };
+		888EB55E19A9114500156F17 /* rvmButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmButton.h; sourceTree = "<group>"; };
+		888EB55F19A9114500156F17 /* rvmButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmButton.m; sourceTree = "<group>"; };
+		888F3C4018C674D2009B076F /* rvmOverlayWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmOverlayWindow.h; sourceTree = "<group>"; };
+		888F3C4118C674D2009B076F /* rvmOverlayWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmOverlayWindow.m; sourceTree = "<group>"; };
+		888FD72F1934C05A00E1354F /* rvmRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmRecorderViewController.h; sourceTree = "<group>"; };
+		888FD7301934C05A00E1354F /* rvmRecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmRecorderViewController.m; sourceTree = "<group>"; };
+		888FD7311934C05A00E1354F /* rvmRecorderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmRecorderViewController.xib; sourceTree = "<group>"; };
+		888FD7341934C17700E1354F /* rvmRecorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmRecorderView.h; sourceTree = "<group>"; };
+		888FD7351934C17700E1354F /* rvmRecorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmRecorderView.m; sourceTree = "<group>"; };
+		888FE40A19EBC8C200447B64 /* NSFileWrapper+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileWrapper+Extension.h"; sourceTree = "<group>"; };
+		888FE40B19EBC8C200447B64 /* NSFileWrapper+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileWrapper+Extension.m"; sourceTree = "<group>"; };
+		8892D0DB1ADB1D43003B255B /* rvmX360Gamepad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmX360Gamepad.h; sourceTree = "<group>"; };
+		8892D0DC1ADB1D43003B255B /* rvmX360Gamepad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmX360Gamepad.m; sourceTree = "<group>"; };
+		8892D0DF1ADB25F5003B255B /* rvmGamepadWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmGamepadWindowController.h; sourceTree = "<group>"; };
+		8892D0E01ADB25F5003B255B /* rvmGamepadWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmGamepadWindowController.m; sourceTree = "<group>"; };
+		8892D0E11ADB25F5003B255B /* rvmGamepadWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmGamepadWindowController.xib; sourceTree = "<group>"; };
+		8892D0E51ADB37A7003B255B /* rvmPS3Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPS3Controller.h; sourceTree = "<group>"; };
+		8892D0E61ADB37A7003B255B /* rvmPS3Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPS3Controller.m; sourceTree = "<group>"; };
+		8898C34519857EDF00D9FD14 /* rvmZXSpectrumPlus2Av41.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrumPlus2Av41.h; sourceTree = "<group>"; };
+		8898C34619857EDF00D9FD14 /* rvmZXSpectrumPlus2Av41.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrumPlus2Av41.m; sourceTree = "<group>"; };
+		8898C3491985820F00D9FD14 /* rvmZxSpectrumPlus2Av41Spa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus2Av41Spa.h; sourceTree = "<group>"; };
+		8898C34A1985820F00D9FD14 /* rvmZxSpectrumPlus2Av41Spa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus2Av41Spa.m; sourceTree = "<group>"; };
+		8898C34D1985826800D9FD14 /* rvmZxSpectrumPlus3v41.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus3v41.h; sourceTree = "<group>"; };
+		8898C34E1985826800D9FD14 /* rvmZxSpectrumPlus3v41.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus3v41.m; sourceTree = "<group>"; };
+		8898C351198582A900D9FD14 /* rvmZxSpectrumPlus3Spa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus3Spa.h; sourceTree = "<group>"; };
+		8898C352198582A900D9FD14 /* rvmZxSpectrumPlus3Spa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus3Spa.m; sourceTree = "<group>"; };
+		8898C355198582E800D9FD14 /* rvmZxSpectrumPlus3v41Spa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus3v41Spa.h; sourceTree = "<group>"; };
+		8898C356198582E800D9FD14 /* rvmZxSpectrumPlus3v41Spa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus3v41Spa.m; sourceTree = "<group>"; };
+		8898C3591985832000D9FD14 /* rvmZxSpectrumPlus3E.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus3E.h; sourceTree = "<group>"; };
+		8898C35A1985832000D9FD14 /* rvmZxSpectrumPlus3E.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus3E.m; sourceTree = "<group>"; };
+		8898CB0C196092F8008C747B /* rvmUpd765.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmUpd765.h; sourceTree = "<group>"; };
+		8898CB0D196092F8008C747B /* rvmUpd765.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmUpd765.m; sourceTree = "<group>"; };
+		889A7BED1A5E8ED800ECF623 /* rvmAudioViewControllerZx128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmAudioViewControllerZx128.h; sourceTree = "<group>"; };
+		889A7BEE1A5E8ED800ECF623 /* rvmAudioViewControllerZx128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmAudioViewControllerZx128.m; sourceTree = "<group>"; };
+		889A7BEF1A5E8ED800ECF623 /* rvmAudioViewControllerZx128.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmAudioViewControllerZx128.xib; sourceTree = "<group>"; };
+		889E102018FD6775002F5441 /* rvmGLFloatTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmGLFloatTexture.h; sourceTree = "<group>"; };
+		889E102118FD6775002F5441 /* rvmGLFloatTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmGLFloatTexture.m; sourceTree = "<group>"; };
+		88A3D7E9192638A500F35BDF /* rvmCassetteViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rvmCassetteViewProtocol.h; sourceTree = "<group>"; };
+		88A4CBC819202B39009DB394 /* rvmZXSpectrumPlus2E.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrumPlus2E.h; sourceTree = "<group>"; };
+		88A4CBC919202B39009DB394 /* rvmZXSpectrumPlus2E.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrumPlus2E.m; sourceTree = "<group>"; };
+		88A504AC1969CE7F00F798DE /* rvmPlus3FddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPlus3FddView.h; sourceTree = "<group>"; };
+		88A504AD1969CE7F00F798DE /* rvmPlus3FddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPlus3FddView.m; sourceTree = "<group>"; };
+		88A504AF1969D18C00F798DE /* rvmPlus3FddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPlus3FddViewController.h; sourceTree = "<group>"; };
+		88A504B01969D18C00F798DE /* rvmPlus3FddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPlus3FddViewController.m; sourceTree = "<group>"; };
+		88AB78061A14A6D900511268 /* rvmPlus2DatacorderView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmPlus2DatacorderView2.h; sourceTree = "<group>"; };
+		88AB78071A14A6D900511268 /* rvmPlus2DatacorderView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmPlus2DatacorderView2.m; sourceTree = "<group>"; };
+		88ACFE751A6901F600B64D4A /* rvmSnapshotListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmSnapshotListViewController.h; sourceTree = "<group>"; };
+		88ACFE761A6901F600B64D4A /* rvmSnapshotListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmSnapshotListViewController.m; sourceTree = "<group>"; };
+		88ACFE771A6901F600B64D4A /* rvmSnapshotListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmSnapshotListViewController.xib; sourceTree = "<group>"; };
+		88AFA08D19B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus2AKeyboardView.h; sourceTree = "<group>"; };
+		88AFA08E19B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus2AKeyboardView.m; sourceTree = "<group>"; };
+		88AFA09119B6239A00F50AAB /* rvmZxSpectrumPlus2AKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmZxSpectrumPlus2AKeyboardViewController.xib; sourceTree = "<group>"; };
+		88AFA09319B6298800F50AAB /* rvmZxSpectrumPlus3KeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus3KeyboardView.h; sourceTree = "<group>"; };
+		88AFA09419B6298800F50AAB /* rvmZxSpectrumPlus3KeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus3KeyboardView.m; sourceTree = "<group>"; };
+		88AFA09719B62A2800F50AAB /* rvmZxSpectrumPlus3KeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmZxSpectrumPlus3KeyboardViewController.xib; sourceTree = "<group>"; };
+		88B0E15E1A667EA9009ABB46 /* rvmSnapshotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmSnapshotViewController.h; sourceTree = "<group>"; };
+		88B0E15F1A667EA9009ABB46 /* rvmSnapshotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmSnapshotViewController.m; sourceTree = "<group>"; };
+		88B0E1601A667EA9009ABB46 /* rvmSnapshotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmSnapshotViewController.xib; sourceTree = "<group>"; };
+		88B16A8318B7826B00C86FBC /* rvmAlphaButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmAlphaButton.h; sourceTree = "<group>"; };
+		88B16A8418B7826B00C86FBC /* rvmAlphaButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmAlphaButton.m; sourceTree = "<group>"; };
+		88B34B9A1969E54F00C6184E /* rvmZXSpectrumPlus3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrumPlus3.h; sourceTree = "<group>"; };
+		88B34B9B1969E54F00C6184E /* rvmZXSpectrumPlus3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrumPlus3.m; sourceTree = "<group>"; };
+		88B97BF31914F62300F5C87B /* rvmRecentMachinesHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmRecentMachinesHeaderViewController.h; sourceTree = "<group>"; };
+		88B97BF41914F62300F5C87B /* rvmRecentMachinesHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmRecentMachinesHeaderViewController.m; sourceTree = "<group>"; };
+		88B97BF51914F62300F5C87B /* rvmRecentMachinesHeaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmRecentMachinesHeaderViewController.xib; sourceTree = "<group>"; };
+		88B97BF919150F0600F5C87B /* rvmMachineItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmMachineItemViewController.h; sourceTree = "<group>"; };
+		88B97BFA19150F0600F5C87B /* rvmMachineItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmMachineItemViewController.m; sourceTree = "<group>"; };
+		88B97BFB19150F0600F5C87B /* rvmMachineItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmMachineItemViewController.xib; sourceTree = "<group>"; };
+		88B97C0319150F9300F5C87B /* rvmMachinesRunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmMachinesRunningViewController.h; sourceTree = "<group>"; };
+		88B97C0419150F9300F5C87B /* rvmMachinesRunningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmMachinesRunningViewController.m; sourceTree = "<group>"; };
+		88B97C0519150F9300F5C87B /* rvmMachinesRunningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmMachinesRunningViewController.xib; sourceTree = "<group>"; };
+		88B97C081915119F00F5C87B /* rvmRunningMachinesHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmRunningMachinesHeaderViewController.h; sourceTree = "<group>"; };
+		88B97C091915119F00F5C87B /* rvmRunningMachinesHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmRunningMachinesHeaderViewController.m; sourceTree = "<group>"; };
+		88B97C0A1915119F00F5C87B /* rvmRunningMachinesHeaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmRunningMachinesHeaderViewController.xib; sourceTree = "<group>"; };
+		88BE0A5518E0378600228159 /* rvmMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmMainWindowController.h; sourceTree = "<group>"; };
+		88BE0A5618E0378600228159 /* rvmMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmMainWindowController.m; sourceTree = "<group>"; };
+		88BE0A5718E0378600228159 /* rvmMainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmMainWindowController.xib; sourceTree = "<group>"; };
+		88BE0A5A18E0387800228159 /* rvmNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmNavigationViewController.h; sourceTree = "<group>"; };
+		88BE0A5B18E0387800228159 /* rvmNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmNavigationViewController.m; sourceTree = "<group>"; };
+		88BE0A6218E0399500228159 /* rvmNavigationItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmNavigationItemViewController.h; sourceTree = "<group>"; };
+		88BE0A6318E0399500228159 /* rvmNavigationItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmNavigationItemViewController.m; sourceTree = "<group>"; };
+		88BE0A6518E0604C00228159 /* rvmNavButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmNavButtonCell.h; sourceTree = "<group>"; };
+		88BE0A6618E0604C00228159 /* rvmNavButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmNavButtonCell.m; sourceTree = "<group>"; };
+		88BE0A6818E08DF300228159 /* rvmMachinesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmMachinesCollectionViewController.h; sourceTree = "<group>"; };
+		88BE0A6918E08DF300228159 /* rvmMachinesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmMachinesCollectionViewController.m; sourceTree = "<group>"; };
+		88BE0A6A18E08DF300228159 /* rvmMachinesCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmMachinesCollectionViewController.xib; sourceTree = "<group>"; };
+		88C2E5D51A502EC600401F59 /* rvmTapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmTapeView.h; sourceTree = "<group>"; };
+		88C2E5D61A502EC600401F59 /* rvmTapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmTapeView.m; sourceTree = "<group>"; };
+		88C5062E18A8C27B00147DDA /* rvmArchitecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmArchitecture.h; sourceTree = "<group>"; };
+		88C5062F18A8C27B00147DDA /* rvmArchitecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmArchitecture.m; sourceTree = "<group>"; };
+		88C5063818A8FB9200147DDA /* rvmArchitecuresDocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmArchitecuresDocumentController.h; sourceTree = "<group>"; };
+		88C5063918A8FB9200147DDA /* rvmArchitecuresDocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmArchitecuresDocumentController.m; sourceTree = "<group>"; };
+		88C537F018965D50004F82B6 /* rvmAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmAudioEngine.h; sourceTree = "<group>"; };
+		88C537F118965D50004F82B6 /* rvmAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmAudioEngine.m; sourceTree = "<group>"; };
+		88C537F3189664E1004F82B6 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		88C6476318E1A98E00C9A149 /* rvmSimpleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmSimpleCollectionView.h; sourceTree = "<group>"; };
+		88C6476418E1A98E00C9A149 /* rvmSimpleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmSimpleCollectionView.m; sourceTree = "<group>"; };
+		88C6E9971A9CA40500714A61 /* crtPlus.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crtPlus.glsl; sourceTree = "<group>"; };
+		88C7456F1930D64F0010FEBE /* spectrum16k.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spectrum16k.m; sourceTree = "<group>"; };
+		88C745701930D64F0010FEBE /* spectrum48k.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spectrum48k.h; sourceTree = "<group>"; };
+		88C745711930D64F0010FEBE /* spectrum48k.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spectrum48k.m; sourceTree = "<group>"; };
+		88C745721930D64F0010FEBE /* spectrum48kIssue2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spectrum48kIssue2.m; sourceTree = "<group>"; };
+		88C745731930D64F0010FEBE /* spectrum128k.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spectrum128k.h; sourceTree = "<group>"; };
+		88C745741930D64F0010FEBE /* spectrum128k.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spectrum128k.m; sourceTree = "<group>"; };
+		88C745751930D64F0010FEBE /* spectrumPlus2A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spectrumPlus2A.h; sourceTree = "<group>"; };
+		88C745761930D64F0010FEBE /* spectrumPlus2A.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spectrumPlus2A.m; sourceTree = "<group>"; };
+		88CA45CA19ABD8A100C74DDA /* rvmZxSpectrum128kKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmZxSpectrum128kKeyboardViewController.xib; sourceTree = "<group>"; };
+		88D62B1019AF3A3A007DE2CF /* rvmZxSpectrum+2KeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rvmZxSpectrum+2KeyboardView.h"; sourceTree = "<group>"; };
+		88D62B1119AF3A3A007DE2CF /* rvmZxSpectrum+2KeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "rvmZxSpectrum+2KeyboardView.m"; sourceTree = "<group>"; };
+		88D62B1419AF44A2007DE2CF /* rvmZxSpectrum+2KeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "rvmZxSpectrum+2KeyboardViewController.xib"; sourceTree = "<group>"; };
+		88D727F41A91E070006EDA36 /* rvmZ80Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZ80Decoder.h; sourceTree = "<group>"; };
+		88D727F51A91E070006EDA36 /* rvmZ80Decoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZ80Decoder.m; sourceTree = "<group>"; };
+		88D744DF1A7F8D090093F912 /* rvmOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmOutlineView.h; sourceTree = "<group>"; };
+		88D744E01A7F8D090093F912 /* rvmOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmOutlineView.m; sourceTree = "<group>"; };
+		88D7495C18FACF5200A403AE /* rvmZXSpectrum128kSpa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrum128kSpa.h; sourceTree = "<group>"; };
+		88D7495D18FACF5200A403AE /* rvmZXSpectrum128kSpa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrum128kSpa.m; sourceTree = "<group>"; };
+		88D7495F18FACF8F00A403AE /* rvmZxSpectrumPlus2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus2.h; sourceTree = "<group>"; };
+		88D7496018FACF8F00A403AE /* rvmZxSpectrumPlus2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus2.m; sourceTree = "<group>"; };
+		88D786D0196D6EC5000E5B3E /* spectrumPlus3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spectrumPlus3.m; sourceTree = "<group>"; };
+		88D786D1196D6EC5000E5B3E /* spectrumPlus3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spectrumPlus3.h; sourceTree = "<group>"; };
+		88DB921B19E7E76C005C2656 /* rvmBackgroundViewDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmBackgroundViewDraw.h; sourceTree = "<group>"; };
+		88DB921C19E7E76C005C2656 /* rvmBackgroundViewDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmBackgroundViewDraw.m; sourceTree = "<group>"; };
+		88DC8BBF1920E0C80015BD09 /* rvmZXSpectrum48kIssue2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrum48kIssue2.h; sourceTree = "<group>"; };
+		88DC8BC01920E0C80015BD09 /* rvmZXSpectrum48kIssue2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrum48kIssue2.m; sourceTree = "<group>"; };
+		88DC8BC21920E16F0015BD09 /* rvmZXSpectrum16kIssue2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZXSpectrum16kIssue2.h; sourceTree = "<group>"; };
+		88DC8BC31920E16F0015BD09 /* rvmZXSpectrum16kIssue2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZXSpectrum16kIssue2.m; sourceTree = "<group>"; };
+		88DCC5F51AC770B00059CB48 /* rvmZxSpectrumPlusKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmZxSpectrumPlusKeyboardViewController.xib; sourceTree = "<group>"; };
+		88DF3E441AED708E0092B234 /* paused.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = paused.glsl; sourceTree = "<group>"; };
+		88DFAADF1A56CD03006303A5 /* rvmAudioMixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmAudioMixer.h; sourceTree = "<group>"; };
+		88DFAAE01A56CD03006303A5 /* rvmAudioMixer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmAudioMixer.m; sourceTree = "<group>"; };
+		88DFE671191D3C7E00F7B05F /* rvmZxSpectrumPlus2A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmZxSpectrumPlus2A.h; sourceTree = "<group>"; };
+		88DFE672191D3C7E00F7B05F /* rvmZxSpectrumPlus2A.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmZxSpectrumPlus2A.m; sourceTree = "<group>"; };
+		88E05D751960297500C8465D /* rvmDskDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmDskDecoder.h; sourceTree = "<group>"; };
+		88E05D761960297500C8465D /* rvmDskDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmDskDecoder.m; sourceTree = "<group>"; };
+		88E151DA188FF71400489656 /* rvmAbsoluteTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmAbsoluteTime.h; sourceTree = "<group>"; };
+		88E151DB188FF71400489656 /* rvmAbsoluteTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmAbsoluteTime.m; sourceTree = "<group>"; };
+		88E19D981C8DEE7000CC0822 /* rvmNSImage+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rvmNSImage+Extensions.h"; sourceTree = "<group>"; };
+		88E19D991C8DEE7000CC0822 /* rvmNSImage+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "rvmNSImage+Extensions.m"; sourceTree = "<group>"; };
+		88E19D9C1C8DF66000CC0822 /* rvmInvesSpectrumPlusKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmInvesSpectrumPlusKeyboardView.h; sourceTree = "<group>"; };
+		88E19D9D1C8DF66000CC0822 /* rvmInvesSpectrumPlusKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmInvesSpectrumPlusKeyboardView.m; sourceTree = "<group>"; };
+		88E19DA01C8DF70600CC0822 /* rvmInvesSpectrumPlusKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmInvesSpectrumPlusKeyboardViewController.xib; sourceTree = "<group>"; };
+		88E1B7321AD450400073587D /* rvmJumpingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmJumpingButton.h; sourceTree = "<group>"; };
+		88E1B7331AD450400073587D /* rvmJumpingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmJumpingButton.m; sourceTree = "<group>"; };
+		88EB7717185BD38900DDD575 /* rvmBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmBackgroundView.h; sourceTree = "<group>"; };
+		88EB7718185BD38900DDD575 /* rvmBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmBackgroundView.m; sourceTree = "<group>"; };
+		88ED80801C1C580C00ABE193 /* warp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = warp.glsl; sourceTree = "<group>"; };
+		88EFF02D1854F5110066DF6B /* Retro Virtual Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Retro Virtual Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88EFF0301854F5110066DF6B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		88EFF0331854F5110066DF6B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		88EFF0341854F5110066DF6B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		88EFF0351854F5110066DF6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		88EFF0381854F5110066DF6B /* Retro Virtual Machine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Retro Virtual Machine-Info.plist"; sourceTree = "<group>"; };
+		88EFF03A1854F5110066DF6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		88EFF03C1854F5110066DF6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88EFF03E1854F5110066DF6B /* Retro Virtual Machine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Retro Virtual Machine-Prefix.pch"; sourceTree = "<group>"; };
+		88EFF0401854F5110066DF6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		88EFF0421854F5110066DF6B /* rvmAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rvmAppDelegate.h; sourceTree = "<group>"; };
+		88EFF0431854F5110066DF6B /* rvmAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rvmAppDelegate.m; sourceTree = "<group>"; };
+		88EFF0461854F5110066DF6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		88EFF0481854F5110066DF6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		88EFF0651854F5A50066DF6B /* rvmMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmMatrix.h; sourceTree = "<group>"; };
+		88EFF0661854F5A50066DF6B /* rvmMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmMatrix.m; sourceTree = "<group>"; };
+		88EFF0681854F5A50066DF6B /* rvmGLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmGLTexture.h; sourceTree = "<group>"; };
+		88EFF0691854F5A50066DF6B /* rvmGLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmGLTexture.m; sourceTree = "<group>"; };
+		88EFF06B1854F5A50066DF6B /* compile.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = compile.lua; sourceTree = "<group>"; };
+		88EFF06D1854F5A50066DF6B /* normalVS.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = normalVS.glsl; sourceTree = "<group>"; };
+		88EFF06E1854F5A50066DF6B /* rvmShaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmShaders.h; sourceTree = "<group>"; };
+		88EFF0701854F5A50066DF6B /* rvmDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmDebugViewController.h; sourceTree = "<group>"; };
+		88EFF0711854F5A50066DF6B /* rvmDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmDebugViewController.m; sourceTree = "<group>"; };
+		88EFF0721854F5A50066DF6B /* rvmDebugViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmDebugViewController.xib; sourceTree = "<group>"; };
+		88EFF0771854F5A50066DF6B /* rvmMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmMainView.h; sourceTree = "<group>"; };
+		88EFF0781854F5A50066DF6B /* rvmMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmMainView.m; sourceTree = "<group>"; };
+		88EFF0831854F5C90066DF6B /* rvmGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmGLProgram.h; sourceTree = "<group>"; };
+		88EFF0841854F5C90066DF6B /* rvmGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmGLProgram.m; sourceTree = "<group>"; };
+		88EFF0861854F5E60066DF6B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		88EFF0881854F5F00066DF6B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		88EFF08B1854F7210066DF6B /* z80.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = z80.c; path = src/z80.c; sourceTree = "<group>"; };
+		88EFF08C1854F7210066DF6B /* z80.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = z80.h; path = src/z80.h; sourceTree = "<group>"; };
+		88F3F8B426939B8600D3FCDD /* libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libz.a; path = ../../../../../../Volumes/Datos/Dropbox/2016/Proyectos/Ne.old/libs/osx/libz.a; sourceTree = "<group>"; };
+		88F3F8B626939BE900D3FCDD /* libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libz.a; path = "Retro Virtual Machine/libz.a"; sourceTree = "<group>"; };
+		88F3F8B826939EE700D3FCDD /* Retro Virtual Machine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Retro Virtual Machine.entitlements"; sourceTree = "<group>"; };
+		88F7AD091963EB4700264D2D /* spectrumLua.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = spectrumLua.c; path = "Retro Virtual Machine/Architectures/ZX Spectrum/Meta/spectrumLua.c"; sourceTree = SOURCE_ROOT; };
+		88FDC2621AE7BC8200A2E5EB /* rvmAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmAboutWindowController.h; sourceTree = "<group>"; };
+		88FDC2631AE7BC8200A2E5EB /* rvmAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmAboutWindowController.m; sourceTree = "<group>"; };
+		88FDC2641AE7BC8200A2E5EB /* rvmAboutWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rvmAboutWindowController.xib; sourceTree = "<group>"; };
+		88FDC2681AE7BFDE00A2E5EB /* rvmShaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmShaderView.h; sourceTree = "<group>"; };
+		88FDC2691AE7BFDE00A2E5EB /* rvmShaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmShaderView.m; sourceTree = "<group>"; };
+		88FDC26C1AE7C18700A2E5EB /* rvmShaderLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvmShaderLayer.h; sourceTree = "<group>"; };
+		88FDC26D1AE7C18700A2E5EB /* rvmShaderLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rvmShaderLayer.m; sourceTree = "<group>"; };
+		88FDC2701AE7D04B00A2E5EB /* plasma.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plasma.glsl; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88EFF02A1854F5110066DF6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F3F8B726939BE900D3FCDD /* libz.a in Frameworks */,
+				885B6B1819729E8800B43498 /* AVFoundation.framework in Frameworks */,
+				88C537F4189664E1004F82B6 /* AudioUnit.framework in Frameworks */,
+				8854C5131891993600A1E154 /* QuartzCore.framework in Frameworks */,
+				8833E1F11871EFDF001C936F /* IOKit.framework in Frameworks */,
+				884A13651855CEEA00DF17AF /* AudioToolbox.framework in Frameworks */,
+				88EFF0891854F5F00066DF6B /* CoreVideo.framework in Frameworks */,
+				88EFF0871854F5E60066DF6B /* OpenGL.framework in Frameworks */,
+				88EFF0311854F5110066DF6B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		881F7EA418BBBAB0008F96E2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				881F7EA518BBBAED008F96E2 /* rvmRoundedButtonCell.h */,
+				881F7EA618BBBAED008F96E2 /* rvmRoundedButtonCell.m */,
+				8881A83718C65F6700811CE1 /* rvmTexturedButton.h */,
+				8881A83818C65F6700811CE1 /* rvmTexturedButton.m */,
+				88BE0A6518E0604C00228159 /* rvmNavButtonCell.h */,
+				88BE0A6618E0604C00228159 /* rvmNavButtonCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		882AA12D185662880037F4A3 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				882AA12E185662B50037F4A3 /* rvmSoundQueue.h */,
+				882AA12F185662B50037F4A3 /* rvmSoundQueue.m */,
+				88E151DA188FF71400489656 /* rvmAbsoluteTime.h */,
+				88E151DB188FF71400489656 /* rvmAbsoluteTime.m */,
+				882CDD8E189119E900C8A70E /* rvmTripleBuffer.h */,
+				882CDD8F189119E900C8A70E /* rvmTripleBuffer.m */,
+				885660A51C8991AF00469353 /* rvmBufferChain.h */,
+				885660A61C8991AF00469353 /* rvmBufferChain.m */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		883763F61AED6997009CFD35 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				883763F41AED65A1009CFD35 /* sna.icns */,
+				883763F21AED659A009CFD35 /* z80.icns */,
+				883763F01AED62D6009CFD35 /* documents.icns */,
+				883763EE1AED6235009CFD35 /* disk.icns */,
+				883763EC1AED6200009CFD35 /* csw.icns */,
+				883763EA1AED61BA009CFD35 /* pzx.icns */,
+				883763E81AED6197009CFD35 /* tzx.icns */,
+				883763E61AED5EE1009CFD35 /* tap.icns */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
+		883A9AC419AA163C002688DB /* Zx Spectrum */ = {
+			isa = PBXGroup;
+			children = (
+				88E19DA01C8DF70600CC0822 /* rvmInvesSpectrumPlusKeyboardViewController.xib */,
+				881F9ADD1C7A31F700B9E4AC /* rvmZxSpectrumPlusSpaKeyboardViewController.xib */,
+				881F9AD71C7A2F9400B9E4AC /* rvmZxSpectrum128kSpaKeyboardViewController.xib */,
+				888D402219ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.h */,
+				888D402319ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.m */,
+				883A9AC519AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.h */,
+				883A9AC619AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.m */,
+				88CA45CA19ABD8A100C74DDA /* rvmZxSpectrum128kKeyboardViewController.xib */,
+				88D62B1019AF3A3A007DE2CF /* rvmZxSpectrum+2KeyboardView.h */,
+				88D62B1119AF3A3A007DE2CF /* rvmZxSpectrum+2KeyboardView.m */,
+				88D62B1419AF44A2007DE2CF /* rvmZxSpectrum+2KeyboardViewController.xib */,
+				88AFA08D19B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.h */,
+				88AFA08E19B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.m */,
+				88AFA09119B6239A00F50AAB /* rvmZxSpectrumPlus2AKeyboardViewController.xib */,
+				88AFA09319B6298800F50AAB /* rvmZxSpectrumPlus3KeyboardView.h */,
+				88AFA09419B6298800F50AAB /* rvmZxSpectrumPlus3KeyboardView.m */,
+				88AFA09719B62A2800F50AAB /* rvmZxSpectrumPlus3KeyboardViewController.xib */,
+				8879706C1AC76F2A00B3A1F2 /* rvmZXSpectrumPlusKeyboardView.h */,
+				8879706D1AC76F2A00B3A1F2 /* rvmZXSpectrumPlusKeyboardView.m */,
+				88DCC5F51AC770B00059CB48 /* rvmZxSpectrumPlusKeyboardViewController.xib */,
+				881F9AD31C7A2E7E00B9E4AC /* rvmZxSpectrum128kSpaKeyboardView.h */,
+				881F9AD41C7A2E7E00B9E4AC /* rvmZxSpectrum128kSpaKeyboardView.m */,
+				881F9AD91C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.h */,
+				881F9ADA1C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.m */,
+				88E19D9C1C8DF66000CC0822 /* rvmInvesSpectrumPlusKeyboardView.h */,
+				88E19D9D1C8DF66000CC0822 /* rvmInvesSpectrumPlusKeyboardView.m */,
+			);
+			path = "Zx Spectrum";
+			sourceTree = "<group>";
+		};
+		884174F11ACC13D600A2E0B3 /* Gamepads */ = {
+			isa = PBXGroup;
+			children = (
+				884174F21ACC140400A2E0B3 /* rvmPs3GamepadView.h */,
+				884174F31ACC140400A2E0B3 /* rvmPs3GamepadView.m */,
+			);
+			path = Gamepads;
+			sourceTree = "<group>";
+		};
+		884A227C1A88A9D900CCCC73 /* Snap */ = {
+			isa = PBXGroup;
+			children = (
+				884A227D1A88A9FC00CCCC73 /* rvmSNADecoder.h */,
+				884A227E1A88A9FC00CCCC73 /* rvmSNADecoder.m */,
+				88D727F41A91E070006EDA36 /* rvmZ80Decoder.h */,
+				88D727F51A91E070006EDA36 /* rvmZ80Decoder.m */,
+				8881840F1C8F0834008B253A /* rvmSnapshotDecoderProtocol.h */,
+			);
+			path = Snap;
+			sourceTree = "<group>";
+		};
+		884DBC47185B0BF300B43FF0 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				883B37F2185EF27F00AA1546 /* NSColor+rvmNSColors.h */,
+				883B37F3185EF27F00AA1546 /* NSColor+rvmNSColors.m */,
+				884DBC49185B0C9600B43FF0 /* NSView+AutolayoutExtension.h */,
+				884DBC4A185B0C9600B43FF0 /* NSView+AutolayoutExtension.m */,
+				888FE40A19EBC8C200447B64 /* NSFileWrapper+Extension.h */,
+				888FE40B19EBC8C200447B64 /* NSFileWrapper+Extension.m */,
+				887D7D901A4462F400AB7929 /* NSData+Gzip.h */,
+				887D7D911A4462F400AB7929 /* NSData+Gzip.m */,
+				88E19D981C8DEE7000CC0822 /* rvmNSImage+Extensions.h */,
+				88E19D991C8DEE7000CC0822 /* rvmNSImage+Extensions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		885A63F418B3DF560052AE97 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				885A63F518B3DF830052AE97 /* rvmSnowLayer.h */,
+				885A63F618B3DF830052AE97 /* rvmSnowLayer.m */,
+				88FDC2681AE7BFDE00A2E5EB /* rvmShaderView.h */,
+				88FDC2691AE7BFDE00A2E5EB /* rvmShaderView.m */,
+				88FDC26C1AE7C18700A2E5EB /* rvmShaderLayer.h */,
+				88FDC26D1AE7C18700A2E5EB /* rvmShaderLayer.m */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		885EE4A41862E5820067AEAC /* Decoders */ = {
+			isa = PBXGroup;
+			children = (
+				88F3F8B426939B8600D3FCDD /* libz.a */,
+				884A227C1A88A9D900CCCC73 /* Snap */,
+				88E05D741960295600C8465D /* Disk */,
+				885EE4A91862E5D20067AEAC /* Tape */,
+				885EE4A81862E5C20067AEAC /* rvmTapeDecoderProtocol.h */,
+			);
+			path = Decoders;
+			sourceTree = "<group>";
+		};
+		885EE4A91862E5D20067AEAC /* Tape */ = {
+			isa = PBXGroup;
+			children = (
+				88709FC61876063F00802150 /* rvmPulsesBlock.h */,
+				88709FC71876063F00802150 /* rvmPulsesBlock.m */,
+				88709FC91876083900802150 /* rvmPureDataBlock.h */,
+				88709FCA1876083900802150 /* rvmPureDataBlock.m */,
+				88709FC31876031A00802150 /* rvmPureToneBlock.h */,
+				88709FC41876031A00802150 /* rvmPureToneBlock.m */,
+				8847B5101873003300C2BDC8 /* rvmStandarBlock.h */,
+				8847B5111873003300C2BDC8 /* rvmStandarBlock.m */,
+				885EE4AA1862E6150067AEAC /* rvmTAPDecoder.h */,
+				885EE4AB1862E6150067AEAC /* rvmTAPDecoder.m */,
+				88709FC21876022500802150 /* rvmTapeBlockProtocol.h */,
+				8808A1761873548B00013279 /* rvmTZXDecoder.h */,
+				8808A1771873548B00013279 /* rvmTZXDecoder.m */,
+				88842A5819ED59A900BD015F /* rvmPZXDecoder.h */,
+				88842A5919ED59A900BD015F /* rvmPZXDecoder.m */,
+				8862702D19FA4C25000F56B8 /* rvmTapeBlocks.h */,
+				8862702E19FA4C25000F56B8 /* rvmTapeBlocks.m */,
+				884E27B61A08FB00004608DA /* rvmCSWDecoder.h */,
+				884E27B71A08FB00004608DA /* rvmCSWDecoder.m */,
+			);
+			path = Tape;
+			sourceTree = "<group>";
+		};
+		8866AB0918589EDA00FD3EAC /* WindowControllers */ = {
+			isa = PBXGroup;
+			children = (
+				887BA2C6189984E200125854 /* rvmNewMachineWindowController.h */,
+				887BA2C7189984E200125854 /* rvmNewMachineWindowController.m */,
+				887BA2C8189984E200125854 /* rvmNewMachineWindowController.xib */,
+				8866AB0A1858A06B00FD3EAC /* rvmMonitorWindowController.h */,
+				8866AB0B1858A06B00FD3EAC /* rvmMonitorWindowController.m */,
+				8866AB0C1858A06B00FD3EAC /* rvmMonitorWindowController.xib */,
+				88BE0A5518E0378600228159 /* rvmMainWindowController.h */,
+				88BE0A5618E0378600228159 /* rvmMainWindowController.m */,
+				88BE0A5718E0378600228159 /* rvmMainWindowController.xib */,
+				88840A15196E75BE001B5E5D /* rvmSelectMediaWindowController.h */,
+				88840A16196E75BE001B5E5D /* rvmSelectMediaWindowController.m */,
+				88840A17196E75BE001B5E5D /* rvmSelectMediaWindowController.xib */,
+				88FDC2621AE7BC8200A2E5EB /* rvmAboutWindowController.h */,
+				88FDC2631AE7BC8200A2E5EB /* rvmAboutWindowController.m */,
+				88FDC2641AE7BC8200A2E5EB /* rvmAboutWindowController.xib */,
+			);
+			path = WindowControllers;
+			sourceTree = "<group>";
+		};
+		886EE0651858FF5D0087B8C7 /* CoreAudio */ = {
+			isa = PBXGroup;
+			children = (
+				88C537F018965D50004F82B6 /* rvmAudioEngine.h */,
+				88C537F118965D50004F82B6 /* rvmAudioEngine.m */,
+				88DFAADF1A56CD03006303A5 /* rvmAudioMixer.h */,
+				88DFAAE01A56CD03006303A5 /* rvmAudioMixer.m */,
+			);
+			path = CoreAudio;
+			sourceTree = "<group>";
+		};
+		886F26D919239758009A39C1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88A504AF1969D18C00F798DE /* rvmPlus3FddViewController.h */,
+				88A504B01969D18C00F798DE /* rvmPlus3FddViewController.m */,
+				88675D1D196ABAAD00ABD12A /* rvmPlus3FddViewController.xib */,
+				886F26E319239945009A39C1 /* rvmPlus2DatacorderViewController.xib */,
+				886F26E419239945009A39C1 /* rvmPlus2DatacorderViewController.h */,
+				886F26E519239945009A39C1 /* rvmPlus2DatacorderViewController.m */,
+				8885553F19321AB2002AA219 /* rvmPlus2ADatacorderViewController.m */,
+				8885554019321AB2002AA219 /* rvmPlus2ADatacorderViewController.xib */,
+				888FD72F1934C05A00E1354F /* rvmRecorderViewController.h */,
+				888FD7301934C05A00E1354F /* rvmRecorderViewController.m */,
+				888FD7311934C05A00E1354F /* rvmRecorderViewController.xib */,
+				88840A1A196E8801001B5E5D /* rvmMediaLoader.h */,
+				881BD7EB1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.h */,
+				881BD7EC1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.m */,
+				881BD7ED1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		886F26E2192398EC009A39C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				886A1DFB197D40B2006272D6 /* rvmDiskView.h */,
+				886A1DFC197D40B2006272D6 /* rvmDiskView.m */,
+				886F26E819239974009A39C1 /* rvmPlus2DatacorderView.h */,
+				886F26E919239974009A39C1 /* rvmPlus2DatacorderView.m */,
+				88A3D7E9192638A500F35BDF /* rvmCassetteViewProtocol.h */,
+				8885554319321E16002AA219 /* rvmPlus2ADatacorderView.h */,
+				8885554419321E16002AA219 /* rvmPlus2ADatacorderView.m */,
+				888FD7341934C17700E1354F /* rvmRecorderView.h */,
+				888FD7351934C17700E1354F /* rvmRecorderView.m */,
+				88A504AC1969CE7F00F798DE /* rvmPlus3FddView.h */,
+				88A504AD1969CE7F00F798DE /* rvmPlus3FddView.m */,
+				887827A71986F825001485B1 /* rvmFddDriveView.h */,
+				887827A81986F825001485B1 /* rvmFddDriveView.m */,
+				88AB78061A14A6D900511268 /* rvmPlus2DatacorderView2.h */,
+				88AB78071A14A6D900511268 /* rvmPlus2DatacorderView2.m */,
+				8885553E19321AB2002AA219 /* rvmPlus2ADatacorderViewController.h */,
+				88C2E5D51A502EC600401F59 /* rvmTapeView.h */,
+				88C2E5D61A502EC600401F59 /* rvmTapeView.m */,
+				88662D561A571330009331BF /* rvmAudioLeds.h */,
+				88662D571A571330009331BF /* rvmAudioLeds.m */,
+			);
+			name = Views;
+			path = View;
+			sourceTree = "<group>";
+		};
+		887150E0199BE887007183B7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				887150E1199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.h */,
+				887150E2199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.m */,
+				887150E3199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.xib */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		887351B518F413CD00855F0C /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				884174F11ACC13D600A2E0B3 /* Gamepads */,
+				888A8F9C199930C5004080F0 /* Keyboards */,
+				8876EDCC19881FB400D00318 /* WindowsControllers */,
+				886F26E2192398EC009A39C1 /* Views */,
+				886F26D919239758009A39C1 /* ViewControllers */,
+				887351B618F4141C00855F0C /* rvmDevice.h */,
+				887351B718F4141C00855F0C /* rvmDevice.m */,
+				887351B918F415FF00855F0C /* rvmAY3819X.h */,
+				887351BA18F415FF00855F0C /* rvmAY3819X.m */,
+				8898CB0C196092F8008C747B /* rvmUpd765.h */,
+				8898CB0D196092F8008C747B /* rvmUpd765.m */,
+				8824BA171BAF55F000F84D99 /* rvmDeviceConfigViewController.h */,
+				8824BA181BAF55F000F84D99 /* rvmDeviceConfigViewController.m */,
+				8824BA191BAF55F000F84D99 /* rvmDeviceConfigViewController.xib */,
+				8824BA1D1BAF5E4B00F84D99 /* rvmDeviceProtocol.h */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		8876BC781A6BEE0000EB7C6A /* Table cells */ = {
+			isa = PBXGroup;
+			children = (
+				8876BC791A6BEEA900EB7C6A /* rvmRemovableTableCellView.h */,
+				8876BC7A1A6BEEA900EB7C6A /* rvmRemovableTableCellView.m */,
+				884DAAA91A7FEFC2006CC42E /* rvmTableRow.h */,
+				884DAAAA1A7FEFC2006CC42E /* rvmTableRow.m */,
+			);
+			path = "Table cells";
+			sourceTree = "<group>";
+		};
+		8876EDCC19881FB400D00318 /* WindowsControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8876EDCD19881FF100D00318 /* rvmNewDiskWindowsController.h */,
+				8876EDCE19881FF100D00318 /* rvmNewDiskWindowsController.m */,
+				8876EDD11988200A00D00318 /* rvmNewDiskWindowController.xib */,
+			);
+			path = WindowsControllers;
+			sourceTree = "<group>";
+		};
+		88788E251ACDA85A0093E0E1 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				88788E2E1ACDAC750093E0E1 /* rvmInputManager.h */,
+				88788E2F1ACDAC750093E0E1 /* rvmInputManager.m */,
+				88788E321ACDAC860093E0E1 /* rvmGamepad.h */,
+				88788E331ACDAC860093E0E1 /* rvmGamepad.m */,
+				8892D0DB1ADB1D43003B255B /* rvmX360Gamepad.h */,
+				8892D0DC1ADB1D43003B255B /* rvmX360Gamepad.m */,
+				8892D0DF1ADB25F5003B255B /* rvmGamepadWindowController.h */,
+				8892D0E01ADB25F5003B255B /* rvmGamepadWindowController.m */,
+				8892D0E11ADB25F5003B255B /* rvmGamepadWindowController.xib */,
+				8892D0E51ADB37A7003B255B /* rvmPS3Controller.h */,
+				8892D0E61ADB37A7003B255B /* rvmPS3Controller.m */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		888A8F9C199930C5004080F0 /* Keyboards */ = {
+			isa = PBXGroup;
+			children = (
+				883A9AC419AA163C002688DB /* Zx Spectrum */,
+				888A8F9D19993133004080F0 /* rvmMacKeyboardView.h */,
+				888A8F9E19993133004080F0 /* rvmMacKeyboardView.m */,
+				888A8FA519993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.h */,
+				888A8FA619993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.m */,
+				888A8FA719993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.xib */,
+			);
+			path = Keyboards;
+			sourceTree = "<group>";
+		};
+		888F3C3F18C674AD009B076F /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				888F3C4018C674D2009B076F /* rvmOverlayWindow.h */,
+				888F3C4118C674D2009B076F /* rvmOverlayWindow.m */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		88B97BF21914F5E500F5C87B /* Collection Headers */ = {
+			isa = PBXGroup;
+			children = (
+				88B97BF31914F62300F5C87B /* rvmRecentMachinesHeaderViewController.h */,
+				88B97BF41914F62300F5C87B /* rvmRecentMachinesHeaderViewController.m */,
+				88B97BF51914F62300F5C87B /* rvmRecentMachinesHeaderViewController.xib */,
+				88B97C081915119F00F5C87B /* rvmRunningMachinesHeaderViewController.h */,
+				88B97C091915119F00F5C87B /* rvmRunningMachinesHeaderViewController.m */,
+				88B97C0A1915119F00F5C87B /* rvmRunningMachinesHeaderViewController.xib */,
+			);
+			path = "Collection Headers";
+			sourceTree = "<group>";
+		};
+		88B97BF819150E7300F5C87B /* Collection Items */ = {
+			isa = PBXGroup;
+			children = (
+				88B97BF919150F0600F5C87B /* rvmMachineItemViewController.h */,
+				88B97BFA19150F0600F5C87B /* rvmMachineItemViewController.m */,
+				88B97BFB19150F0600F5C87B /* rvmMachineItemViewController.xib */,
+				88B97C0319150F9300F5C87B /* rvmMachinesRunningViewController.h */,
+				88B97C0419150F9300F5C87B /* rvmMachinesRunningViewController.m */,
+				88B97C0519150F9300F5C87B /* rvmMachinesRunningViewController.xib */,
+			);
+			path = "Collection Items";
+			sourceTree = "<group>";
+		};
+		88C7456E1930D6170010FEBE /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				882C020E1C7EF4BE005E7AF3 /* spectrumInves.h */,
+				882C020F1C7EF4BE005E7AF3 /* spectrumInves.m */,
+				88D786D0196D6EC5000E5B3E /* spectrumPlus3.m */,
+				88D786D1196D6EC5000E5B3E /* spectrumPlus3.h */,
+				88F7AD091963EB4700264D2D /* spectrumLua.c */,
+				88C7456F1930D64F0010FEBE /* spectrum16k.m */,
+				88C745701930D64F0010FEBE /* spectrum48k.h */,
+				88C745711930D64F0010FEBE /* spectrum48k.m */,
+				88C745721930D64F0010FEBE /* spectrum48kIssue2.m */,
+				88C745731930D64F0010FEBE /* spectrum128k.h */,
+				88C745741930D64F0010FEBE /* spectrum128k.m */,
+				88C745751930D64F0010FEBE /* spectrumPlus2A.h */,
+				88C745761930D64F0010FEBE /* spectrumPlus2A.m */,
+			);
+			name = Meta;
+			path = Meta/Compiled;
+			sourceTree = "<group>";
+		};
+		88E05D741960295600C8465D /* Disk */ = {
+			isa = PBXGroup;
+			children = (
+				88E05D751960297500C8465D /* rvmDskDecoder.h */,
+				88E05D761960297500C8465D /* rvmDskDecoder.m */,
+			);
+			path = Disk;
+			sourceTree = "<group>";
+		};
+		88EFF0241854F5110066DF6B = {
+			isa = PBXGroup;
+			children = (
+				883763F61AED6997009CFD35 /* icons */,
+				8800B86E19253FCF00ED7606 /* Resources */,
+				88EFF02F1854F5110066DF6B /* Frameworks */,
+				88EFF02E1854F5110066DF6B /* Products */,
+				88EFF0361854F5110066DF6B /* Retro Virtual Machine */,
+				88EFF08A1854F7050066DF6B /* z80 */,
+			);
+			sourceTree = "<group>";
+		};
+		88EFF02E1854F5110066DF6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88EFF02D1854F5110066DF6B /* Retro Virtual Machine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88EFF02F1854F5110066DF6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88F3F8B626939BE900D3FCDD /* libz.a */,
+				885B6B1719729E8800B43498 /* AVFoundation.framework */,
+				88C537F3189664E1004F82B6 /* AudioUnit.framework */,
+				8854C5121891993600A1E154 /* QuartzCore.framework */,
+				8833E1F01871EFDF001C936F /* IOKit.framework */,
+				884A13641855CEEA00DF17AF /* AudioToolbox.framework */,
+				884A13621855CED800DF17AF /* CoreAudio.framework */,
+				88EFF0881854F5F00066DF6B /* CoreVideo.framework */,
+				88EFF0861854F5E60066DF6B /* OpenGL.framework */,
+				88EFF0301854F5110066DF6B /* Cocoa.framework */,
+				88EFF0321854F5110066DF6B /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88EFF0321854F5110066DF6B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88EFF0331854F5110066DF6B /* AppKit.framework */,
+				88EFF0341854F5110066DF6B /* CoreData.framework */,
+				88EFF0351854F5110066DF6B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		88EFF0361854F5110066DF6B /* Retro Virtual Machine */ = {
+			isa = PBXGroup;
+			children = (
+				88F3F8B826939EE700D3FCDD /* Retro Virtual Machine.entitlements */,
+				88788E251ACDA85A0093E0E1 /* Input */,
+				88EFF0901854F9960066DF6B /* Architectures */,
+				884DBC47185B0BF300B43FF0 /* Categories */,
+				886EE0651858FF5D0087B8C7 /* CoreAudio */,
+				885EE4A41862E5820067AEAC /* Decoders */,
+				887351B518F413CD00855F0C /* Devices */,
+				88EFF0481854F5110066DF6B /* Images.xcassets */,
+				885A63F418B3DF560052AE97 /* Layers */,
+				88EFF0451854F5110066DF6B /* MainMenu.xib */,
+				88EFF0641854F5A50066DF6B /* Math */,
+				882AA12D185662880037F4A3 /* Misc */,
+				88EFF0671854F5A50066DF6B /* OpenGL */,
+				88EFF0421854F5110066DF6B /* rvmAppDelegate.h */,
+				88EFF0431854F5110066DF6B /* rvmAppDelegate.m */,
+				88EFF06A1854F5A50066DF6B /* Shaders */,
+				88EFF0371854F5110066DF6B /* Supporting Files */,
+				88EFF06F1854F5A50066DF6B /* ViewControllers */,
+				88EFF0761854F5A50066DF6B /* Views */,
+				8866AB0918589EDA00FD3EAC /* WindowControllers */,
+				888F3C3F18C674AD009B076F /* Windows */,
+			);
+			path = "Retro Virtual Machine";
+			sourceTree = "<group>";
+		};
+		88EFF0371854F5110066DF6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88EFF0381854F5110066DF6B /* Retro Virtual Machine-Info.plist */,
+				88EFF0391854F5110066DF6B /* InfoPlist.strings */,
+				88EFF03C1854F5110066DF6B /* main.m */,
+				88EFF03E1854F5110066DF6B /* Retro Virtual Machine-Prefix.pch */,
+				88EFF03F1854F5110066DF6B /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88EFF0641854F5A50066DF6B /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				88EFF0651854F5A50066DF6B /* rvmMatrix.h */,
+				88EFF0661854F5A50066DF6B /* rvmMatrix.m */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		88EFF0671854F5A50066DF6B /* OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				88EFF0831854F5C90066DF6B /* rvmGLProgram.h */,
+				88EFF0841854F5C90066DF6B /* rvmGLProgram.m */,
+				88EFF0681854F5A50066DF6B /* rvmGLTexture.h */,
+				88EFF0691854F5A50066DF6B /* rvmGLTexture.m */,
+				889E102018FD6775002F5441 /* rvmGLFloatTexture.h */,
+				889E102118FD6775002F5441 /* rvmGLFloatTexture.m */,
+			);
+			path = OpenGL;
+			sourceTree = "<group>";
+		};
+		88EFF06A1854F5A50066DF6B /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				88DF3E441AED708E0092B234 /* paused.glsl */,
+				88363C2819030C1500A46BFB /* normalFS.glsl */,
+				8868D7D818B6307500574BC9 /* rvmShaders.c */,
+				88EFF06B1854F5A50066DF6B /* compile.lua */,
+				88EFF06D1854F5A50066DF6B /* normalVS.glsl */,
+				88EFF06E1854F5A50066DF6B /* rvmShaders.h */,
+				8868D7D618B606FB00574BC9 /* whiteNoise.glsl */,
+				8863DDC318FC3D0D00C5BB1D /* crtFS.glsl */,
+				88C6E9971A9CA40500714A61 /* crtPlus.glsl */,
+				88FDC2701AE7D04B00A2E5EB /* plasma.glsl */,
+				88ED80801C1C580C00ABE193 /* warp.glsl */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		88EFF06F1854F5A50066DF6B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8876BC781A6BEE0000EB7C6A /* Table cells */,
+				88B97BF819150E7300F5C87B /* Collection Items */,
+				88B97BF21914F5E500F5C87B /* Collection Headers */,
+				88EFF0701854F5A50066DF6B /* rvmDebugViewController.h */,
+				88EFF0711854F5A50066DF6B /* rvmDebugViewController.m */,
+				88EFF0721854F5A50066DF6B /* rvmDebugViewController.xib */,
+				883E35FF1871B59400518381 /* rvmOSDViewController.h */,
+				883E36001871B59400518381 /* rvmOSDViewController.m */,
+				883E36011871B59400518381 /* rvmOSDViewController.xib */,
+				886875851892FB890046461B /* rvmAudioViewController.h */,
+				886875861892FB890046461B /* rvmAudioViewController.m */,
+				886875871892FB890046461B /* rvmAudioViewController.xib */,
+				88300D7A18C604B50041DF86 /* rvmOSDControlViewController.h */,
+				88300D7B18C604B50041DF86 /* rvmOSDControlViewController.m */,
+				88300D7C18C604B50041DF86 /* rvmOSDControlViewController.xib */,
+				88BE0A5A18E0387800228159 /* rvmNavigationViewController.h */,
+				88BE0A5B18E0387800228159 /* rvmNavigationViewController.m */,
+				88BE0A6218E0399500228159 /* rvmNavigationItemViewController.h */,
+				88BE0A6318E0399500228159 /* rvmNavigationItemViewController.m */,
+				88BE0A6818E08DF300228159 /* rvmMachinesCollectionViewController.h */,
+				88BE0A6918E08DF300228159 /* rvmMachinesCollectionViewController.m */,
+				88BE0A6A18E08DF300228159 /* rvmMachinesCollectionViewController.xib */,
+				8863DDBE18FC380700C5BB1D /* rvmVideoViewController.h */,
+				8863DDBF18FC380700C5BB1D /* rvmVideoViewController.m */,
+				8863DDC018FC380700C5BB1D /* rvmVideoViewController.xib */,
+				88899192193BA91900E09008 /* rvmTransitionViewController.h */,
+				88899193193BA91900E09008 /* rvmTransitionViewController.m */,
+				889A7BED1A5E8ED800ECF623 /* rvmAudioViewControllerZx128.h */,
+				889A7BEE1A5E8ED800ECF623 /* rvmAudioViewControllerZx128.m */,
+				889A7BEF1A5E8ED800ECF623 /* rvmAudioViewControllerZx128.xib */,
+				88B0E15E1A667EA9009ABB46 /* rvmSnapshotViewController.h */,
+				88B0E15F1A667EA9009ABB46 /* rvmSnapshotViewController.m */,
+				88B0E1601A667EA9009ABB46 /* rvmSnapshotViewController.xib */,
+				88ACFE751A6901F600B64D4A /* rvmSnapshotListViewController.h */,
+				88ACFE761A6901F600B64D4A /* rvmSnapshotListViewController.m */,
+				88ACFE771A6901F600B64D4A /* rvmSnapshotListViewController.xib */,
+				882B78D41AD53085008036F5 /* rvmOSDLastSnapshot.h */,
+				882B78D51AD53085008036F5 /* rvmOSDLastSnapshot.m */,
+				882B78D61AD53085008036F5 /* rvmOSDLastSnapshot.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88EFF0761854F5A50066DF6B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				881F7EA418BBBAB0008F96E2 /* Cells */,
+				88EFF0771854F5A50066DF6B /* rvmMainView.h */,
+				88EFF0781854F5A50066DF6B /* rvmMainView.m */,
+				88EB7717185BD38900DDD575 /* rvmBackgroundView.h */,
+				88EB7718185BD38900DDD575 /* rvmBackgroundView.m */,
+				8864DD92185C9C9A00C971F7 /* rvmBox.h */,
+				8864DD93185C9C9A00C971F7 /* rvmBox.m */,
+				882AEF9B186093430026CD79 /* rvmConsoleView.h */,
+				882AEF9C186093430026CD79 /* rvmConsoleView.m */,
+				884724F51898496500E5129B /* rvmCollectionView.h */,
+				884724F61898496500E5129B /* rvmCollectionView.m */,
+				88825EFB189A595E00D27E60 /* rvmImageView.h */,
+				88825EFC189A595E00D27E60 /* rvmImageView.m */,
+				8870B60218B3654A008403CB /* rvmCollectionViewDelegateProtocol.h */,
+				88B16A8318B7826B00C86FBC /* rvmAlphaButton.h */,
+				88B16A8418B7826B00C86FBC /* rvmAlphaButton.m */,
+				88C6476318E1A98E00C9A149 /* rvmSimpleCollectionView.h */,
+				88C6476418E1A98E00C9A149 /* rvmSimpleCollectionView.m */,
+				888EB55E19A9114500156F17 /* rvmButton.h */,
+				888EB55F19A9114500156F17 /* rvmButton.m */,
+				88DB921B19E7E76C005C2656 /* rvmBackgroundViewDraw.h */,
+				88DB921C19E7E76C005C2656 /* rvmBackgroundViewDraw.m */,
+				88D744DF1A7F8D090093F912 /* rvmOutlineView.h */,
+				88D744E01A7F8D090093F912 /* rvmOutlineView.m */,
+				88E1B7321AD450400073587D /* rvmJumpingButton.h */,
+				88E1B7331AD450400073587D /* rvmJumpingButton.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88EFF08A1854F7050066DF6B /* z80 */ = {
+			isa = PBXGroup;
+			children = (
+				888E8598191AA4AF004520B1 /* z.c */,
+				888E8599191AA4AF004520B1 /* zuops.h */,
+				88EFF08B1854F7210066DF6B /* z80.c */,
+				88EFF08C1854F7210066DF6B /* z80.h */,
+			);
+			path = z80;
+			sourceTree = "<group>";
+		};
+		88EFF0901854F9960066DF6B /* Architectures */ = {
+			isa = PBXGroup;
+			children = (
+				88EFF0911854F9C40066DF6B /* ZX Spectrum */,
+				886EE0641858FB510087B8C7 /* rvmMachineProtocol.h */,
+				88C5062E18A8C27B00147DDA /* rvmArchitecture.h */,
+				88C5062F18A8C27B00147DDA /* rvmArchitecture.m */,
+				88C5063818A8FB9200147DDA /* rvmArchitecuresDocumentController.h */,
+				88C5063918A8FB9200147DDA /* rvmArchitecuresDocumentController.m */,
+				88416AF01BAFE26200846360 /* rvmMachine.h */,
+				88416AF11BAFE26200846360 /* rvmMachine.m */,
+			);
+			path = Architectures;
+			sourceTree = "<group>";
+		};
+		88EFF0911854F9C40066DF6B /* ZX Spectrum */ = {
+			isa = PBXGroup;
+			children = (
+				887150E0199BE887007183B7 /* View Controllers */,
+				88C7456E1930D6170010FEBE /* Meta */,
+				884CECA818F821AD0025E14D /* rvmZXSpectrum128k.h */,
+				884CECA918F821AD0025E14D /* rvmZXSpectrum128k.m */,
+				88D7495C18FACF5200A403AE /* rvmZXSpectrum128kSpa.h */,
+				88D7495D18FACF5200A403AE /* rvmZXSpectrum128kSpa.m */,
+				884CECA518F820EB0025E14D /* rvmZXSpectrum16k.h */,
+				884CECA618F820EB0025E14D /* rvmZXSpectrum16k.m */,
+				88DC8BC21920E16F0015BD09 /* rvmZXSpectrum16kIssue2.h */,
+				88DC8BC31920E16F0015BD09 /* rvmZXSpectrum16kIssue2.m */,
+				884CECA218F81C190025E14D /* rvmZXSpectrum48k.h */,
+				884CECA318F81C190025E14D /* rvmZXSpectrum48k.m */,
+				88DC8BBF1920E0C80015BD09 /* rvmZXSpectrum48kIssue2.h */,
+				88DC8BC01920E0C80015BD09 /* rvmZXSpectrum48kIssue2.m */,
+				88D7495F18FACF8F00A403AE /* rvmZxSpectrumPlus2.h */,
+				88D7496018FACF8F00A403AE /* rvmZxSpectrumPlus2.m */,
+				88DFE671191D3C7E00F7B05F /* rvmZxSpectrumPlus2A.h */,
+				88DFE672191D3C7E00F7B05F /* rvmZxSpectrumPlus2A.m */,
+				8842BE0B191D6BFF00CB02ED /* rvmZxSpectrumPlus2ASpa.h */,
+				8842BE0C191D6BFF00CB02ED /* rvmZxSpectrumPlus2ASpa.m */,
+				88A4CBC819202B39009DB394 /* rvmZXSpectrumPlus2E.h */,
+				88A4CBC919202B39009DB394 /* rvmZXSpectrumPlus2E.m */,
+				886E6F9518FB1C37001B9131 /* rvmZXSpectrumPlus2Fr.h */,
+				886E6F9618FB1C37001B9131 /* rvmZXSpectrumPlus2Fr.m */,
+				886E6F9218FB1BD9001B9131 /* rvmZxSpectrumPlus2Spa.h */,
+				886E6F9318FB1BD9001B9131 /* rvmZxSpectrumPlus2Spa.m */,
+				88B34B9A1969E54F00C6184E /* rvmZXSpectrumPlus3.h */,
+				88B34B9B1969E54F00C6184E /* rvmZXSpectrumPlus3.m */,
+				8898C34519857EDF00D9FD14 /* rvmZXSpectrumPlus2Av41.h */,
+				8898C34619857EDF00D9FD14 /* rvmZXSpectrumPlus2Av41.m */,
+				8898C3491985820F00D9FD14 /* rvmZxSpectrumPlus2Av41Spa.h */,
+				8898C34A1985820F00D9FD14 /* rvmZxSpectrumPlus2Av41Spa.m */,
+				8898C34D1985826800D9FD14 /* rvmZxSpectrumPlus3v41.h */,
+				8898C34E1985826800D9FD14 /* rvmZxSpectrumPlus3v41.m */,
+				8898C351198582A900D9FD14 /* rvmZxSpectrumPlus3Spa.h */,
+				8898C352198582A900D9FD14 /* rvmZxSpectrumPlus3Spa.m */,
+				8898C355198582E800D9FD14 /* rvmZxSpectrumPlus3v41Spa.h */,
+				8898C356198582E800D9FD14 /* rvmZxSpectrumPlus3v41Spa.m */,
+				8898C3591985832000D9FD14 /* rvmZxSpectrumPlus3E.h */,
+				8898C35A1985832000D9FD14 /* rvmZxSpectrumPlus3E.m */,
+				887970681AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.h */,
+				887970691AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.m */,
+				881F9ADF1C7A323500B9E4AC /* rvmZXSpectrumPlusSpa.h */,
+				881F9AE01C7A323500B9E4AC /* rvmZXSpectrumPlusSpa.m */,
+				882C020A1C7EF3B1005E7AF3 /* rvmZXSpectrumInves.h */,
+				882C020B1C7EF3B1005E7AF3 /* rvmZXSpectrumInves.m */,
+			);
+			path = "ZX Spectrum";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8852317119793B7D00B515FB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8898C34719857EDF00D9FD14 /* rvmZXSpectrumPlus2Av41.h in Headers */,
+				887D7D921A4462F400AB7929 /* NSData+Gzip.h in Headers */,
+				882C02101C7EF4BE005E7AF3 /* spectrumInves.h in Headers */,
+				888D402419ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.h in Headers */,
+				8892D0E71ADB37A7003B255B /* rvmPS3Controller.h in Headers */,
+				88E19D9E1C8DF66000CC0822 /* rvmInvesSpectrumPlusKeyboardView.h in Headers */,
+				88842A5A19ED59A900BD015F /* rvmPZXDecoder.h in Headers */,
+				8824BA1A1BAF55F000F84D99 /* rvmDeviceConfigViewController.h in Headers */,
+				8898C35B1985832000D9FD14 /* rvmZxSpectrumPlus3E.h in Headers */,
+				88E1B7341AD450400073587D /* rvmJumpingButton.h in Headers */,
+				8876EDCF19881FF100D00318 /* rvmNewDiskWindowsController.h in Headers */,
+				88788E341ACDAC860093E0E1 /* rvmGamepad.h in Headers */,
+				88416AF21BAFE26200846360 /* rvmMachine.h in Headers */,
+				884E27B81A08FB00004608DA /* rvmCSWDecoder.h in Headers */,
+				88AFA08F19B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.h in Headers */,
+				88788E301ACDAC750093E0E1 /* rvmInputManager.h in Headers */,
+				881F9AD51C7A2E7E00B9E4AC /* rvmZxSpectrum128kSpaKeyboardView.h in Headers */,
+				8898C34B1985820F00D9FD14 /* rvmZxSpectrumPlus2Av41Spa.h in Headers */,
+				888EB56019A9114500156F17 /* rvmButton.h in Headers */,
+				889A7BF01A5E8ED800ECF623 /* rvmAudioViewControllerZx128.h in Headers */,
+				8898C353198582A900D9FD14 /* rvmZxSpectrumPlus3Spa.h in Headers */,
+				88C2E5D71A502EC600401F59 /* rvmTapeView.h in Headers */,
+				88AFA09519B6298800F50AAB /* rvmZxSpectrumPlus3KeyboardView.h in Headers */,
+				88FDC26A1AE7BFDE00A2E5EB /* rvmShaderView.h in Headers */,
+				882B78D71AD53085008036F5 /* rvmOSDLastSnapshot.h in Headers */,
+				8892D0E21ADB25F5003B255B /* rvmGamepadWindowController.h in Headers */,
+				8879706E1AC76F2A00B3A1F2 /* rvmZXSpectrumPlusKeyboardView.h in Headers */,
+				884A227F1A88A9FC00CCCC73 /* rvmSNADecoder.h in Headers */,
+				88D744E11A7F8D090093F912 /* rvmOutlineView.h in Headers */,
+				88DFAAE11A56CD03006303A5 /* rvmAudioMixer.h in Headers */,
+				8876BC7B1A6BEEA900EB7C6A /* rvmRemovableTableCellView.h in Headers */,
+				888A8F9F19993133004080F0 /* rvmMacKeyboardView.h in Headers */,
+				883A9AC719AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.h in Headers */,
+				886A1DFD197D40B2006272D6 /* rvmDiskView.h in Headers */,
+				881F9AE11C7A323500B9E4AC /* rvmZXSpectrumPlusSpa.h in Headers */,
+				887150E4199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.h in Headers */,
+				88D62B1219AF3A3A007DE2CF /* rvmZxSpectrum+2KeyboardView.h in Headers */,
+				88FDC26E1AE7C18700A2E5EB /* rvmShaderLayer.h in Headers */,
+				887827A91986F825001485B1 /* rvmFddDriveView.h in Headers */,
+				88ACFE781A6901F600B64D4A /* rvmSnapshotListViewController.h in Headers */,
+				881F9ADB1C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.h in Headers */,
+				8879706A1AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.h in Headers */,
+				88E19D9A1C8DEE7000CC0822 /* rvmNSImage+Extensions.h in Headers */,
+				882C020C1C7EF3B1005E7AF3 /* rvmZXSpectrumInves.h in Headers */,
+				88DB921D19E7E76C005C2656 /* rvmBackgroundViewDraw.h in Headers */,
+				881BD7EE1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.h in Headers */,
+				88662D581A571330009331BF /* rvmAudioLeds.h in Headers */,
+				885660A71C8991AF00469353 /* rvmBufferChain.h in Headers */,
+				888FE40C19EBC8C200447B64 /* NSFileWrapper+Extension.h in Headers */,
+				884174F41ACC140400A2E0B3 /* rvmPs3GamepadView.h in Headers */,
+				884DAAAB1A7FEFC2006CC42E /* rvmTableRow.h in Headers */,
+				88AB78081A14A6D900511268 /* rvmPlus2DatacorderView2.h in Headers */,
+				8898C34F1985826800D9FD14 /* rvmZxSpectrumPlus3v41.h in Headers */,
+				8852317219793B9E00B515FB /* rvmImageView.h in Headers */,
+				88D727F61A91E070006EDA36 /* rvmZ80Decoder.h in Headers */,
+				8898C357198582E800D9FD14 /* rvmZxSpectrumPlus3v41Spa.h in Headers */,
+				88B0E1611A667EA9009ABB46 /* rvmSnapshotViewController.h in Headers */,
+				88FDC2651AE7BC8200A2E5EB /* rvmAboutWindowController.h in Headers */,
+				888A8FA819993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.h in Headers */,
+				8862702F19FA4C25000F56B8 /* rvmTapeBlocks.h in Headers */,
+				8892D0DD1ADB1D43003B255B /* rvmX360Gamepad.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		88EFF02C1854F5110066DF6B /* Retro Virtual Machine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88EFF05E1854F5120066DF6B /* Build configuration list for PBXNativeTarget "Retro Virtual Machine" */;
+			buildPhases = (
+				8807E96D19617C3B00BC8CFF /* ShellScript */,
+				88EFF0291854F5110066DF6B /* Sources */,
+				88EFF02A1854F5110066DF6B /* Frameworks */,
+				88EFF02B1854F5110066DF6B /* Resources */,
+				88971E3E1941E3A1006FC156 /* Embed Frameworks */,
+				8852317119793B7D00B515FB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Retro Virtual Machine";
+			productName = "Retro Virtual Machine";
+			productReference = 88EFF02D1854F5110066DF6B /* Retro Virtual Machine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88EFF0251854F5110066DF6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = rvm;
+				LastUpgradeCheck = 1250;
+				ORGANIZATIONNAME = "Juan Carlos González Amestoy";
+				TargetAttributes = {
+					88EFF02C1854F5110066DF6B = {
+						DevelopmentTeam = TNP49M7S5T;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 88EFF0281854F5110066DF6B /* Build configuration list for PBXProject "Retro Virtual Machine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88EFF0241854F5110066DF6B;
+			productRefGroup = 88EFF02E1854F5110066DF6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88EFF02C1854F5110066DF6B /* Retro Virtual Machine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88EFF02B1854F5110066DF6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8892D0E41ADB25F5003B255B /* rvmGamepadWindowController.xib in Resources */,
+				88363C2919030C1500A46BFB /* normalFS.glsl in Resources */,
+				883E36031871B59400518381 /* rvmOSDViewController.xib in Resources */,
+				88C6E9981A9CA40500714A61 /* crtPlus.glsl in Resources */,
+				88DF3E451AED708E0092B234 /* paused.glsl in Resources */,
+				883763F31AED659A009CFD35 /* z80.icns in Resources */,
+				88BE0A6C18E08DF300228159 /* rvmMachinesCollectionViewController.xib in Resources */,
+				88AFA09819B62A2800F50AAB /* rvmZxSpectrumPlus3KeyboardViewController.xib in Resources */,
+				88AFA09219B6239A00F50AAB /* rvmZxSpectrumPlus2AKeyboardViewController.xib in Resources */,
+				88675D1E196ABAAD00ABD12A /* rvmPlus3FddViewController.xib in Resources */,
+				883763E71AED5EE1009CFD35 /* tap.icns in Resources */,
+				88EFF07D1854F5A50066DF6B /* normalVS.glsl in Resources */,
+				88B97BFD19150F0600F5C87B /* rvmMachineItemViewController.xib in Resources */,
+				88EFF03B1854F5110066DF6B /* InfoPlist.strings in Resources */,
+				88D62B1519AF44A2007DE2CF /* rvmZxSpectrum+2KeyboardViewController.xib in Resources */,
+				888FD7331934C05A00E1354F /* rvmRecorderViewController.xib in Resources */,
+				88EFF0491854F5110066DF6B /* Images.xcassets in Resources */,
+				883763E91AED6197009CFD35 /* tzx.icns in Resources */,
+				886875891892FB890046461B /* rvmAudioViewController.xib in Resources */,
+				88BE0A5918E0378600228159 /* rvmMainWindowController.xib in Resources */,
+				88B97C0C1915119F00F5C87B /* rvmRunningMachinesHeaderViewController.xib in Resources */,
+				8868D7D718B606FB00574BC9 /* whiteNoise.glsl in Resources */,
+				88FDC2671AE7BC8200A2E5EB /* rvmAboutWindowController.xib in Resources */,
+				88300D7E18C604B50041DF86 /* rvmOSDControlViewController.xib in Resources */,
+				883763F51AED65A1009CFD35 /* sna.icns in Resources */,
+				881F9AD81C7A2F9400B9E4AC /* rvmZxSpectrum128kSpaKeyboardViewController.xib in Resources */,
+				8885554219321AB2002AA219 /* rvmPlus2ADatacorderViewController.xib in Resources */,
+				887150E6199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.xib in Resources */,
+				883763EF1AED6235009CFD35 /* disk.icns in Resources */,
+				88FDC2711AE7D04C00A2E5EB /* plasma.glsl in Resources */,
+				883763ED1AED6200009CFD35 /* csw.icns in Resources */,
+				88EFF07B1854F5A50066DF6B /* compile.lua in Resources */,
+				8824BA1C1BAF55F000F84D99 /* rvmDeviceConfigViewController.xib in Resources */,
+				88CA45CB19ABD8A100C74DDA /* rvmZxSpectrum128kKeyboardViewController.xib in Resources */,
+				88E19DA11C8DF70600CC0822 /* rvmInvesSpectrumPlusKeyboardViewController.xib in Resources */,
+				88ED80811C1C580C00ABE193 /* warp.glsl in Resources */,
+				887BA2CA189984E200125854 /* rvmNewMachineWindowController.xib in Resources */,
+				888A8FAA19993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.xib in Resources */,
+				88840A19196E75BE001B5E5D /* rvmSelectMediaWindowController.xib in Resources */,
+				883763F11AED62D6009CFD35 /* documents.icns in Resources */,
+				88B0E1631A667EA9009ABB46 /* rvmSnapshotViewController.xib in Resources */,
+				8863DDC418FC3D0D00C5BB1D /* crtFS.glsl in Resources */,
+				8866AB0E1858A06B00FD3EAC /* rvmMonitorWindowController.xib in Resources */,
+				881BD7F01BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.xib in Resources */,
+				88EFF0411854F5110066DF6B /* Credits.rtf in Resources */,
+				88B97C0719150F9300F5C87B /* rvmMachinesRunningViewController.xib in Resources */,
+				8876EDD21988200A00D00318 /* rvmNewDiskWindowController.xib in Resources */,
+				882B78D91AD53085008036F5 /* rvmOSDLastSnapshot.xib in Resources */,
+				886F26E619239945009A39C1 /* rvmPlus2DatacorderViewController.xib in Resources */,
+				88DCC5F61AC770B00059CB48 /* rvmZxSpectrumPlusKeyboardViewController.xib in Resources */,
+				88ACFE7A1A6901F600B64D4A /* rvmSnapshotListViewController.xib in Resources */,
+				889A7BF21A5E8ED800ECF623 /* rvmAudioViewControllerZx128.xib in Resources */,
+				8800B86F19253FCF00ED7606 /* Resources in Resources */,
+				8863DDC218FC380700C5BB1D /* rvmVideoViewController.xib in Resources */,
+				883763EB1AED61BA009CFD35 /* pzx.icns in Resources */,
+				881F9ADE1C7A31F700B9E4AC /* rvmZxSpectrumPlusSpaKeyboardViewController.xib in Resources */,
+				88EFF0471854F5110066DF6B /* MainMenu.xib in Resources */,
+				88B97BF71914F62300F5C87B /* rvmRecentMachinesHeaderViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8807E96D19617C3B00BC8CFF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n#export PATH=$PATH:/usr/local/bin\n#export LUA_PATH=\"/Users/jcgamestoy/Dropbox/Proyectos/H/?.lua;./?.lua;/Users/jcgamestoy/Dropbox/Proyectos/C/?.lua;/usr/local/share/luajit-2.1.0-alpha/?.lua;?.lua\"\n#export LUA_CPATH=\"/Users/jcgamestoy/Dropbox/Proyectos/H/lib/osx/?.dylib;/Users/jcgamestoy/Dropbox/Proyectos/C/lib/osx/?.dylib;?.dylib\"\n\n#hc \"$SRCROOT/Retro Virtual Machine/LUA/code\" -o \"$SRCROOT/Retro Virtual Machine/LUA/luaCode.c\"\n\n#hc \"$SRCROOT/Retro Virtual Machine/LUA/rvm/\" -o \"$SRCROOT/Retro Virtual Machine/Debugger Commands/commands.c\"\n#cd \"$SRCROOT/Retro Virtual Machine/Shaders/\"\n\n#H compile.lua .\n\n#cd \"$SRCROOT/Retro Virtual Machine/Architectures/ZX Spectrum/Meta/\"\n\n#H spectrum.lua\n\n#hc compiled -o spectrumLua.c -r -n rvm_architectures_zxspectrum\n\n#cd \"$SRCROOT/Retro Virtual Machine/Architectures/Amstrad CPC/Meta/\"\n\n#H amstrad.lua\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88EFF0291854F5110066DF6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				885EE4AC1862E6150067AEAC /* rvmTAPDecoder.m in Sources */,
+				886E6F9718FB1C37001B9131 /* rvmZXSpectrumPlus2Fr.m in Sources */,
+				88E19D9F1C8DF66000CC0822 /* rvmInvesSpectrumPlusKeyboardView.m in Sources */,
+				88EFF0791854F5A50066DF6B /* rvmMatrix.m in Sources */,
+				88BE0A6B18E08DF300228159 /* rvmMachinesCollectionViewController.m in Sources */,
+				88E19D9B1C8DEE7000CC0822 /* rvmNSImage+Extensions.m in Sources */,
+				888D402519ABA74A00388B08 /* rvmZxSpectrum128kKeyboardView.m in Sources */,
+				8864DD94185C9C9A00C971F7 /* rvmBox.m in Sources */,
+				88EFF0851854F5C90066DF6B /* rvmGLProgram.m in Sources */,
+				884CECA418F81C190025E14D /* rvmZXSpectrum48k.m in Sources */,
+				88DB921E19E7E76C005C2656 /* rvmBackgroundViewDraw.m in Sources */,
+				8876EDD019881FF100D00318 /* rvmNewDiskWindowsController.m in Sources */,
+				88899194193BA91900E09008 /* rvmTransitionViewController.m in Sources */,
+				88788E311ACDAC750093E0E1 /* rvmInputManager.m in Sources */,
+				8863DDC118FC380700C5BB1D /* rvmVideoViewController.m in Sources */,
+				882AEF9D186093430026CD79 /* rvmConsoleView.m in Sources */,
+				88E05D771960297500C8465D /* rvmDskDecoder.m in Sources */,
+				88C2E5D81A502EC600401F59 /* rvmTapeView.m in Sources */,
+				88BE0A6418E0399500228159 /* rvmNavigationItemViewController.m in Sources */,
+				886E6F9418FB1BD9001B9131 /* rvmZxSpectrumPlus2Spa.m in Sources */,
+				886A1DFE197D40B2006272D6 /* rvmDiskView.m in Sources */,
+				887351B818F4141C00855F0C /* rvmDevice.m in Sources */,
+				88825EFD189A595E00D27E60 /* rvmImageView.m in Sources */,
+				88D62B1319AF3A3A007DE2CF /* rvmZxSpectrum+2KeyboardView.m in Sources */,
+				88B97C0B1915119F00F5C87B /* rvmRunningMachinesHeaderViewController.m in Sources */,
+				88BE0A5D18E0387800228159 /* rvmNavigationViewController.m in Sources */,
+				88B97BF61914F62300F5C87B /* rvmRecentMachinesHeaderViewController.m in Sources */,
+				889E102218FD6775002F5441 /* rvmGLFloatTexture.m in Sources */,
+				88B0E1621A667EA9009ABB46 /* rvmSnapshotViewController.m in Sources */,
+				8898C34819857EDF00D9FD14 /* rvmZXSpectrumPlus2Av41.m in Sources */,
+				88A504B21969D18C00F798DE /* rvmPlus3FddViewController.m in Sources */,
+				88C5063A18A8FB9200147DDA /* rvmArchitecuresDocumentController.m in Sources */,
+				884DAAAC1A7FEFC2006CC42E /* rvmTableRow.m in Sources */,
+				8842BE0D191D6BFF00CB02ED /* rvmZxSpectrumPlus2ASpa.m in Sources */,
+				888FD7361934C17700E1354F /* rvmRecorderView.m in Sources */,
+				888F3C4218C674D2009B076F /* rvmOverlayWindow.m in Sources */,
+				888A8FA019993133004080F0 /* rvmMacKeyboardView.m in Sources */,
+				886F26EA19239974009A39C1 /* rvmPlus2DatacorderView.m in Sources */,
+				8898CB0E196092F8008C747B /* rvmUpd765.m in Sources */,
+				88D786D2196D6EC5000E5B3E /* spectrumPlus3.m in Sources */,
+				88DC8BC11920E0C80015BD09 /* rvmZXSpectrum48kIssue2.m in Sources */,
+				882AA130185662B50037F4A3 /* rvmSoundQueue.m in Sources */,
+				885660A81C8991AF00469353 /* rvmBufferChain.m in Sources */,
+				88A4CBCA19202B39009DB394 /* rvmZXSpectrumPlus2E.m in Sources */,
+				88AFA09619B6298800F50AAB /* rvmZxSpectrumPlus3KeyboardView.m in Sources */,
+				88EFF08D1854F7210066DF6B /* z80.c in Sources */,
+				88FDC26F1AE7C18700A2E5EB /* rvmShaderLayer.m in Sources */,
+				886875881892FB890046461B /* rvmAudioViewController.m in Sources */,
+				88D7496118FACF8F00A403AE /* rvmZxSpectrumPlus2.m in Sources */,
+				888FE40D19EBC8C200447B64 /* NSFileWrapper+Extension.m in Sources */,
+				88D744E21A7F8D090093F912 /* rvmOutlineView.m in Sources */,
+				88DFAAE21A56CD03006303A5 /* rvmAudioMixer.m in Sources */,
+				88AFA09019B6213600F50AAB /* rvmZxSpectrumPlus2AKeyboardView.m in Sources */,
+				888E859A191AA4AF004520B1 /* z.c in Sources */,
+				887D7D931A4462F400AB7929 /* NSData+Gzip.m in Sources */,
+				88FDC2661AE7BC8200A2E5EB /* rvmAboutWindowController.m in Sources */,
+				883A9AC819AA16BC002688DB /* rvmZxSpectrum48kKeyboardView.m in Sources */,
+				885A63F718B3DF830052AE97 /* rvmSnowLayer.m in Sources */,
+				884724F71898496500E5129B /* rvmCollectionView.m in Sources */,
+				8898C35C1985832000D9FD14 /* rvmZxSpectrumPlus3E.m in Sources */,
+				88B97C0619150F9300F5C87B /* rvmMachinesRunningViewController.m in Sources */,
+				88E151DC188FF71400489656 /* rvmAbsoluteTime.m in Sources */,
+				88E1B7351AD450400073587D /* rvmJumpingButton.m in Sources */,
+				88ACFE791A6901F600B64D4A /* rvmSnapshotListViewController.m in Sources */,
+				881F9AE21C7A323500B9E4AC /* rvmZXSpectrumPlusSpa.m in Sources */,
+				881F7EA718BBBAED008F96E2 /* rvmRoundedButtonCell.m in Sources */,
+				88C7457A1930D64F0010FEBE /* spectrum128k.m in Sources */,
+				88A504AE1969CE7F00F798DE /* rvmPlus3FddView.m in Sources */,
+				8881A83918C65F6700811CE1 /* rvmTexturedButton.m in Sources */,
+				88C745781930D64F0010FEBE /* spectrum48k.m in Sources */,
+				8824BA1B1BAF55F000F84D99 /* rvmDeviceConfigViewController.m in Sources */,
+				882CDD90189119E900C8A70E /* rvmTripleBuffer.m in Sources */,
+				88DC8BC41920E16F0015BD09 /* rvmZXSpectrum16kIssue2.m in Sources */,
+				88EB7719185BD38900DDD575 /* rvmBackgroundView.m in Sources */,
+				881BD7EF1BB9B6D2000DF1FE /* rvmAmstradCPC464RecorderViewController.m in Sources */,
+				8892D0DE1ADB1D43003B255B /* rvmX360Gamepad.m in Sources */,
+				884A22801A88A9FC00CCCC73 /* rvmSNADecoder.m in Sources */,
+				88F7AD0A1963EB4700264D2D /* spectrumLua.c in Sources */,
+				88B16A8518B7826B00C86FBC /* rvmAlphaButton.m in Sources */,
+				881F9ADC1C7A31B900B9E4AC /* rvmZxSpectrumPlusSpaKeyboardView.m in Sources */,
+				887BA2C9189984E200125854 /* rvmNewMachineWindowController.m in Sources */,
+				88C7457B1930D64F0010FEBE /* spectrumPlus2A.m in Sources */,
+				88AB78091A14A6D900511268 /* rvmPlus2DatacorderView2.m in Sources */,
+				888A8FA919993A28004080F0 /* rvmZxSpectrum48kKeyboardConfigViewController.m in Sources */,
+				88EFF0441854F5110066DF6B /* rvmAppDelegate.m in Sources */,
+				8898C358198582E800D9FD14 /* rvmZxSpectrumPlus3v41Spa.m in Sources */,
+				8885554519321E16002AA219 /* rvmPlus2ADatacorderView.m in Sources */,
+				8879706B1AC76DDD00B3A1F2 /* rvmZXSpectrumPlus.m in Sources */,
+				884174F51ACC140400A2E0B3 /* rvmPs3GamepadView.m in Sources */,
+				88300D7D18C604B50041DF86 /* rvmOSDControlViewController.m in Sources */,
+				886F26E719239945009A39C1 /* rvmPlus2DatacorderViewController.m in Sources */,
+				88C6476518E1A98E00C9A149 /* rvmSimpleCollectionView.m in Sources */,
+				88D727F71A91E070006EDA36 /* rvmZ80Decoder.m in Sources */,
+				88EFF0821854F5A50066DF6B /* rvmMainView.m in Sources */,
+				888EB56119A9114500156F17 /* rvmButton.m in Sources */,
+				882B78D81AD53085008036F5 /* rvmOSDLastSnapshot.m in Sources */,
+				8892D0E81ADB37A7003B255B /* rvmPS3Controller.m in Sources */,
+				882C020D1C7EF3B1005E7AF3 /* rvmZXSpectrumInves.m in Sources */,
+				887351BB18F415FF00855F0C /* rvmAY3819X.m in Sources */,
+				882C02111C7EF4BE005E7AF3 /* spectrumInves.m in Sources */,
+				8898C3501985826800D9FD14 /* rvmZxSpectrumPlus3v41.m in Sources */,
+				887827AA1986F825001485B1 /* rvmFddDriveView.m in Sources */,
+				8885554119321AB2002AA219 /* rvmPlus2ADatacorderViewController.m in Sources */,
+				884E27B91A08FB00004608DA /* rvmCSWDecoder.m in Sources */,
+				88C745791930D64F0010FEBE /* spectrum48kIssue2.m in Sources */,
+				88B34B9C1969E54F00C6184E /* rvmZXSpectrumPlus3.m in Sources */,
+				88662D591A571330009331BF /* rvmAudioLeds.m in Sources */,
+				8879706F1AC76F2A00B3A1F2 /* rvmZXSpectrumPlusKeyboardView.m in Sources */,
+				88C537F218965D50004F82B6 /* rvmAudioEngine.m in Sources */,
+				88788E351ACDAC860093E0E1 /* rvmGamepad.m in Sources */,
+				88C745771930D64F0010FEBE /* spectrum16k.m in Sources */,
+				88DFE673191D3C7E00F7B05F /* rvmZxSpectrumPlus2A.m in Sources */,
+				88709FC51876031A00802150 /* rvmPureToneBlock.m in Sources */,
+				888FD7321934C05A00E1354F /* rvmRecorderViewController.m in Sources */,
+				887150E5199BE8B9007183B7 /* rvmZxSpectrum48kConfigViewController.m in Sources */,
+				884CECAA18F821AD0025E14D /* rvmZXSpectrum128k.m in Sources */,
+				88709FC81876063F00802150 /* rvmPulsesBlock.m in Sources */,
+				8892D0E31ADB25F5003B255B /* rvmGamepadWindowController.m in Sources */,
+				88BE0A6718E0604C00228159 /* rvmNavButtonCell.m in Sources */,
+				8847B5121873003300C2BDC8 /* rvmStandarBlock.m in Sources */,
+				8862703019FA4C25000F56B8 /* rvmTapeBlocks.m in Sources */,
+				8898C34C1985820F00D9FD14 /* rvmZxSpectrumPlus2Av41Spa.m in Sources */,
+				884CECA718F820EB0025E14D /* rvmZXSpectrum16k.m in Sources */,
+				8866AB0D1858A06B00FD3EAC /* rvmMonitorWindowController.m in Sources */,
+				88840A18196E75BE001B5E5D /* rvmSelectMediaWindowController.m in Sources */,
+				88EFF07A1854F5A50066DF6B /* rvmGLTexture.m in Sources */,
+				88FDC26B1AE7BFDE00A2E5EB /* rvmShaderView.m in Sources */,
+				88B97BFC19150F0600F5C87B /* rvmMachineItemViewController.m in Sources */,
+				88C5063118A8C27B00147DDA /* rvmArchitecture.m in Sources */,
+				8808A1781873548B00013279 /* rvmTZXDecoder.m in Sources */,
+				88D7495E18FACF5200A403AE /* rvmZXSpectrum128kSpa.m in Sources */,
+				883E36021871B59400518381 /* rvmOSDViewController.m in Sources */,
+				88842A5B19ED59A900BD015F /* rvmPZXDecoder.m in Sources */,
+				881F9AD61C7A2E7E00B9E4AC /* rvmZxSpectrum128kSpaKeyboardView.m in Sources */,
+				884DBC4B185B0C9600B43FF0 /* NSView+AutolayoutExtension.m in Sources */,
+				889A7BF11A5E8ED800ECF623 /* rvmAudioViewControllerZx128.m in Sources */,
+				8898C354198582A900D9FD14 /* rvmZxSpectrumPlus3Spa.m in Sources */,
+				883B37F4185EF27F00AA1546 /* NSColor+rvmNSColors.m in Sources */,
+				8876BC7C1A6BEEA900EB7C6A /* rvmRemovableTableCellView.m in Sources */,
+				88709FCB1876083900802150 /* rvmPureDataBlock.m in Sources */,
+				88416AF31BAFE26200846360 /* rvmMachine.m in Sources */,
+				88EFF03D1854F5110066DF6B /* main.m in Sources */,
+				88BE0A5818E0378600228159 /* rvmMainWindowController.m in Sources */,
+				8868D7D918B6307500574BC9 /* rvmShaders.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		88EFF0391854F5110066DF6B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88EFF03A1854F5110066DF6B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		88EFF03F1854F5110066DF6B /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88EFF0401854F5110066DF6B /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		88EFF0451854F5110066DF6B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88EFF0461854F5110066DF6B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88EFF05C1854F5120066DF6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = Rvm;
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		88EFF05D1854F5120066DF6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_MODULE_NAME = Rvm;
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Release;
+		};
+		88EFF05F1854F5120066DF6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Retro Virtual Machine/Retro Virtual Machine.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TNP49M7S5T;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Retro Virtual Machine/Retro Virtual Machine-Prefix.pch";
+				INFOPLIST_FILE = "Retro Virtual Machine/Retro Virtual Machine-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Retro\\ Virtual\\ Machine";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MARKETING_VERSION = 1.1.9;
+				"OTHER_LDFLAGS[arch=*]" = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MadeInAlacant.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		88EFF0601854F5120066DF6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Retro Virtual Machine/Retro Virtual Machine.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TNP49M7S5T;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Retro Virtual Machine/Retro Virtual Machine-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "Retro Virtual Machine/Retro Virtual Machine-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Retro\\ Virtual\\ Machine";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MARKETING_VERSION = 1.1.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MadeInAlacant.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88EFF0281854F5110066DF6B /* Build configuration list for PBXProject "Retro Virtual Machine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88EFF05C1854F5120066DF6B /* Debug */,
+				88EFF05D1854F5120066DF6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88EFF05E1854F5120066DF6B /* Build configuration list for PBXNativeTarget "Retro Virtual Machine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88EFF05F1854F5120066DF6B /* Debug */,
+				88EFF0601854F5120066DF6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88EFF0251854F5110066DF6B /* Project object */;
+}

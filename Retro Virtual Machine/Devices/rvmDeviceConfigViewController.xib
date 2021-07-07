@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="rvmDeviceConfigViewController">
+            <connections>
+                <outlet property="placeHolder" destination="LX2-SR-uVl" id="AhJ-N4-E2c"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY" customClass="rvmBackgroundView">
+            <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="XFQ-Ub-DUx" customClass="rvmBox">
+                    <rect key="frame" x="442" y="178" width="338" height="348"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hoJ-ZB-ZtG">
+                            <rect key="frame" x="121" y="322" width="75" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Description" id="QDU-iK-hWt">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="mFl-tW-0Wj" customClass="rvmBox">
+                    <rect key="frame" x="20" y="178" width="414" height="348"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T29-JA-9wx">
+                            <rect key="frame" x="141" y="325" width="111" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Attached devices" id="RWY-Y2-O6i">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="414" id="dYW-rQ-Nqd"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="96I-bU-HPs" customClass="rvmBox">
+                    <rect key="frame" x="20" y="20" width="414" height="150"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCN-zC-uVe">
+                            <rect key="frame" x="152" y="128" width="112" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Available Devices" id="H0R-bC-Lg2">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="414" id="Din-Oc-aJ3"/>
+                        <constraint firstAttribute="height" constant="150" id="uho-fT-ikq"/>
+                    </constraints>
+                </customView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="63U-dO-8hB">
+                    <rect key="frame" x="345" y="550" width="110" height="36"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Devices" id="HQv-QP-dN4">
+                        <font key="font" size="30" name=".HelveticaNeueDeskInterface-Regular"/>
+                        <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="LX2-SR-uVl">
+                    <rect key="frame" x="493" y="20" width="246" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="8Ze-GB-e7a"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="mFl-tW-0Wj" firstAttribute="top" secondItem="63U-dO-8hB" secondAttribute="bottom" constant="24" id="7IU-Tj-ww5"/>
+                <constraint firstAttribute="bottom" secondItem="96I-bU-HPs" secondAttribute="bottom" constant="20" id="ACf-5M-EFW"/>
+                <constraint firstItem="63U-dO-8hB" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="Agv-bl-fgO"/>
+                <constraint firstItem="63U-dO-8hB" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="14" id="BJq-P9-3KR"/>
+                <constraint firstAttribute="trailing" secondItem="LX2-SR-uVl" secondAttribute="trailing" constant="61" id="Cdu-Uy-uoM"/>
+                <constraint firstItem="96I-bU-HPs" firstAttribute="top" secondItem="mFl-tW-0Wj" secondAttribute="bottom" constant="8" id="FUA-Ii-2js"/>
+                <constraint firstItem="LX2-SR-uVl" firstAttribute="top" secondItem="XFQ-Ub-DUx" secondAttribute="bottom" constant="8" id="Hyy-nR-x1P"/>
+                <constraint firstItem="96I-bU-HPs" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="JsS-2N-yVL"/>
+                <constraint firstItem="XFQ-Ub-DUx" firstAttribute="leading" secondItem="mFl-tW-0Wj" secondAttribute="trailing" constant="8" id="Rk2-S5-Siy"/>
+                <constraint firstAttribute="trailing" secondItem="XFQ-Ub-DUx" secondAttribute="trailing" constant="20" id="T0K-SP-EDI"/>
+                <constraint firstItem="mFl-tW-0Wj" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="iOx-e1-xUF"/>
+                <constraint firstAttribute="bottom" secondItem="LX2-SR-uVl" secondAttribute="bottom" constant="20" id="m8w-1L-bIh"/>
+                <constraint firstItem="XFQ-Ub-DUx" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="442" id="qQ7-7a-IFK"/>
+                <constraint firstItem="XFQ-Ub-DUx" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="74" id="qeb-Xw-jhu"/>
+                <constraint firstItem="LX2-SR-uVl" firstAttribute="leading" secondItem="96I-bU-HPs" secondAttribute="trailing" constant="59" id="um2-1e-fFL"/>
+                <constraint firstItem="mFl-tW-0Wj" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="74" id="v51-KP-38e"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                    <color key="value" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor2">
+                    <color key="value" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="552" y="334"/>
+        </customView>
+    </objects>
+</document>

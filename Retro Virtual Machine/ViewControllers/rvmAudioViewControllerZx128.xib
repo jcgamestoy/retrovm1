@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="rvmAudioViewControllerZx128">
+            <connections>
+                <outlet property="ayALed" destination="IuF-Ad-8he" id="aNA-Uw-sZY"/>
+                <outlet property="ayAPan" destination="qFi-QS-1ds" id="3Mu-Pv-blC"/>
+                <outlet property="ayAVol" destination="b3g-pC-cVb" id="duw-Dh-xlf"/>
+                <outlet property="ayBLed" destination="LgS-iP-o4A" id="yK9-RC-swe"/>
+                <outlet property="ayBPan" destination="geA-ay-rTU" id="hOc-6L-L7r"/>
+                <outlet property="ayBVol" destination="FsT-Ft-jai" id="6He-Xn-et4"/>
+                <outlet property="ayCLed" destination="SNo-Cz-KzV" id="jiM-Ah-dgi"/>
+                <outlet property="ayCPan" destination="te6-66-TLH" id="sfj-p5-Egf"/>
+                <outlet property="ayCVol" destination="JB0-gD-l8n" id="2hN-V6-beG"/>
+                <outlet property="backgroundView" destination="f9h-vO-2S1" id="g6S-XG-0Va"/>
+                <outlet property="beeperLed" destination="kcL-fk-0hs" id="VLl-r6-wVN"/>
+                <outlet property="beeperPan" destination="as7-Wg-K4O" id="i5I-lT-Jx7"/>
+                <outlet property="beeperVol" destination="XJp-Rw-Ken" id="Bfm-Iq-gui"/>
+                <outlet property="highPassLabel" destination="U55-3K-uYF" id="lYM-OT-7Yy"/>
+                <outlet property="highPassSlider" destination="Hwy-BZ-PSo" id="ZAh-cW-TK8"/>
+                <outlet property="lMaster" destination="XcQ-xM-NZO" id="fHF-0N-ctr"/>
+                <outlet property="lowPassLabel" destination="ijL-sK-Av4" id="tZS-Ih-Ih6"/>
+                <outlet property="lowPassSlider" destination="Leu-Mw-nBq" id="OsF-4D-fvD"/>
+                <outlet property="mixerPop" destination="pnU-V6-rYz" id="46q-Vv-ybP"/>
+                <outlet property="placeHolder" destination="ef1-cH-ce3" id="gDJ-Fo-Std"/>
+                <outlet property="presetCombo" destination="MI8-hJ-f9W" id="cTj-WB-pTj"/>
+                <outlet property="rMaster" destination="KtF-xy-iw5" id="w1j-ah-H2e"/>
+                <outlet property="scrollView" destination="hiN-VD-IaB" id="CKG-t6-pfr"/>
+                <outlet property="soundImage" destination="NkJ-zJ-KO5" id="qaT-Ur-Xqy"/>
+                <outlet property="view" destination="f9h-vO-2S1" id="xjl-A9-rEn"/>
+                <outlet property="volumeSlider" destination="6LP-uB-LVf" id="22B-rz-CQO"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="f9h-vO-2S1" customClass="rvmBackgroundView">
+            <rect key="frame" x="0.0" y="0.0" width="1061" height="1106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ef1-cH-ce3">
+                    <rect key="frame" x="249" y="252" width="802" height="602"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ef1-cH-ce3" secondAttribute="height" multiplier="4:3" id="zO2-lq-57H"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="NkJ-zJ-KO5" customClass="rvmImageView">
+                    <rect key="frame" x="55" y="977" width="133" height="119"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="119" id="JHI-tv-jNf"/>
+                        <constraint firstAttribute="width" constant="133" id="R69-FL-Yeq"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="Audio"/>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" translatesAutoresizingMaskIntoConstraints="NO" id="hiN-VD-IaB">
+                    <rect key="frame" x="10" y="10" width="229" height="957"/>
+                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="8nC-M5-wQm">
+                        <rect key="frame" x="0.0" y="0.0" width="229" height="598"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-uW-KW4">
+                                <rect key="frame" x="0.0" y="0.0" width="223" height="957"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PN8-0P-nbd" customClass="rvmBox">
+                                        <rect key="frame" x="9" y="702" width="205" height="224"/>
+                                        <subviews>
+                                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hwy-BZ-PSo">
+                                                <rect key="frame" x="6" y="15" width="191" height="21"/>
+                                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="22000" doubleValue="30" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="linear" id="VwF-qc-sZU"/>
+                                                <connections>
+                                                    <action selector="onHighPass:" target="-2" id="y8S-DZ-i6L"/>
+                                                </connections>
+                                            </slider>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijL-sK-Av4">
+                                                <rect key="frame" x="6" y="84" width="191" height="17"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Low Pass Filter:" id="1yP-h5-Meu">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U55-3K-uYF">
+                                                <rect key="frame" x="6" y="37" width="191" height="17"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="High Pass Filter:" id="aJ4-6H-c5g">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XcQ-xM-NZO" customClass="rvmAudioLeds">
+                                                <rect key="frame" x="69" y="118" width="16" height="96"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="factor">
+                                                        <real key="value" value="0.75"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </customView>
+                                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KtF-xy-iw5" customClass="rvmAudioLeds">
+                                                <rect key="frame" x="93" y="118" width="16" height="96"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="factor">
+                                                        <real key="value" value="0.75"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </customView>
+                                            <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6LP-uB-LVf">
+                                                <rect key="frame" x="115" y="115" width="21" height="101"/>
+                                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="right" sliderType="linear" id="3LB-Ky-Me3"/>
+                                                <connections>
+                                                    <action selector="onVolumen:" target="-2" id="a8t-bz-iQd"/>
+                                                </connections>
+                                            </slider>
+                                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Leu-Mw-nBq">
+                                                <rect key="frame" x="3" y="57" width="194" height="21"/>
+                                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="22000" doubleValue="5000" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="linear" id="nW2-hv-ePQ"/>
+                                                <connections>
+                                                    <action selector="onLowPass:" target="-2" id="5x8-VP-Ouz"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </customView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0f-BS-efh">
+                                        <rect key="frame" x="7" y="932" width="209" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Output" id="WvX-4b-xSZ">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCb-Y1-hfV">
+                                        <rect key="frame" x="127" y="662" width="85" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Mixer..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Egd-Oq-FiN">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onMixer:" target="-2" id="gIn-jT-M9z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="598" id="jOx-XF-JzK"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Wej-uW-KW4" secondAttribute="trailing" constant="6" id="0mK-d3-QYi"/>
+                            <constraint firstItem="Wej-uW-KW4" firstAttribute="leading" secondItem="8nC-M5-wQm" secondAttribute="leading" id="JQ6-p3-NBe"/>
+                            <constraint firstItem="Wej-uW-KW4" firstAttribute="top" secondItem="8nC-M5-wQm" secondAttribute="top" id="KhR-1T-kz2"/>
+                            <constraint firstAttribute="bottom" secondItem="Wej-uW-KW4" secondAttribute="bottom" priority="250" id="zX7-CM-gJN"/>
+                        </constraints>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </clipView>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="229" id="qC5-Tt-K06"/>
+                    </constraints>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Ddw-CX-bmd">
+                        <rect key="frame" x="0.0" y="582" width="229" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Khy-73-Ni9">
+                        <rect key="frame" x="213" y="0.0" width="16" height="598"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="NkJ-zJ-KO5" firstAttribute="centerX" secondItem="Wej-uW-KW4" secondAttribute="centerX" id="5Jj-NJ-FIG"/>
+                <constraint firstItem="ef1-cH-ce3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="f9h-vO-2S1" secondAttribute="top" constant="10" id="BgR-Or-yM3"/>
+                <constraint firstAttribute="trailing" secondItem="ef1-cH-ce3" secondAttribute="trailing" priority="250" constant="10" id="Fcw-UG-ewR"/>
+                <constraint firstAttribute="bottom" secondItem="ef1-cH-ce3" secondAttribute="bottom" priority="250" constant="10" id="H4r-9q-RoI"/>
+                <constraint firstItem="NkJ-zJ-KO5" firstAttribute="top" secondItem="f9h-vO-2S1" secondAttribute="top" constant="10" id="HfV-Mb-NqR"/>
+                <constraint firstAttribute="centerY" secondItem="ef1-cH-ce3" secondAttribute="centerY" constant="9.0450046172918519e-06" id="Hod-85-dqj"/>
+                <constraint firstItem="hiN-VD-IaB" firstAttribute="top" secondItem="NkJ-zJ-KO5" secondAttribute="bottom" constant="10" id="abm-LF-50X"/>
+                <constraint firstItem="ef1-cH-ce3" firstAttribute="leading" secondItem="hiN-VD-IaB" secondAttribute="trailing" constant="10" id="fjg-6c-DKZ"/>
+                <constraint firstItem="hiN-VD-IaB" firstAttribute="leading" secondItem="f9h-vO-2S1" secondAttribute="leading" constant="10" id="k0U-zF-Zdc"/>
+                <constraint firstAttribute="bottom" secondItem="hiN-VD-IaB" secondAttribute="bottom" constant="10" id="y15-Di-WEH"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="vibrance" value="NO"/>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                    <color key="value" white="0.15125411184210527" alpha="1" colorSpace="calibratedWhite"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor2">
+                    <color key="value" white="0.30167043585526315" alpha="1" colorSpace="calibratedWhite"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="215.5" y="595"/>
+        </customView>
+        <viewController id="6hJ-EK-grT" userLabel="Popover View Controller">
+            <connections>
+                <outlet property="view" destination="pim-0R-wku" id="ecY-Kp-FAl"/>
+            </connections>
+        </viewController>
+        <popover behavior="t" id="pnU-V6-rYz">
+            <connections>
+                <outlet property="contentViewController" destination="6hJ-EK-grT" id="lk8-UR-ptE"/>
+            </connections>
+        </popover>
+        <customView id="pim-0R-wku">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="226"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IuF-Ad-8he" customClass="rvmAudioLeds">
+                    <rect key="frame" x="152" y="68" width="14" height="90"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="width">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="factor">
+                            <real key="value" value="0.75"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="b3g-pC-cVb">
+                    <rect key="frame" x="177" y="64" width="21" height="89"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="right" sliderType="linear" id="ktR-Ez-lBL"/>
+                    <connections>
+                        <action selector="onVolChannel:" target="-2" id="Dou-qZ-jkB"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="qFi-QS-1ds">
+                    <rect key="frame" x="129" y="40" width="61" height="21"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="Vct-SE-Zre"/>
+                    <connections>
+                        <action selector="onPanChannel:" target="-2" id="eds-XT-aqS"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNS-tu-Jk9">
+                    <rect key="frame" x="153" y="159" width="13" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A" id="ars-El-GEa">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LgS-iP-o4A" customClass="rvmAudioLeds">
+                    <rect key="frame" x="240" y="68" width="14" height="90"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="width">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="factor">
+                            <real key="value" value="0.75"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="FsT-Ft-jai">
+                    <rect key="frame" x="265" y="64" width="21" height="89"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="right" sliderType="linear" id="fbt-Qm-rk4"/>
+                    <connections>
+                        <action selector="onVolChannel:" target="-2" id="uq0-3P-8wq"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="geA-ay-rTU">
+                    <rect key="frame" x="217" y="40" width="61" height="21"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="FTH-fk-AWl"/>
+                    <connections>
+                        <action selector="onPanChannel:" target="-2" id="THo-Oj-ZWY"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUT-lT-oc6">
+                    <rect key="frame" x="240" y="159" width="14" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="B" id="Rdt-pX-Vmu">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNo-Cz-KzV" customClass="rvmAudioLeds">
+                    <rect key="frame" x="320" y="68" width="14" height="90"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="width">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="factor">
+                            <real key="value" value="0.75"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="JB0-gD-l8n">
+                    <rect key="frame" x="345" y="64" width="21" height="89"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="right" sliderType="linear" id="KFn-64-xaK"/>
+                    <connections>
+                        <action selector="onVolChannel:" target="-2" id="gZX-WQ-5lZ"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="te6-66-TLH">
+                    <rect key="frame" x="297" y="40" width="61" height="21"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="Fji-14-zKk"/>
+                    <connections>
+                        <action selector="onPanChannel:" target="-2" id="4dI-8q-1kl"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxi-4H-KDI">
+                    <rect key="frame" x="320" y="159" width="14" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="C" id="WbL-Dp-Nid">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box horizontalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="F55-dJ-FOx">
+                    <rect key="frame" x="100" y="42" width="5" height="164"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3RM-30-8UX">
+                    <rect key="frame" x="129" y="190" width="69" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="AY-3-8192" id="eq8-Sb-Pit">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MI8-hJ-f9W">
+                    <rect key="frame" x="217" y="185" width="150" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="iVl-DP-Q1i">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="Wzz-E9-LF9">
+                            <items>
+                                <menuItem title="Mono" id="902-ZK-vpy">
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="QFD-WU-UUV"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="73k-xR-9qI"/>
+                                <menuItem title="Stereo ABC" tag="1" id="jm8-Gh-rvp">
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="cj8-d6-Paz"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Stereo ACB" tag="2" id="dUa-B0-fTn">
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="mL2-F6-N6A"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Stereo BAC" tag="3" id="ahC-OQ-ZEr">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="ozD-Zh-GwX"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Stereo BCA" tag="4" id="695-BS-0Eh">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="GhJ-aJ-dYW"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Stereo CAB" tag="5" id="fzQ-Nd-qZG">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="SUe-83-lpo"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Stereo CBA" tag="6" id="bEa-MA-9m4">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="5j5-Aj-WdF"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="O4C-eh-RAn"/>
+                                <menuItem title="Custom" tag="7" id="OQH-S4-Ehu">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="ndD-gE-gyb"/>
+                                    </connections>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcL-fk-0hs" customClass="rvmAudioLeds">
+                    <rect key="frame" x="41" y="68" width="14" height="90"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="width">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="factor">
+                            <real key="value" value="0.75"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XJp-Rw-Ken">
+                    <rect key="frame" x="66" y="64" width="21" height="89"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="1.3300000000000001" doubleValue="1.3300000000000001" tickMarkPosition="right" sliderType="linear" id="vP1-Py-7rd"/>
+                    <connections>
+                        <action selector="onVolChannel:" target="-2" id="zMa-JG-G3o"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="as7-Wg-K4O">
+                    <rect key="frame" x="18" y="40" width="61" height="21"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="QFE-KM-2mg"/>
+                    <connections>
+                        <action selector="onPanChannel:" target="-2" id="4AQ-ff-TKE"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="doK-Yv-sed">
+                    <rect key="frame" x="24" y="159" width="49" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bepper" id="d6p-i4-cJI">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zbn-sb-zZb">
+                    <rect key="frame" x="23" y="18" width="61" height="18"/>
+                    <buttonCell key="cell" type="check" title="Mute" bezelStyle="regularSquare" imagePosition="left" inset="2" id="3kd-SL-9al">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onMute:" target="-2" id="OoG-iD-F4v"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="psa-F7-xbw">
+                    <rect key="frame" x="129" y="18" width="61" height="18"/>
+                    <buttonCell key="cell" type="check" title="Mute" bezelStyle="regularSquare" imagePosition="left" inset="2" id="lqb-r3-M65">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onMute:" target="-2" id="PfZ-V6-Usf"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="bTn-VP-KWp">
+                    <rect key="frame" x="217" y="18" width="61" height="18"/>
+                    <buttonCell key="cell" type="check" title="Mute" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jzS-Oa-P9y">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onMute:" target="-2" id="exD-Cl-nge"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="fw9-kX-owL">
+                    <rect key="frame" x="297" y="18" width="61" height="18"/>
+                    <buttonCell key="cell" type="check" title="Mute" bezelStyle="regularSquare" imagePosition="left" inset="2" id="C6t-ub-Dzv">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onMute:" target="-2" id="csa-Qq-OWp"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="60" y="1322"/>
+        </customView>
+        <customView id="a2J-oZ-yYD">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="226"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKt-9u-QuP" customClass="rvmAudioLeds">
+                    <rect key="frame" x="152" y="68" width="14" height="90"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="width">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="factor">
+                            <real key="value" value="0.75"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="oPA-D9-9DY">
+                    <rect key="frame" x="177" y="64" width="21" height="89"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="right" sliderType="linear" id="gPT-Ly-6gm"/>
+                    <connections>
+                        <action selector="onVolChannel:" target="-2" id="paY-bt-wsF"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Yd-uu-IaI">
+                    <rect key="frame" x="129" y="40" width="61" height="21"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="K4s-Es-jrb"/>
+                    <connections>
+                        <action selector="onPanChannel:" target="-2" id="xUf-3c-xfl"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vsG-1T-OAe">
+                    <rect key="frame" x="153" y="159" width="13" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A" id="8D4-KG-CAu">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sD9-0z-vuY" customClass="rvmAudioLeds">
+                    <rect key="frame" x="240" y="68" width="14" height="90"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="width">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="factor">
+                            <real key="value" value="0.75"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="kgd-LH-QtN">
+                    <rect key="frame" x="265" y="64" width="21" height="89"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="right" sliderType="linear" id="XkE-RO-LvA"/>
+                    <connections>
+                        <action selector="onVolChannel:" target="-2" id="GQu-J8-BTj"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="4Bp-f0-IAt">
+                    <rect key="frame" x="217" y="40" width="61" height="21"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="jdV-hD-5lG"/>
+                    <connections>
+                        <action selector="onPanChannel:" target="-2" id="mYS-UE-Z7I"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kC1-pi-cQi">
+                    <rect key="frame" x="240" y="159" width="14" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="B" id="9IY-3Y-v03">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ExN-jf-cCY" customClass="rvmAudioLeds">
+                    <rect key="frame" x="320" y="68" width="14" height="90"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="width">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="factor">
+                            <real key="value" value="0.75"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="5Kv-iK-1gP">
+                    <rect key="frame" x="345" y="64" width="21" height="89"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="right" sliderType="linear" id="y9a-CR-67O"/>
+                    <connections>
+                        <action selector="onVolChannel:" target="-2" id="vLf-AB-d6T"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="eD2-Aw-I2E">
+                    <rect key="frame" x="297" y="40" width="61" height="21"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="V5X-1E-Jaz"/>
+                    <connections>
+                        <action selector="onPanChannel:" target="-2" id="HKb-Iu-Ust"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcW-tM-ZPe">
+                    <rect key="frame" x="320" y="159" width="14" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="C" id="5sZ-BP-xuy">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box horizontalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="vEe-n2-YG0">
+                    <rect key="frame" x="100" y="42" width="5" height="164"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4WQ-Mo-NpZ">
+                    <rect key="frame" x="129" y="190" width="69" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="AY-3-8192" id="gvf-c6-3vV">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p5a-Ps-jwS">
+                    <rect key="frame" x="217" y="185" width="150" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="tan-a3-03e">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="71g-Fd-kZH">
+                            <items>
+                                <menuItem title="Mono" id="8hR-4f-nav">
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="RPZ-bg-jdg"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="OD3-IE-K4R"/>
+                                <menuItem title="Stereo ABC" tag="1" id="qrI-Tw-3RG">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="71C-6a-agO"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Stereo ACB" tag="2" id="0RP-T6-taQ">
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="l2f-bk-fNv"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Stereo BAC" tag="3" id="pE8-QY-cLP">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="RKj-a0-SEd"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Stereo BCA" tag="4" id="zDc-LW-wga">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="XJj-3L-do2"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Stereo CAB" tag="5" id="4iE-yz-2So">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="gwX-yb-3F9"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Stereo CBA" tag="6" id="esg-O9-W5o">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="C3n-rX-Lov"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="T6R-Kj-yt6"/>
+                                <menuItem title="Custom" tag="7" id="R7k-o3-ntX">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="onPreset:" target="-2" id="Dhi-kw-3XC"/>
+                                    </connections>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nE8-sy-kfK" customClass="rvmAudioLeds">
+                    <rect key="frame" x="41" y="68" width="14" height="90"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="width">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="factor">
+                            <real key="value" value="0.75"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rAr-gk-q71">
+                    <rect key="frame" x="66" y="64" width="21" height="89"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="1.3300000000000001" doubleValue="1.3300000000000001" tickMarkPosition="right" sliderType="linear" id="RUK-lK-K0o"/>
+                    <connections>
+                        <action selector="onVolChannel:" target="-2" id="NNQ-UW-Btg"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QP2-jx-GOu">
+                    <rect key="frame" x="18" y="40" width="61" height="21"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="H8s-tg-wQa"/>
+                    <connections>
+                        <action selector="onPanChannel:" target="-2" id="szg-yL-oJs"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gZC-UI-NYa">
+                    <rect key="frame" x="24" y="159" width="49" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bepper" id="hkm-a3-gAH">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pms-Tu-QwE">
+                    <rect key="frame" x="23" y="18" width="61" height="18"/>
+                    <buttonCell key="cell" type="check" title="Mute" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ADt-Gi-fob">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onMute:" target="-2" id="I0D-KA-Cbv"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="0x9-jD-6r3">
+                    <rect key="frame" x="129" y="18" width="61" height="18"/>
+                    <buttonCell key="cell" type="check" title="Mute" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wFV-nX-HhL">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onMute:" target="-2" id="chl-Zq-tNJ"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="O0Z-kZ-03a">
+                    <rect key="frame" x="217" y="18" width="61" height="18"/>
+                    <buttonCell key="cell" type="check" title="Mute" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jxy-Kh-dka">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onMute:" target="-2" id="eJT-JN-P07"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="9Eg-UE-5AQ">
+                    <rect key="frame" x="297" y="18" width="61" height="18"/>
+                    <buttonCell key="cell" type="check" title="Mute" bezelStyle="regularSquare" imagePosition="left" inset="2" id="faZ-gY-Tsf">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onMute:" target="-2" id="VSp-Lw-TSX"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="60" y="1322"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="Audio" width="248" height="248"/>
+    </resources>
+</document>

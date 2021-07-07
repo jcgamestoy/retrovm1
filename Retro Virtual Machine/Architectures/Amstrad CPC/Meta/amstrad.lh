@@ -1,0 +1,122 @@
+$if not isLua then
+//(C)2014 Juan Carlos González Amestoy
+#import <Foundation/Foundation.h>
+#import "rvmMachineProtocol.h"
+
+#import "z80.h"
+
+#import "rvmTapeDecoderProtocol.h"
+#import "rvmAY3819X.h"
+#import "rvmAudioMixer.h"
+
+#import "crtc0.h"
+
+$if machineIs('664','6128') then
+#import "cpc464.h"
+#import "rvmUpd765.h"
+$end
+
+struct _[=$structName$];
+
+extern uint8 rvmCPCMode0T[256][2];
+extern uint8 rvmCPCMode1T[256][4];
+
+$if machineIs('464') then
+typedef uint32_t* (*rvmAmstradStep)(void *amstrad,bool fast,uint32_t* buffer);
+$end
+
+extern uint32 gateArrayPalette[32];
+
+typedef struct _rvm[=$name$]S
+{
+  z80* cpu;
+  rvmAudioMixerS* mixer;
+
+  rvmAmstradStep step;
+  rvmAmstradStep frameF;
+
+  uint T;
+
+  uint8 *videoRam;
+  uint8 **ram;
+  uint8 *firmware;
+  uint8 **rom;
+
+  crtc* crtc;
+
+  uint cycle;
+  uint8 byteL;
+
+  uint ma;
+  int monPx;
+  uint monLi,mE,waitHS;
+
+  uint palette[16];
+  uint border;
+
+  int16_t audioBuffer[65536];
+  uint lastAudio;
+
+  uint8 ppiA,ppiC;
+  uint8_t aySelect,ayMode;
+  rvmAY3819XT *ay;
+
+  uint8 ppiControl;
+  uint8 keyboardLine;
+
+  uint8 penS,gateArray,vsync;
+
+  uint8 gaIntLine,gaIntDelay,gaInterrupt;
+
+  uint8 romSelect,videoMode;
+
+  uint8 crtcS;
+
+  uint8_t keyboard[0x10];
+
+  int so,soundIndex;
+  double soc;
+  double soundChannels[4];
+  uint hsyncDelay;
+  uint controlLines;
+  rvmTapeDecoderProtocolS *cassetteDecoder;
+  uint cassetteT,level;
+$if machineIs('664','6128') then
+  //Disk support
+  rvmUpd765S *upd765;
+  int16_t *motorSound,*motorLast,*motor;
+  int16_t *seekSound,*seekLast,*seek;
+  uint32_t ledA,ledB;
+$end
+
+$if machineIs('6128') then
+  uint8 **bank;
+$end
+
+}rvm[=$name$]S;
+
+$if machineIs('464') then
+void rvm[=$name$]Ack(z80* z80);
+uint rvm[=$name$]Contention(z80 *z,uint16 a);
+uint rvm[=$name$]ZeroContention(z80 *z,uint16 a);
+uint rvm[=$name$]IOContention(z80 *z,uint16 a);
+uint8 rvm[=$name$]BusInt(z80* z80);
+uint8 rvm[=$name$]Keyboard(rvmAY3819XT *ay,uint16 a);
+$end
+
+$if machineIs('464','664') then
+uint32* rvm[=$name$]Frame([=$structName$]* amstrad,bool fast,uint32 *buffer);
+uint32* rvm[=$name$]Step([=$structName$]* amstrad,bool fast,uint32 *buffer);
+uint8 rvm[=$name$]In(z80* z80,uint16 a);
+$end
+
+$if machineIs('464','664','6128') then
+void rvm[=$name$]Out(z80* z80,uint16 a,uint8 v);
+uint8 rvm[=$name$]Get(z80 *z,uint16 a);
+$end
+
+$if machineIs('464','6128') then
+void rvm[=$name$]Set(z80 *z,uint16 a,uint8 v);
+$end
+
+$end

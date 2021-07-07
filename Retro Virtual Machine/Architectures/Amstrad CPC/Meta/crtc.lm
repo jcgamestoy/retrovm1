@@ -1,0 +1,164 @@
+
+#import "crtc0.h"
+
+void rvm[=$name$]Step(crtc* crtc)
+{
+  uint previous=crtc->output;
+
+  //Step
+  crtc->output=0;
+
+  crtc->hcc++;
+
+  if(crtc->hcc>crtc->regs[0])
+  {
+    crtc->vlc++;
+    crtc->lc++;
+    if(crtc->vsl) crtc->vsl--;
+    //if(previous & kRvmCrtcVsync) crtc->vsl++;
+    crtc->hcc=0;
+  }
+
+  if(previous & kRvmCrtcVadj)
+  {
+    if(crtc->lc>=crtc->regs[5])
+    {
+      crtc->mc=((crtc->regs[12]&0x3f)<<8)+crtc->regs[13];
+      crtc->vcc=crtc->lc=crtc->vlc=0;   
+    }
+    else
+      crtc->output|=kRvmCrtcVadj;
+  }
+
+  if(crtc->vlc>crtc->regs[9])
+  {
+    crtc->vcc++;
+    if(crtc->vcc==crtc->regs[7])
+    {
+      crtc->vsl=(crtc->regs[3] & 0xf0) >>4;
+      crtc->vsl=(crtc->vsl)?crtc->vsl:16;
+    }
+    crtc->vlc=0;
+    crtc->mc+=crtc->regs[1];
+    //printf("VCC: %d previous:%x\n",crtc->vcc,previous);
+  }
+
+  //if(crtc->lc>=((crtc->regs[4]+1)*(crtc->regs[9]+1)+crtc->regs[5]))
+  if(crtc->vcc>crtc->regs[4])
+  {
+    if(crtc->regs[5])
+    {
+      if(!(crtc->output & kRvmCrtcVadj))
+      {
+        crtc->output|=kRvmCrtcVadj;
+        crtc->lc=0;
+      }
+    }
+    else
+    {
+      crtc->mc=((crtc->regs[12]&0x3f)<<8)+crtc->regs[13];
+      crtc->vcc=crtc->lc=crtc->vlc=0;
+    }
+  }
+
+  //Output
+  crtc->output|=(crtc->hcc<crtc->regs[1] && crtc->vcc<crtc->regs[6])?kRvmCrtcDe:0;
+  crtc->output|=(crtc->hcc>=crtc->regs[2] && crtc->hcc<(crtc->regs[2]+(crtc->regs[3] & 0xf)))?kRvmCrtcHsync:0;
+  //crtc->output|=(crtc->vcc>=crtc->regs[7] && /*crtc->vcc<=(crtc->regs[7]+2)*/crtc->vsl<((crtc->regs[3]&0xf0)>>4))?kRvmCrtcVsync:0;
+  crtc->output|=(crtc->vsl)?kRvmCrtcVsync:0;
+  crtc->output=crtc->output | (((previous ^ crtc->output) & kRvmCrtcHsync)?kRvmCrtcHsyncEdge:0) | (((previous ^ crtc->output) & kRvmCrtcVsync)?kRvmCrtcVsyncEdge:0);
+
+  //if(!(crtc->output & kRvmCrtcVsync)) crtc->vsl=0;
+
+  if(crtc->output & 0x10) //Change address
+  {
+    crtc->ma=crtc->mc+crtc->hcc;
+    crtc->ra=crtc->vlc & 0x7; 
+  }
+
+
+  // uint previous=crtc->output;
+  // crtc->output&=kRvmCrtcClearEdge;
+
+  // crtc->hcc++; //Aumentamos
+
+  // if(crtc->hcc>=crtc->regs[1]) //de off
+  // {
+  //   crtc->output&=kRvmCrtcClearDe; //All off
+
+  //   if(crtc->hcc>=crtc->regs[2]) //hsync on
+  //   {
+  //     crtc->output|=kRvmCrtcHsync;
+    
+  //     if(crtc->hcc>=crtc->regs[2]+(crtc->regs[3] & 0xf)) //hsync on
+  //     {
+  //       crtc->output&=kRvmCrtcClearHsync;
+        
+
+  //       if(crtc->hcc>crtc->regs[0]) //new line
+  //       {
+  //         crtc->vlc++;
+  //         crtc->lc++;
+  //         crtc->hcc=0;
+  //         //crtc->de=1; //Screen on
+  //         crtc->output|=(crtc->regs[1])?kRvmCrtcDe:0;
+
+  //         if(crtc->vlc>crtc->regs[9])
+  //         {
+  //           crtc->vcc++;
+  //           crtc->vlc=0;
+  //           crtc->mc+=crtc->regs[1];
+  //         }
+
+  //         //lines
+  //         if(crtc->vcc>=crtc->regs[6])
+  //         {
+  //           crtc->output&=kRvmCrtcClearDe;
+
+  //           if(crtc->vcc>=crtc->regs[7])
+  //           {
+  //             //if(!crtc->vsync) crtc->lvsync=crtc->lc+16;
+  //             crtc->output|=kRvmCrtcVsync;
+              
+
+  //             if(crtc->vcc>crtc->regs[7]+2)
+  //             {
+  //               crtc->output&=kRvmCrtcClearVsync;
+                
+
+  //               if(crtc->vcc>crtc->regs[4])
+  //               {
+  //                 if(crtc->vcc==crtc->regs[4]+1 && crtc->vlc==0)
+  //                   crtc->lc=-crtc->regs[5];
+
+  //                 if(crtc->lc>0)
+  //                 {
+  //                 //New frame
+  //                   crtc->vcc=crtc->lc=crtc->vlc=0;
+  //                   crtc->mc=((crtc->regs[12]&0x3f)<<8)+crtc->regs[13];
+  //                   crtc->output=kRvmCrtcDe;
+  //                 }
+  //                 //crtc->vsync=crtc->hsync=0;
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  
+
+  // if(crtc->output & 0x10) //Change address
+  // {
+  //   crtc->ma=crtc->mc+crtc->hcc;
+  //   crtc->ra=crtc->vlc; //¿Se puede eliminar rc con vlc?
+  // }
+
+  // //crtc->hsedge=(hs && !crtc->hsync)?1:0;
+  // //if(!vs && crtc->vsync) crtc->lvsync=crtc->lc+16;
+  // //crtc->vsedge=(vs && !crtc->vsync)?1:0;
+  // crtc->output=crtc->output | (((previous ^ crtc->output) & kRvmCrtcHsync)?kRvmCrtcHsyncEdge:0) | (((previous ^ crtc->output) & kRvmCrtcVsync)?kRvmCrtcVsyncEdge:0);
+}
+

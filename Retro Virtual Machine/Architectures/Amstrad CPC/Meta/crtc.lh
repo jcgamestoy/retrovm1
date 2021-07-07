@@ -1,0 +1,50 @@
+$if not isLua then
+//(C)2015 Juan Carlos González Amestoy.
+
+struct _crtc;
+
+typedef void (*rvmCRTCStep)(struct _crtc*);
+typedef uint8 (*rvmCRTCR)(struct _crtc*,uint);
+typedef void (*rvmCRTCW)(struct _crtc*,uint,uint8);
+typedef void (*rvmCRTCReset)(struct _crtc*);
+
+#define kRvmCrtcHsync 0x1
+#define kRvmCrtcHsyncEdge 0x2
+#define kRvmCrtcVsync 0x4
+#define kRvmCrtcVsyncEdge 0x8
+#define kRvmCrtcDe 0x10
+#define kRvmCrtcVadj 0x20
+
+#define kRvmCrtcHsyncRaising 0x3
+#define kRvmCrtcHsyncFalling 0x2
+
+#define kRvmCrtcClearEdge 0xFFFFFFF5
+#define kRvmCrtcClearHsync 0xFFFFFFFE
+#define kRvmCrtcClearVsync 0xFFFFFFFB
+#define kRvmCrtcClearDe 0xFFFFFFEF
+
+typedef struct _crtc
+{
+  uint8 regs[18]; //Registers
+  uint16 ma;
+  uint8 ra;
+  //uint vsync,hsync,de;
+  uint output;
+  //uint hsedge,vsedge;
+  uint R;
+
+  uint vcc,vlc,hcc,vsl; //counters;
+  int lc;
+  //uint lvsync; //latches
+  uint16 mc;
+
+  rvmCRTCStep step;
+  rvmCRTCR read;
+  rvmCRTCW write;
+  rvmCRTCReset reset;
+}crtc;
+
+void rvm[=$name$]Step(crtc* crtc);
+
+
+$end

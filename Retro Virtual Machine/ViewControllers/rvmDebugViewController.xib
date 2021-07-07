@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="rvmDebugViewController">
+            <connections>
+                <outlet property="TstatesView" destination="Clf-1x-IDd" id="M9F-mS-vhW"/>
+                <outlet property="aRegister" destination="avv-Te-1uA" id="VwS-JD-Ifl"/>
+                <outlet property="afRegister" destination="Gko-kV-iZI" id="rwD-Y0-oun"/>
+                <outlet property="afpRegister" destination="hgr-dR-4dt" id="O7r-T7-BpU"/>
+                <outlet property="apRegister" destination="xW0-ua-Q6n" id="83T-VA-nsU"/>
+                <outlet property="bRegister" destination="V05-dU-wS4" id="1iv-NL-Csk"/>
+                <outlet property="backgroundView" destination="1" id="LY0-L8-ICn"/>
+                <outlet property="bcRegister" destination="Hmd-ts-31x" id="ePO-8w-api"/>
+                <outlet property="bcpRegister" destination="4rg-0l-SeO" id="vjz-B3-5xQ"/>
+                <outlet property="borderView" destination="PeF-Ta-ucG" id="8Rm-Ah-hVn"/>
+                <outlet property="bpRegister" destination="0BO-Bt-Rox" id="RnS-do-yKg"/>
+                <outlet property="cRegister" destination="WYf-V3-0ah" id="8bi-cX-HYS"/>
+                <outlet property="consoleBox" destination="lPy-PI-Erc" id="bc9-eR-b2o"/>
+                <outlet property="consoleView" destination="VpZ-gx-rUJ" id="WzU-Kf-LNM"/>
+                <outlet property="cpRegister" destination="sl9-BJ-96W" id="CUU-BS-XyG"/>
+                <outlet property="dRegister" destination="IIM-31-NgS" id="rm4-NX-JFX"/>
+                <outlet property="deRegister" destination="9CM-ab-JIU" id="EjW-HF-qJK"/>
+                <outlet property="depRegister" destination="9Zg-a0-lao" id="LwB-MJ-juM"/>
+                <outlet property="disassemblyView" destination="bi3-Zo-lCl" id="L2y-ec-oXZ"/>
+                <outlet property="dpRegister" destination="vLd-0g-4GK" id="28R-VI-Rmx"/>
+                <outlet property="eRegister" destination="tXJ-gg-dDJ" id="s7s-lC-dxs"/>
+                <outlet property="earView" destination="KwE-ep-izy" id="6XL-7K-2iG"/>
+                <outlet property="epRegister" destination="YLL-7r-wS4" id="gd5-yQ-J5c"/>
+                <outlet property="flags" destination="j6I-0G-Ck8" id="PeO-Hr-KVo"/>
+                <outlet property="hRegister" destination="SWU-xO-0Ae" id="uKY-7Y-7aX"/>
+                <outlet property="hlRegister" destination="m4B-ME-eS9" id="Ztf-OL-7Pg"/>
+                <outlet property="hlpRegister" destination="h5K-mx-hzT" id="hCn-fI-Riu"/>
+                <outlet property="hpRegister" destination="Yyk-2l-YHC" id="PN4-VP-k4t"/>
+                <outlet property="iRegister" destination="aOG-Eo-KH5" id="TKv-dI-WZj"/>
+                <outlet property="ixRegister" destination="4PR-uJ-ndf" id="5He-Pm-w5d"/>
+                <outlet property="iyRegister" destination="TZk-da-WJX" id="Brw-dI-LQE"/>
+                <outlet property="lRegister" destination="0IJ-1L-pjO" id="0Q0-RN-pK6"/>
+                <outlet property="lpRegister" destination="P5b-of-0kk" id="25n-ZU-HhJ"/>
+                <outlet property="micIn" destination="Iiu-aT-iCB" id="2Yy-Gw-J0t"/>
+                <outlet property="micView" destination="Ufv-jq-Wg3" id="Thr-x5-Ji2"/>
+                <outlet property="pcRegister" destination="ggL-yz-hcG" id="Qq1-lH-dDk"/>
+                <outlet property="placeHolder" destination="wa3-fJ-DvS" id="cwg-wb-sEa"/>
+                <outlet property="rRegister" destination="v6w-ff-yK0" id="Gm6-gQ-gbR"/>
+                <outlet property="spRegister" destination="S3A-wY-XZ6" id="9iH-lc-Vv8"/>
+                <outlet property="stackView" destination="ERq-SG-GKc" id="JTc-cR-H4J"/>
+                <outlet property="view" destination="1" id="2"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="1" customClass="rvmBackgroundView">
+            <rect key="frame" x="0.0" y="0.0" width="749" height="674"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="wa3-fJ-DvS">
+                    <rect key="frame" x="360" y="260" width="369" height="346"/>
+                </customView>
+                <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBs-Ph-40L" customClass="rvmBox">
+                    <rect key="frame" x="20" y="260" width="163" height="346"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avv-Te-1uA">
+                            <rect key="frame" x="12" y="292" width="44" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A:0x00" id="Vq8-9H-bei">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V05-dU-wS4">
+                            <rect key="frame" x="12" y="274" width="44" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="B:0x00" id="con-J6-swc">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WYf-V3-0ah">
+                            <rect key="frame" x="12" y="256" width="44" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="C:0x00" id="QAk-7E-85j">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xW0-ua-Q6n">
+                            <rect key="frame" x="100" y="292" width="51" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A':0x00" id="GQd-C6-C7X">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0BO-Bt-Rox">
+                            <rect key="frame" x="100" y="274" width="51" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="B':0x00" id="tUV-LA-hbB">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sl9-BJ-96W">
+                            <rect key="frame" x="100" y="256" width="51" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="C':0x00" id="0us-ww-Vp1">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IIM-31-NgS">
+                            <rect key="frame" x="12" y="238" width="44" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="D:0x00" id="cUQ-cg-6qL">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXJ-gg-dDJ">
+                            <rect key="frame" x="12" y="220" width="44" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="E:0x00" id="xnv-vQ-LmQ">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SWU-xO-0Ae">
+                            <rect key="frame" x="12" y="202" width="44" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="H:0x00" id="Zh5-60-LSP">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLd-0g-4GK">
+                            <rect key="frame" x="100" y="238" width="51" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="D':0x00" id="h1i-vb-jS0">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLL-7r-wS4">
+                            <rect key="frame" x="100" y="220" width="51" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="E':0x00" id="wtJ-oH-CaT">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yyk-2l-YHC">
+                            <rect key="frame" x="100" y="202" width="51" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="H':0x00" id="djP-dc-O2J">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IJ-1L-pjO">
+                            <rect key="frame" x="12" y="184" width="44" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="L:0x00" id="l4l-Nt-r8R">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-of-0kk">
+                            <rect key="frame" x="100" y="184" width="51" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="L':0x00" id="fcS-r3-lHf">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v6w-ff-yK0">
+                            <rect key="frame" x="12" y="166" width="44" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="R:0x00" id="ovg-ob-Qs7">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-Eo-KH5">
+                            <rect key="frame" x="100" y="166" width="51" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="I':0x00" id="Zlk-HF-BX2">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gko-kV-iZI">
+                            <rect key="frame" x="12" y="141" width="64" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="AF:0x0000" id="5KD-NV-oSO">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hmd-ts-31x">
+                            <rect key="frame" x="12" y="122" width="64" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="BC:0x0000" id="7Y2-e6-81w">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9CM-ab-JIU">
+                            <rect key="frame" x="12" y="105" width="64" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="DE:0x0000" id="ZqQ-Gu-RWR">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4B-ME-eS9">
+                            <rect key="frame" x="12" y="87" width="64" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="HL:0x0000" id="2JJ-OY-3V7">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PR-uJ-ndf">
+                            <rect key="frame" x="12" y="69" width="64" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="IX:0x0000" id="EJ5-KR-Jfg">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggL-yz-hcG">
+                            <rect key="frame" x="12" y="51" width="64" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="PC:0x0000" id="cci-Ua-zVU">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgr-dR-4dt">
+                            <rect key="frame" x="80" y="141" width="71" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="AF':0x0000" id="EDA-hj-pHb">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4rg-0l-SeO">
+                            <rect key="frame" x="80" y="122" width="71" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="BC':0x0000" id="QbZ-hC-YT4">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Zg-a0-lao">
+                            <rect key="frame" x="80" y="105" width="71" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="DE':0x0000" id="l1M-CR-s5d">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-mx-hzT">
+                            <rect key="frame" x="80" y="87" width="71" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="HL':0x0000" id="3Nc-wj-N9C">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TZk-da-WJX">
+                            <rect key="frame" x="80" y="69" width="71" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="IY :0x0000" id="uE2-5N-YKj">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3A-wY-XZ6">
+                            <rect key="frame" x="80" y="51" width="71" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="SP :0x0000" id="SuG-xl-J4C">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6I-0G-Ck8">
+                            <rect key="frame" x="12" y="20" width="139" height="23"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="C N P/V X H X Z S" id="tl5-Nn-PBg">
+                                <font key="font" size="13" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipA-Ac-nYP">
+                            <rect key="frame" x="62" y="318" width="29" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Z80" id="i2o-gq-8KL">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="163" id="Nm5-gB-g4n"/>
+                        <constraint firstAttribute="height" constant="346" id="UGF-Wo-4i7"/>
+                    </constraints>
+                </customView>
+                <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l27-Ht-ddb" customClass="rvmBox">
+                    <rect key="frame" x="189" y="386" width="163" height="220"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9X-Af-AXm">
+                            <rect key="frame" x="62" y="192" width="38" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Stack" id="Zoh-FB-hR6">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERq-SG-GKc">
+                            <rect key="frame" x="-2" y="4" width="167" height="180"/>
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="1" id="lOh-bu-cQe">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="163" id="Zoq-xh-Sci"/>
+                        <constraint firstAttribute="height" constant="220" id="eUj-QN-Oho"/>
+                    </constraints>
+                </customView>
+                <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEA-HY-ddF" customClass="rvmBox">
+                    <rect key="frame" x="189" y="260" width="163" height="118"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2pZ-83-6IP">
+                            <rect key="frame" x="67" y="94" width="29" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ULA" id="G4U-lC-F41">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVg-jp-gn1">
+                            <rect key="frame" x="9" y="75" width="50" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Border:" id="xsf-WE-7f2">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PeF-Ta-ucG" customClass="rvmBackgroundView">
+                            <rect key="frame" x="59" y="75" width="93" height="13"/>
+                        </customView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ODo-FX-cba">
+                            <rect key="frame" x="9" y="56" width="50" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Ear:" id="lRg-H1-cwE">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-ep-izy" customClass="rvmBackgroundView">
+                            <rect key="frame" x="40" y="56" width="17" height="13"/>
+                        </customView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yw9-KO-rwv">
+                            <rect key="frame" x="9" y="37" width="50" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mic:" id="F9l-sJ-DFf">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Clf-1x-IDd">
+                            <rect key="frame" x="9" y="20" width="106" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="T-States:0" id="k85-B0-h8r">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ufv-jq-Wg3" customClass="rvmBackgroundView">
+                            <rect key="frame" x="40" y="37" width="17" height="13"/>
+                        </customView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="km5-DH-xzV">
+                            <rect key="frame" x="67" y="37" width="50" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="In:" id="HD2-Io-iAb">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iiu-aT-iCB" customClass="rvmBackgroundView">
+                            <rect key="frame" x="93" y="37" width="17" height="13"/>
+                        </customView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="163" id="CGO-nS-lDn"/>
+                        <constraint firstAttribute="height" constant="118" id="LAd-Cw-cm5"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="QiS-d2-0GD" customClass="rvmBox">
+                    <rect key="frame" x="20" y="20" width="332" height="232"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uue-9B-NB7">
+                            <rect key="frame" x="126" y="205" width="81" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Disassembly" id="Ghn-JC-yIu">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="bi3-Zo-lCl">
+                            <rect key="frame" x="13" y="11" width="309" height="188"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="305" id="VS3-er-fHg"/>
+                            </constraints>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1" id="7zN-YJ-yVL">
+                                <font key="font" size="11" name="Menlo-Regular"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="uue-9B-NB7" firstAttribute="top" secondItem="QiS-d2-0GD" secondAttribute="top" constant="10" id="Bqb-A1-fT8"/>
+                        <constraint firstItem="uue-9B-NB7" firstAttribute="leading" secondItem="QiS-d2-0GD" secondAttribute="leading" constant="128" id="bw7-sQ-Tss"/>
+                        <constraint firstItem="bi3-Zo-lCl" firstAttribute="top" secondItem="QiS-d2-0GD" secondAttribute="top" priority="999" constant="33" id="gkC-VU-cRV"/>
+                        <constraint firstItem="bi3-Zo-lCl" firstAttribute="leading" secondItem="QiS-d2-0GD" secondAttribute="leading" constant="15" id="j5p-dB-z6v"/>
+                        <constraint firstAttribute="bottom" secondItem="bi3-Zo-lCl" secondAttribute="bottom" priority="999" constant="11" id="tQQ-26-MVS"/>
+                        <constraint firstAttribute="width" constant="332" id="wLE-BV-7cd"/>
+                    </constraints>
+                </customView>
+                <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPy-PI-Erc" customClass="rvmBox">
+                    <rect key="frame" x="360" y="20" width="369" height="232"/>
+                    <subviews>
+                        <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxf-dl-q8t">
+                            <rect key="frame" x="8" y="8" width="353" height="216"/>
+                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="nYh-WV-YHT">
+                                <rect key="frame" x="0.0" y="0.0" width="353" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textView drawsBackground="NO" importsGraphics="NO" findStyle="panel" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="VpZ-gx-rUJ" customClass="rvmConsoleView">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                        <size key="minSize" width="353" height="216"/>
+                                        <size key="maxSize" width="463" height="10000000"/>
+                                        <color key="insertionPointColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <size key="minSize" width="353" height="216"/>
+                                        <size key="maxSize" width="463" height="10000000"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </clipView>
+                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="TDY-op-ScG">
+                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </scroller>
+                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="JgD-pH-ta8">
+                                <rect key="frame" x="337" y="0.0" width="16" height="216"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </scroller>
+                        </scrollView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="232" id="89P-nU-fFa"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uxf-dl-q8t" secondAttribute="bottom" constant="8" id="Ens-PC-VNg"/>
+                        <constraint firstAttribute="bottom" secondItem="uxf-dl-q8t" secondAttribute="bottom" constant="8" id="J8h-Bh-TG0"/>
+                        <constraint firstItem="uxf-dl-q8t" firstAttribute="top" secondItem="lPy-PI-Erc" secondAttribute="top" constant="8" id="fGj-vb-iJS"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uxf-dl-q8t" secondAttribute="trailing" constant="8" id="giV-1d-ehp"/>
+                        <constraint firstItem="uxf-dl-q8t" firstAttribute="leading" secondItem="lPy-PI-Erc" secondAttribute="leading" constant="8" id="hb8-IS-kNE"/>
+                        <constraint firstAttribute="trailing" secondItem="uxf-dl-q8t" secondAttribute="trailing" constant="8" id="tu3-gt-1fZ"/>
+                        <constraint firstItem="uxf-dl-q8t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lPy-PI-Erc" secondAttribute="leading" constant="8" id="zfy-Eb-2Rb"/>
+                    </constraints>
+                </customView>
+                <imageView autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6kQ-uo-576">
+                    <rect key="frame" x="13" y="614" width="530" height="50"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="proportionallyDown" image="Logo1" id="RNX-8n-aYY"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="lPy-PI-Erc" firstAttribute="leading" secondItem="QiS-d2-0GD" secondAttribute="trailing" constant="8" id="6L8-O3-JDB"/>
+                <constraint firstItem="QiS-d2-0GD" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="E9X-MT-PhE"/>
+                <constraint firstAttribute="bottom" secondItem="QiS-d2-0GD" secondAttribute="bottom" constant="20" id="GEy-E1-cYY"/>
+                <constraint firstItem="lPy-PI-Erc" firstAttribute="top" secondItem="wa3-fJ-DvS" secondAttribute="bottom" constant="8" id="Qs9-JQ-Hlp"/>
+                <constraint firstItem="LBs-Ph-40L" firstAttribute="top" secondItem="1" secondAttribute="top" constant="68" id="UIL-gQ-if4"/>
+                <constraint firstAttribute="trailing" secondItem="lPy-PI-Erc" secondAttribute="trailing" constant="20" id="W5P-MZ-y4f"/>
+                <constraint firstItem="LBs-Ph-40L" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="Wtb-o3-ozO"/>
+                <constraint firstItem="l27-Ht-ddb" firstAttribute="top" secondItem="1" secondAttribute="top" constant="68" id="dgd-uO-PXL"/>
+                <constraint firstItem="wa3-fJ-DvS" firstAttribute="top" secondItem="1" secondAttribute="top" constant="68" id="fQR-b1-I5y"/>
+                <constraint firstAttribute="trailing" secondItem="wa3-fJ-DvS" secondAttribute="trailing" constant="20" id="in3-I8-Jw8"/>
+                <constraint firstItem="l27-Ht-ddb" firstAttribute="leading" secondItem="LBs-Ph-40L" secondAttribute="trailing" constant="6" id="lNh-AC-hlX"/>
+                <constraint firstItem="WEA-HY-ddF" firstAttribute="top" secondItem="l27-Ht-ddb" secondAttribute="bottom" constant="8" id="ovh-Zf-gJk"/>
+                <constraint firstItem="QiS-d2-0GD" firstAttribute="top" secondItem="WEA-HY-ddF" secondAttribute="bottom" constant="8" id="q87-sN-Hxg"/>
+                <constraint firstItem="QiS-d2-0GD" firstAttribute="top" secondItem="LBs-Ph-40L" secondAttribute="bottom" constant="8" id="tlH-MA-3pD"/>
+                <constraint firstItem="wa3-fJ-DvS" firstAttribute="leading" secondItem="l27-Ht-ddb" secondAttribute="trailing" constant="8" id="w8D-Ea-NBh"/>
+                <constraint firstItem="WEA-HY-ddF" firstAttribute="leading" secondItem="LBs-Ph-40L" secondAttribute="trailing" constant="6" id="xH1-vo-aYT"/>
+                <constraint firstItem="wa3-fJ-DvS" firstAttribute="leading" secondItem="WEA-HY-ddF" secondAttribute="trailing" constant="8" id="xR1-8R-zHb"/>
+                <constraint firstAttribute="bottom" secondItem="lPy-PI-Erc" secondAttribute="bottom" constant="20" id="yYt-4D-7ip"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                    <color key="value" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor2">
+                    <color key="value" white="0.29999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+        </customView>
+    </objects>
+    <resources>
+        <image name="Logo1" width="560" height="78"/>
+    </resources>
+</document>

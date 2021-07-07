@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="rvmMachinesCollectionViewController">
+            <connections>
+                <outlet property="adso" destination="ERC-eh-bTL" id="5Jp-80-Ra5"/>
+                <outlet property="backgroundView" destination="Hz6-mo-xeY" id="a2d-Iu-jad"/>
+                <outlet property="collection" destination="6jS-Ne-oGv" id="HBK-GN-ViK"/>
+                <outlet property="recentHeader" destination="giR-RZ-epc" id="bR7-De-TS3"/>
+                <outlet property="runnigHeader" destination="QM4-BN-Ndt" id="k5D-ho-HTg"/>
+                <outlet property="updateBox" destination="gSQ-8j-QcV" id="8WD-mP-Oya"/>
+                <outlet property="updateButton" destination="40X-mX-5ly" id="rtL-6r-y4I"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView autoresizesSubviews="NO" wantsLayer="YES" id="Hz6-mo-xeY" customClass="rvmBackgroundView">
+            <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="ERC-eh-bTL" customClass="rvmImageView">
+                    <rect key="frame" x="600" y="0.0" width="200" height="317"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ERC-eh-bTL" secondAttribute="height" multiplier="200:317" id="FIb-zS-4kR"/>
+                    </constraints>
+                </customView>
+                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AI-Wg-9Vp">
+                    <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                    <clipView key="contentView" autoresizesSubviews="NO" drawsBackground="NO" copiesOnScroll="NO" id="ycp-ab-ixe">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <customView autoresizesSubviews="NO" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6jS-Ne-oGv" customClass="rvmSimpleCollectionView">
+                                <rect key="frame" x="0.0" y="400" width="800" height="200"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </customView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="g0N-v0-tkC">
+                        <rect key="frame" x="0.0" y="584" width="800" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="baU-PM-J0S">
+                        <rect key="frame" x="784" y="0.0" width="16" height="600"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="gSQ-8j-QcV" customClass="rvmBackgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="800" height="40"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="40X-mX-5ly">
+                            <rect key="frame" x="4" y="2" width="198" height="32"/>
+                            <buttonCell key="cell" type="push" title="Your version is up to date." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bOi-r6-Fd0">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="onUpdate:" target="-2" id="Iwz-HG-OzJ"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RoN-F2-8q2">
+                            <rect key="frame" x="689" y="2" width="107" height="32"/>
+                            <buttonCell key="cell" type="push" title="Donate 💶" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zNw-pw-gfE">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="onDonation:" target="-2" id="nV0-dY-sWV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="J9q-7Z-wUc"/>
+                        <constraint firstItem="40X-mX-5ly" firstAttribute="top" secondItem="gSQ-8j-QcV" secondAttribute="top" constant="10" id="VwM-uh-1Yy"/>
+                        <constraint firstItem="40X-mX-5ly" firstAttribute="leading" secondItem="gSQ-8j-QcV" secondAttribute="leading" constant="10" id="guX-C4-Dbw"/>
+                        <constraint firstItem="RoN-F2-8q2" firstAttribute="top" secondItem="gSQ-8j-QcV" secondAttribute="top" constant="10" id="osG-z6-L8B"/>
+                        <constraint firstAttribute="trailing" secondItem="RoN-F2-8q2" secondAttribute="trailing" constant="10" id="tVc-GQ-6Eb"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                            <color key="value" red="0.0" green="0.77532051282051284" blue="0.39635444878517623" alpha="0.7282327586206897" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                            <real key="value" value="180"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="8AI-Wg-9Vp" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="H9D-JY-bc5"/>
+                <constraint firstAttribute="trailing" secondItem="gSQ-8j-QcV" secondAttribute="trailing" id="NfZ-Aa-pul"/>
+                <constraint firstAttribute="bottom" secondItem="ERC-eh-bTL" secondAttribute="bottom" id="axG-ur-zsw"/>
+                <constraint firstAttribute="bottom" secondItem="8AI-Wg-9Vp" secondAttribute="bottom" id="iIV-LN-xbf"/>
+                <constraint firstItem="ERC-eh-bTL" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="283" id="iuB-dv-Zfs"/>
+                <constraint firstItem="gSQ-8j-QcV" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="kx8-0I-gFu"/>
+                <constraint firstItem="8AI-Wg-9Vp" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="tfp-Iw-2QB"/>
+                <constraint firstAttribute="bottom" secondItem="gSQ-8j-QcV" secondAttribute="bottom" id="uV5-WY-WQR"/>
+                <constraint firstAttribute="trailing" secondItem="ERC-eh-bTL" secondAttribute="trailing" id="vsa-5p-6My"/>
+                <constraint firstAttribute="trailing" secondItem="8AI-Wg-9Vp" secondAttribute="trailing" id="z1h-xm-Czb"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="vibrance" value="NO"/>
+            </userDefinedRuntimeAttributes>
+        </customView>
+        <viewController nibName="rvmRecentMachinesHeaderViewController" id="giR-RZ-epc" customClass="rvmRecentMachinesHeaderViewController"/>
+        <viewController nibName="rvmRunningMachinesHeaderViewController" id="QM4-BN-Ndt" customClass="rvmRunningMachinesHeaderViewController"/>
+    </objects>
+</document>

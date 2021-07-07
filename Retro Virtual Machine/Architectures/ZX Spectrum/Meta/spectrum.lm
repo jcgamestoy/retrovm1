@@ -1,0 +1,1077 @@
+//(C)2014 Juan Carlos González Amestoy
+
+[$[
+  local help=require('spectrumHelp')
+]$]
+
+#import "[=$ include $]"
+
+$if machineIs('48k','128k','+2A','+3','inves') then
+
+$local machineT
+#define pxBORDER 1
+#define pxSCREEN 2
+
+$if machineIs('48k') then
+#define kDelta 18.2
+#define kLINES 312
+#define kTLine 224
+#define kINT 32
+#define kFirst 14335
+
+$machineT={upborder=48,llen=224,lines=312,first=14336}
+
+$elseif machineIs('128k','+2A','+3') then
+//#define kDelta 80.3945578
+#define kDelta 18.465625
+#define kAy 33
+#define kLINES 311
+#define kTLine 228
+#define kINT 34
+
+$if machineIs('128k') then
+#define kFirst 14361
+$machineT={upborder=48,llen=228,lines=311,first=14362}
+$else
+#define kFirst 14361
+$machineT={upborder=48,llen=228,lines=311,first=14365}
+$end
+
+$elseif machineIs('inves') then
+#define kDelta 18.465625
+#define kLINES 311
+#define kTLine 228
+#define kINT 32
+#define kFirst 212
+$machineT={upborder=48,llen=228,lines=311,first=212}
+$end
+
+
+$if machineIs('+2A','+3') then
+#import "spectrum48k.h"
+$end
+
+#define kBeep 44
+
+static uint16 tLine[192];
+//static uint8 dec[kLINES][kTLine];
+
+$if machineIs('+2A','+3') then
+  static uint cPattern[8]={1,0,7,6,5,4,3,2};
+$elseif not machineIs('inves') then
+  static uint cPattern[8]={6,5,4,3,2,1,0,0};
+$end
+
+//static uint8 contention[kLINES][kTLine];
+$if not machineIs('inves') then
+static uint8 contentionBuffer[80000];
+static uint8 *contention=contentionBuffer+0x10;
+$end
+
+$if not machineIs('inves') then
+$if not machineIs('+2A','+3') then
+static uint iFloatingBus[]={0,0,1,2,1,2,0,0};
+$end
+static double soundLevel[4]={0.39/3.79,0.77/3.79,3.66/3.79,3.79/3.79};
+$else
+static double soundLevel[4]={0,4.8/4.8,4.8/4.8,0};
+$end
+
+
+
+
+$if machineIs('+2A') then
+void s[=$name$]_set(z80 *z,uint16 a,uint8 v)
+{
+  z->memw[(a & 0xC000)>>14][a & 0x3fff]=v;
+}
+
+void s[=$name$]_memoryConfig(spectrum *s,uint8 m7f,uint8 m1f)
+{  
+  if(m1f & 0x1) //Expecial mode
+  {
+    switch(m1f & 0x6)
+    {
+      case 0x0:
+        s->cpu->mem[0]=s->cpu->memw[0]=s->ram[0];
+        s->cpu->mem[1]=s->cpu->memw[1]=s->ram[1];
+        s->cpu->mem[2]=s->cpu->memw[2]=s->ram[2];
+        s->cpu->mem[3]=s->cpu->memw[3]=s->ram[3];
+        break;
+      case 0x2:
+        s->cpu->mem[0]=s->cpu->memw[0]=s->ram[4];
+        s->cpu->mem[1]=s->cpu->memw[1]=s->ram[5];
+        s->cpu->mem[2]=s->cpu->memw[2]=s->ram[6];
+        s->cpu->mem[3]=s->cpu->memw[3]=s->ram[7];
+        break;
+      case 0x4:
+        s->cpu->mem[0]=s->cpu->memw[0]=s->ram[4];
+        s->cpu->mem[1]=s->cpu->memw[1]=s->ram[5];
+        s->cpu->mem[2]=s->cpu->memw[2]=s->ram[6];
+        s->cpu->mem[3]=s->cpu->memw[3]=s->ram[3];
+        break;
+      case 0x6:
+        s->cpu->mem[0]=s->cpu->memw[0]=s->ram[4];
+        s->cpu->mem[1]=s->cpu->memw[1]=s->ram[7];
+        s->cpu->mem[2]=s->cpu->memw[2]=s->ram[6];
+        s->cpu->mem[3]=s->cpu->memw[3]=s->ram[3];
+        break;
+    }
+    s->cpu->set=s[=$name$]_set;
+  }
+  else //Normal mode
+  {
+    s->cpu->mem[0]=s->rom[((m1f & 0x4)>>1) | ((m7f & 0x10)>>4)];
+    s->cpu->mem[1]=s->cpu->memw[1]=s->ram[5];
+    s->cpu->mem[2]=s->cpu->memw[2]=s->ram[2];
+    s->cpu->mem[3]=s->cpu->memw[3]=s->ram[m7f & 0x7];
+    s->cpu->set=s48k_set;
+  }
+}
+$end
+
+static uint32 readT[]={
+  [=$ help.doReadTable(machineT) $]
+
+};
+
+static uint32 writeT[]={
+  [=$ help.doWriteTable(machineT) $]
+
+};
+
+$if not machineIs('inves') then
+static void initContention() {
+  for(uint32 i=0;i<(kTLine*kLINES);i++)
+  {
+    contention[i]=0;
+    
+    if(i>=kFirst) {
+      uint32 l=(i-kFirst) / kTLine;
+      uint32 d=(i-kFirst) % kTLine;
+
+      if(l<192 && d<128) {
+        contention[i]=cPattern[d & 0x7];
+      }
+    }
+  }
+}
+$end
+
+void init[=$name$]()
+{
+  $if not machineIs('inves') then
+  initContention();
+  $end
+
+  for(int i=0;i<3;i++)
+  {
+    for(int j=0;j<8;j++)
+    {
+      for(int k=0;k<8;k++)
+      {
+        tLine[(i<<6)+(j<<3)+k]=(i<<11)+(j<<5)+(k<<8);
+      }
+    }
+  }
+  
+  // uint c=0;
+  // for(int i=0;i<kLINES;i++)
+  // {
+  //   for(int j=0;j<kTLine;j++)
+  //   {
+  //     dec[i][j]=0;
+  //     //uint32 t=i*kTLine+j;
+  //     //contention[t]=s[=$name$]_cont4T(t);
+      
+  //     $if machineIs('48k') then
+  //       if(i>=15 && i<303 && j>=kTLine-32 && j<kTLine)
+  //       {
+  //         dec[i][j]=pxBORDER;
+  //       }
+  //       else
+  //       {
+  //         if(i>=16 && i<304)
+  //         {
+  //           if(j<128)
+  //           {
+  //             if(i<64 || i>=256)
+  //               dec[i][j]=pxBORDER;
+  //             else
+  //               dec[i][j]=pxSCREEN;
+  //           }
+  //           else
+  //             if(j<160)
+  //               dec[i][j]=pxBORDER;
+  //         }
+  //       }
+  //     $elseif machineIs('128k','+2A') then
+  //       if(i>=14 && i<302 && j>=kTLine-32 && j<kTLine)
+  //       {
+  //         dec[i][j]=pxBORDER;
+  //       }
+  //       else
+  //       {
+  //         if(i>=15 && i<303)
+  //         {
+  //           if(j<128)
+  //           {
+  //             if(i<63 || i>=255)
+  //               dec[i][j]=pxBORDER;
+  //             else
+  //               dec[i][j]=pxSCREEN;
+  //           }
+  //           else
+  //             if(j<160)
+  //               dec[i][j]=pxBORDER;
+  //         }
+  //       }
+
+  //     $elseif machineIs('inves') then
+  //     if(i>=264 || i<241)
+  //     {
+  //       if(j<144 || j>=180)
+  //       {
+  //         dec[i][j]=pxBORDER;
+  //         c++;
+  //         //if((i>1 && i<193 && (j<112 || j>=212)) || (i==1 && j>=212)) dec[i][j]=pxSCREEN;
+  //         //else if(j<180 || i<241) dec[i][j]=pxBORDER;
+  //       }
+  //     }
+  //     //printf("l:%d t:%d v:%d\n",i,j,dec[i][j]);
+  //     $end
+  //   }
+  // }
+  //printf("C: %d\n",c);
+}
+$end
+
+$if machineIs('48k','128k','+2A','inves') then
+uint32_t s[=$name$]_contention(z80 *z,uint16 a)
+{
+  $if not machineIs('inves') then
+  [=$structName$] *s=([=$structName$]*)z->tag;
+  
+  $if machineIs('48k') then
+    bool d=a>=0x4000 && a<0x8000;
+  $elseif machineIs('128k') then
+    bool d=(a>=0x4000 && a<0x8000) || ((s->memory7f & 0x1) && (a>=0xC000));
+  $elseif machineIs('+2A') then
+    bool dc=(a>=0x4000 && a<0x8000) || ((s->memory7f & 0x4) && (a>=0xC000));
+    uint m=s->memory1f & 0x6;
+    bool de=(m!=0) & ((m==1) || a<0xC000);
+    bool d=(s->memory1f&0x1)?de:dc;
+  $end
+
+  if(d)
+  {
+    return contention[s->t];
+  }
+  $end
+  return 0;
+}
+$end
+
+$if machineIs('48k','128k','+2A','inves') then
+uint32 s[=$name$]_contentionIO(z80 *z,uint16 a)
+{
+  $if machineIs('+2A','inves') then
+    return 0;
+  $else
+    [=$structName$] *s=([=$structName$]*)z->tag;
+    
+    $if machineIs('48k') then
+      bool d=a>=0x4000 && a<0x8000;
+    $elseif machineIs('128k') then
+      bool d=(a>=0x4000 && a<0x8000) || ((s->memory7f & 0x1) && (a>=0xC000));
+    $end
+
+    if(d)
+    {
+      if(a & 0x1)
+      {
+        uint t,tt,T;
+        T=0;
+        //l=s->line;
+        //t=s->line*kTLine+s->t;
+        t=s->t;
+        for(int i=0;i<4;i++)
+        {
+          tt=contention[t];
+          t+=tt+1;
+          T+=tt;
+          // if(t>=kTLine)
+          // {
+          //   t-=kTLine;
+          //   l++;
+          //   if(l>=kLINES) l=0;
+          // }
+        }
+        
+        return T;
+      }
+      else
+      {
+        uint t,tt,T;
+        T=0;
+        //l=s->line;
+        //t=s->line*kTLine+s->t;
+        t=s->t;
+        for(int i=0;i<2;i++)
+        {
+          tt=contention[t];
+          t+=tt+1;
+          T+=tt;
+          // if(t>=kTLine)
+          // {
+          //   t-=kTLine;
+          //   l++;
+          //   if(l>=kLINES) l=0;
+          // }
+        }
+        
+        return T;
+      }
+    }
+    else
+    {
+      if(a & 0x1)
+      {
+        return 0;
+      }
+      else
+      {
+        //uint l=s->line;
+        //uint t=s->line*kTLine+s->t+1;
+        // if(t>=kTLine)
+        // {
+        //   t-=kTLine;
+        //   l++;
+        //   if(l>=kLINES) l=0;
+        // }
+        return contention[s->t+1];
+      }
+    }
+  $end
+}
+$end
+
+$if machineIs('48k','128k','+2A') then
+uint32 floatingBus[=$name$](z80 * z)
+{
+  [=$structName$] *s=([=$structName$]*)z->tag;
+  $if machineIs('48k','128k') then
+  
+
+  
+
+
+  $if machineIs('48k') then
+  uint t=s->t+1;
+  
+  uint l=t / kTLine;
+  t=t % kTLine;
+
+  if(l>=64 && l<256 && t<128)
+  {
+    uint i=iFloatingBus[t & 0x7];
+    
+    int y=l-64;
+  $elseif machineIs('128k') then
+  uint t=s->t+3;
+  
+  uint l=t / kTLine;
+  t=t % kTLine;
+  //printf("s->t:%d t:%d l:%d\n",s->t,t,l);
+
+  if(l>=63 && l<255 && t>=2 && t<130)
+  {
+    uint i=iFloatingBus[t & 0x7];
+    
+    int y=l-63;
+  $end
+  
+    int x=t>>2;
+    
+    if(i==1) return s->cpu->mem[1][tLine[y]+x];
+    if(i==2) return s->cpu->mem[1][0x1800+((y>>3)<<5)+x];
+  }
+
+  return 0xff;
+  
+  $end
+
+  $if machineIs('+2A') then
+  return ((s->t&0x1)?s->attr:s->pixel) | 0x1;
+  $end
+}
+$end
+
+$if machineIs('48k','16k','inves') then
+uint8_t s[=$name$]_get(z80* z,uint16_t a)
+{
+  $if machineIs('16k') then
+  if(a>=0x8000) return floatingBus48k(z);
+  $end
+
+  uint8_t* pt=z->mem[a>>14];
+  return pt[a & 0x3fff];
+}
+$end
+
+$if machineIs('48k','16k','inves') then
+void s[=$name$]_set(z80* z,uint16_t a,uint8_t v)
+{
+  $if machineIs('48k') then
+  if(a<0x4000) return;
+  $end
+
+  $if machineIs('16k') then
+  if(a<0x4000 || a>=0x8000) return;
+  $end
+
+  uint8_t* pt=z->memw[a>>14];
+  pt[a & 0x3fff]=v;
+}
+$end
+
+$if machineIs('48k','issue2','128k','+2A','+3','inves') then
+uint8_t s[=$name$]_in(z80* z,uint16_t a)
+{
+  [=$structName$]* s=([=$structName$]*)z->tag;
+  
+  if(a&0x1)
+  {
+  $if machineIs('128k','+2A','+3') then
+  $if machineIs('128k') then
+  if((a & 0xC002)==0xC000)
+  $else
+  if(((a & 0xC002)==0xC000) || ((a & 0xC002)==0x8000))
+  $end
+  {
+    return s->ay->handle.in((rvmDeviceT*)s->ay,s->aySelect);
+  }
+  $end
+
+  $if machineIs('+3') then
+
+  if((a & 0xf002)==0x3000) //data
+  {
+    return s->upd765->handle.in((rvmDeviceT*)s->upd765,1);
+  }
+
+  if((a & 0xf002)==0x2000) //status
+  {
+    return s->upd765->handle.in((rvmDeviceT*)s->upd765,0);
+  }
+
+  $end
+
+  
+    if((a&0xff)==0x1f) //Kempston
+      return s->joyState;
+    
+    $if machineIs('48k','issue2') then
+      return floatingBus48k(s->cpu);
+    $elseif machineIs('128k') then
+      uint8 b=floatingBus128k(s->cpu);
+
+      if(!(a & 0x8002) && !(s->memory7f & 0x20))
+      {
+        s128k_out(z, a, b);
+      }
+      
+      return b;
+    $elseif machineIs('+2A') then
+      if((a & 0xf003)==0x1)
+        return floatingBus[=$name$](s->cpu);
+      else
+        return 0xff;
+    $elseif machineIs('inves') then
+      return 0xff;
+    $end
+  }
+  
+  uint8_t r=0xff;
+  
+  for(int i=0;i<8;i++)
+    if(!(a & (0x100<<i)))
+      r&=s->keyboard[i];
+
+
+  $if machineIs('issue2') then
+  r=(s->ear || s->mic)?r|0x40:r&0xbf;
+  $else
+  r=(s->ear)?r|0x40:r&0xbf;
+  $end
+  r=s->level?r^0x40:r;
+
+  return r;
+}
+$end
+
+$if machineIs('128k') then
+uint8 s128k_AYin(rvmAY3819XT *h,uint16 a)
+{
+  spectrum128 *s=h->tag;
+  return floatingBus128k(s->cpu);
+}
+$end
+
+$if machineIs('48k') then
+uint8_t s[=$name$]_busInt(z80* z)
+{
+  return 0xff;
+}
+$end
+
+$if machineIs('48k','inves') then
+void s[=$name$]_ack(z80* z)
+{
+  $if machineIs('inves') then
+  [=$structName$]* s=([=$structName$]*)z->tag;
+
+  uint16 a=s->cpu->r.ir;
+  s->ram[a>>14][a & 0x3fff]=0xff;
+  $end
+}
+$end
+
+$if machineIs('48k','128k','+2A','+3','inves') then
+void s[=$name$]_out(z80* z,uint16_t a,uint8_t v)
+{
+  [=$structName$]* s=([=$structName$]*)z->tag;
+  
+  $if machineIs('+2A','+3') then
+    if((a & 0xf002)==0x1000) // memory
+    {
+      $if machineIs('+3') then
+      s->upd765->handle.out((rvmDeviceT*)s->upd765,0xffff,(v & 0x8)>>3);
+      $end
+      if(!(s->memory7f & 0x20))
+      {
+        s->memory1f=v;
+        s[=$name$]_memoryConfig((spectrum*)s, s->memory7f, v);
+        return;
+      }
+    }
+
+    if((a & 0xc002)==0x4000 && !(s->memory7f & 0x20))
+    {
+      s->memory7f=v;
+      s[=$name$]_memoryConfig((spectrum*)s, v, s->memory1f);
+      return;
+    }
+  $end
+
+  $if machineIs('+3') then
+    if((a&0xf002)==0x3000) //data
+    {
+      s->upd765->handle.out((rvmDeviceT*)s->upd765,1,v);
+      return;
+    }
+  $end
+
+  $if machineIs('128k') then
+    if(!(a & 0x8002) && !(s->memory7f & 0x20)) //memory port
+    {
+      s->memory7f=v;
+      //NSLog(@"Memory port: (pc:%.4x) %.4x <- %.2x",z->r.pc,a,v);
+      z->mem[3]=z->memw[3]=s->ram[v & 0x7];
+      //s->f128=(v & 0x18)>>3;
+      z->mem[0]=s->rom[(v & 0x10)>>4];
+    }
+  $end
+
+  $if machineIs('128k','+2A','+3') then
+    if((a & 0xC002)==0xC000) //ay register
+    {
+      s->aySelect=v & 0xf;
+    }
+    
+    if((a & 0xC002)==0x8000)
+    {
+      s->ay->handle.out((rvmDeviceT*)s->ay,s->aySelect,v);
+    }
+  $end
+
+  //if((a&0xfe)==0xfe)
+  if(!(a&0x1))
+  {
+    $if machineIs('inves') then
+
+    uint8 vv=s->ram[a>>14][a & 0x3fff];
+    s->portFELatch=v & vv;
+    $end
+    s->border=v&0x7;
+    s->mic=(v&0x8)>>3;
+    s->ear=(v&0x10)>>4;
+  }
+}
+$end
+
+$if machineIs('48k','128k','+2A','+3','inves') then
+//----------------------------
+//STEP
+//----------------------------
+//static double soundFactor=1.0/128.0;
+
+$local function stepFrame(type)
+uint32* [=$type$][=$name$]([=$structName$] *speccy,bool fast,uint32* buffer)
+{ 
+  $if type=='frame' then
+  do {
+  $end
+  if(speccy->cassetteDecoder)
+  {
+    if(speccy->cassetteDecoder->running)
+    {
+      if(!speccy->cassetteT)
+      {
+        speccy->cassetteT=speccy->cassetteDecoder->step(speccy->cassetteDecoder,&speccy->level);
+        //NSLog(@"T:%d l:%d",speccy->cassetteT,speccy->level);
+        if(!speccy->cassetteT) {
+          //speccy->cassetteRunning=NO;
+          speccy->level=0;
+
+        }
+        
+        if(speccy->cassetteT>=0xfffffffe)
+        {
+          $if machineIs('128k','+2A','+3') then
+          if(speccy->cassetteT==0xffffffff)
+          $end
+          speccy->cassetteDecoder->running=NO;
+          speccy->cassetteT=0;
+        }
+        
+      }
+      else
+        speccy->cassetteT--;
+    }
+    else if(speccy->cassetteDecoder->recording)
+    {
+      speccy->cassetteDecoder->stepRec(speccy->cassetteDecoder,speccy->mic);
+    }
+    else
+    {
+      speccy->level=0;
+    }
+  }
+
+  
+  $if machineIs('+3') then
+  if(speccy->upd765->power)
+  {
+    speccy->upd765->handle.step((rvmDeviceT*)speccy->upd765);
+    if(speccy->upd765->led[0] || speccy->upd765->led[2]) speccy->ledA++;
+    if(speccy->upd765->led[1] || speccy->upd765->led[3]) speccy->ledB++;
+  }
+  $end
+
+  $if machineIs('inves') then
+    speccy->border=speccy->portFELatch & 0x07;
+    speccy->mic=(speccy->portFELatch&0x8)>>3;
+    speccy->ear=(speccy->portFELatch&0x10)>>4;
+  $end
+
+  if(!speccy->T)
+  {
+    z80_step(speccy->cpu,(speccy->t<kINT) ? 1 : 0,0);
+    speccy->T=speccy->cpu->T;
+  }
+  
+  speccy->T--;
+  
+  if(!fast)
+  {
+    uint8_t l=speccy->ear || speccy->level;
+    
+    double beeperLevel=soundLevel[l<<1 | speccy->mic];
+    
+    $if machineIs('128k','+2A','+3') then
+    if(speccy->t & 0x1) speccy->ay->handle.step((rvmDeviceT*)speccy->ay);
+    $end 
+
+    if((speccy->so++)>=speccy->soc)
+    {
+      //double idelta=(speccy->soc-(speccy->so-1));
+      double idelta=(-speccy->soc+(speccy->so-1));
+      double delta=(1-idelta);
+      
+      $if machineIs('48k','inves') then
+      speccy->soundChannels[0]+=(beeperLevel*idelta);
+      
+      $elseif machineIs('128k','+2A','+3') then
+
+      speccy->soundChannels[0]+=beeperLevel*idelta;
+      speccy->soundChannels[1]+=speccy->ay->audioHandle.channel[0]*idelta;
+      speccy->soundChannels[2]+=speccy->ay->audioHandle.channel[1]*idelta;
+      speccy->soundChannels[3]+=speccy->ay->audioHandle.channel[2]*idelta;
+      $end
+
+      double la,ra;
+      speccy->mixer->step(speccy->mixer,speccy->soundChannels,&la,&ra);
+
+      int16_t ll=(int16_t)((la)*0x7000);
+      int16_t rr=(int16_t)((ra)*0x7000);
+
+      $if machineIs('+3') then
+      if(speccy->upd765->motorStatus)
+      {
+        int16_t m=*speccy->motorSound;
+        
+        if((++speccy->motorSound)>=speccy->motorLast)
+          speccy->motorSound=speccy->motor;
+
+        if(speccy->upd765->sstate==8)
+        {
+
+          m+=*speccy->seekSound;
+          
+          if((++speccy->seekSound)>=speccy->seekLast)
+            speccy->seekSound=speccy->seek;          
+        }
+        
+        ll+=m; rr+=m;
+      }
+      $end 
+
+      speccy->audioBuffer[speccy->soundIndex++]=rr;
+      speccy->audioBuffer[speccy->soundIndex++]=ll;
+
+
+      $if machineIs('48k','inves') then
+        speccy->soundChannels[0]=beeperLevel*delta;
+      $else
+        speccy->soundChannels[0]=beeperLevel*delta;
+        speccy->soundChannels[1]=speccy->ay->audioHandle.channel[0]*delta;
+        speccy->soundChannels[2]=speccy->ay->audioHandle.channel[1]*delta;
+        speccy->soundChannels[3]=speccy->ay->audioHandle.channel[2]*delta;
+      $end 
+      
+      speccy->soc+=kDelta;
+    }
+    else
+    {
+    $if machineIs('48k','inves') then
+      speccy->soundChannels[0]+=beeperLevel;
+      //speccy->audioLevelL+=((beeperLevel*kBeep)*soundFactor);
+    $elseif machineIs('128k','+2A') then
+      speccy->soundChannels[0]+=beeperLevel;
+      speccy->soundChannels[1]+=speccy->ay->audioHandle.channel[0];
+      speccy->soundChannels[2]+=speccy->ay->audioHandle.channel[1];
+      speccy->soundChannels[3]+=speccy->ay->audioHandle.channel[2]; 
+    $end
+    }
+ 
+    uint r=readT[speccy->t];
+    uint w=writeT[speccy->t];
+    
+    //if(r==0xffffffff)
+    $if not machineIs('inves') then
+    if((speccy->t & 0x3)==1)
+    $end
+      speccy->bcol=speccy->border;
+
+    if(w!=0xffffffff)
+    {
+      $if machineIs('inves') then
+      int dd=speccy->t-4;
+      dd=(dd<0)?kTLine*kLINES+dd:dd;
+      uint d=readT[dd];
+      $else
+      uint d=readT[speccy->t-4];
+      $end
+
+      if(d) 
+      {
+        if(d==0xffffffff)
+        {
+          speccy->pl=0;
+          speccy->al=speccy->border<<3;
+          $if machineIs('inves') then
+          speccy->attrLatch=0x1; //Border
+          $end
+        }
+        else
+        {
+          speccy->pl=speccy->pixel;
+          $if machineIs('inves') then
+          speccy->attrLatch=(speccy->al>>3) & 0x8;
+          $end
+          speccy->al=speccy->attr;
+        }
+        int index=(speccy->al & 0x7)|((speccy->al>>3) & 0x8);
+        
+        speccy->fg=speccy->palette[index];
+        speccy->bg=speccy->palette[((speccy->al>>3)&0xf)];
+        
+        if((speccy->al & 0x80) && speccy->flash)
+        {
+          speccy->fg=speccy->bg;
+          speccy->bg=speccy->palette[index];
+        }
+      }
+
+      $if machineIs('inves') then
+        if(speccy->attrLatch==1)
+        {
+          speccy->bg=speccy->palette[speccy->border];
+          buffer[w]=(speccy->pl & 0x80) ? speccy->fg : speccy->bg;
+        }
+        else
+          if(speccy->attrLatch!=0xff)
+          {
+            int index=(speccy->al & 0x7) | speccy->attrLatch;
+            uint c=speccy->palette[index];
+            uint d=speccy->palette[((speccy->al>>3)&0x7) | speccy->attrLatch];
+            if((speccy->al & 0x80) && speccy->flash)
+            {
+              uint dd=d;
+              d=c;
+              c=dd;
+            }
+            buffer[w]=(speccy->pl & 0x80) ? c :d;
+            speccy->attrLatch=0xff;
+          }
+          else
+      $end
+      buffer[w]=(speccy->pl & 0x80) ? speccy->fg : speccy->bg;
+      buffer[w+1]=(speccy->pl & 0x40) ? speccy->fg : speccy->bg;
+      speccy->pl<<=2;
+    }
+
+    if(r)
+    {
+      if(r==0xffffffff)
+      {
+      //speccy->pixel=0;
+      //   speccy->attr=speccy->bcol<<3;
+      }
+      else
+      {
+        uint p=r & 0xffff;
+        uint b=r>>16;
+
+        $if machineIs('snow') then
+        if(speccy->cpu->flags & 0x2)
+        {
+          $if machineIs('48k') then
+          //if((speccy->T<=2 && speccy->T) && (speccy->cpu->r.i>=0x40 && speccy->cpu->r.i<0x80) && (r && r!=0xffffffff)) // && (x & 0x1)) //Snow effect
+          if((speccy->T==1 || speccy->T==2) && speccy->cpu->r.i>=0x40 && speccy->cpu->r.i<0x80 && !(r & 0x1))
+          $elseif machineIs('128k') then
+          if((speccy->T==1 || speccy->T==2) && ((speccy->cpu->r.i>=0x40 && speccy->cpu->r.i<0x80) || (speccy->cpu->r.i>=0xc0 && (speccy->memory7f&0x1))) && (((r & 0x100) && (r & 0x1)) || (!(r & 0x100) && !(r & 0x1))))
+
+
+          //if((speccy->T==3 || !speccy->T) && ((speccy->cpu->r.i>=0x40 && speccy->cpu->r.i<0x80) || (speccy->cpu->r.i>=0xc0 && (speccy->memory7f&0x1))) )//&& (((x & 0x1) && !(y & 0x1)) || (!(x&0x1) && (y&0x1))) ) //Snow effect
+          
+          $end
+          {
+            p=(p & 0xff80) | (speccy->cpu->r.r & 0x7f);
+            b=(b & 0xff80) | (speccy->cpu->r.r & 0x7f);
+          }
+        }
+        $end
+        
+        $if machineIs('48k','inves') then
+          speccy->pixel=speccy->cpu->mem[1][p];
+          speccy->attr=speccy->cpu->mem[1][b];
+          
+        $elseif machineIs('128k','+2A','+3') then
+          uint8 *spt=(speccy->memory7f & 0x8)?speccy->ram[7]:speccy->ram[5];
+
+          speccy->pixel=spt[p];
+          speccy->attr=spt[b];
+        $end
+      }
+    }
+
+
+    //speccy->bcol=speccy->border;
+  }
+    // if(speccy->line || speccy->t>=4)
+    // {
+    // switch(dec[speccy->line][speccy->t-4])
+    // {
+    //   case pxBORDER:
+    //     *(buffer++)=speccy->bcol;
+    //     *(buffer++)=speccy->bcol;
+    //     break;
+    //   case pxSCREEN:
+    //   {
+    //     if(!(speccy->t & 0x3))
+    //     {
+    //       speccy->pl=speccy->pixel;
+    //       speccy->al=speccy->attr;
+          
+    //       int index=(speccy->al & 0x7)|((speccy->al>>3) & 0x8);
+          
+    //       speccy->fg=speccy->palette[index];
+    //       speccy->bg=speccy->palette[((speccy->al>>3)&0xf)];
+          
+    //       if((speccy->al & 0x80) && speccy->flash)
+    //       {
+    //         speccy->fg=speccy->bg;
+    //         speccy->bg=speccy->palette[index];
+    //       }
+    //     }
+        
+    //     *(buffer++)=(speccy->pl & 0x80) ? speccy->fg : speccy->bg;
+    //     *(buffer++)=(speccy->pl & 0x40) ? speccy->fg : speccy->bg;
+    //     speccy->pl<<=2;
+    //     break;
+    //   }
+    // }
+    // }
+    
+  //   uint d=dec[speccy->line][speccy->t];
+    
+  //   if(d==pxSCREEN && !(speccy->t & 0x3))
+  //   {
+  //     $if machineIs('48k') then
+  //       int y=speccy->line-64;
+  //     $elseif machineIs('128k','+2A','+3') then
+  //       int y=speccy->line-63;
+  //     $elseif machineIs('inves') then
+  //       int y=speccy->line-1;
+  //     $end
+
+  //     int x=speccy->t>>2;
+     
+  //     uint p=tLine[y]+x;
+  //     uint b=0x1800+((y>>3)<<5)+x;
+      
+  //     $if machineIs('snow') then
+  //     if(speccy->cpu->flags & 0x2)
+  //     {
+  //       $if machineIs('48k') then
+  //       if((speccy->T<=2 && speccy->T) && (speccy->cpu->r.i>=0x40 && speccy->cpu->r.i<0x80) && (x & 0x1)) //Snow effect
+  //       $elseif machineIs('128k') then
+  //       if((speccy->T==3 || !speccy->T) && ((speccy->cpu->r.i>=0x40 && speccy->cpu->r.i<0x80) || (speccy->cpu->r.i>=0xc0 && (speccy->memory7f&0x1))) && (((x & 0x1) && !(y & 0x1)) || (!(x&0x1) && (y&0x1))) ) //Snow effect
+
+  //       $end
+  //       {
+  //         p=(p & 0xff80) | (speccy->cpu->r.r & 0x7f);
+  //         b=(b & 0xff80) | (speccy->cpu->r.r & 0x7f);
+  //       }
+  //     }
+  //     $end
+      
+  //     $if machineIs('48k','inves') then
+  //       speccy->pixel=speccy->cpu->mem[1][p];
+  //       speccy->attr=speccy->cpu->mem[1][b];
+  //     $elseif machineIs('128k','+2A','+3') then
+  //       uint8 *spt=(speccy->memory7f & 0x8)?speccy->ram[7]:speccy->ram[5];
+
+  //       speccy->pixel=spt[p];
+  //       speccy->attr=spt[b];
+  //     $end
+  //   }
+  // }
+  
+  speccy->t++;
+  if(speccy->t==kTLine*kLINES)
+  {
+    speccy->t=0;
+    //speccy->line++;
+    //if(speccy->line==kLINES)
+    //{
+    //  speccy->line=0;
+      speccy->so=speccy->soc=speccy->soundIndex=0;
+      speccy->frame++;
+      if(!(speccy->frame & 0xf))
+        speccy->flash=!speccy->flash;
+
+      if(!fast) speccy->mixer->reset(speccy->mixer);
+    //}
+  }
+
+  $if type=='frame' then
+  } while(speccy->t);
+  $end
+  return buffer;
+}
+$end
+
+$stepFrame('step')
+
+$stepFrame('frame')
+
+$if machineIs('48k') then
+uint32* snap[=$name$]([=$structName$] *speccy,uint32* buffer,uint8* mem,uint8 border)
+{ 
+  int t=0;
+  uint32 fg,bg;
+  uint8 pl,al,pixel,attr;
+
+  while(t<(kTLine*kLINES)) {
+    uint r=readT[t];
+    uint w=writeT[t];
+
+    if(w!=0xffffffff)
+    {
+      uint d=readT[t-4];
+
+      if(d) 
+      {
+        if(d==0xffffffff)
+        {
+          
+        }
+        else
+        {
+          pl=pixel;
+          al=attr;
+        }
+        int index=(al & 0x7)|((al>>3) & 0x8);
+        
+        fg=speccy->palette[index];
+        bg=speccy->palette[((al>>3)&0xf)];
+        
+        if((al & 0x80) && speccy->flash)
+        {
+          fg=bg;
+          bg=speccy->palette[index];
+        }
+      }
+
+      buffer[w]=(pl & 0x80) ? fg : bg;
+      buffer[w+1]=(pl & 0x40) ? fg : bg;
+      pl<<=2;
+    }
+
+    if(r)
+    {
+      if(r==0xffffffff)
+      {
+        attr=border<<3;
+        pixel=0;
+      }
+      else
+      {
+        uint p=r & 0xffff;
+        uint b=r>>16;
+
+        $if machineIs('48k','inves') then
+          pixel=speccy->cpu->mem[1][p];
+          attr=speccy->cpu->mem[1][b];
+          
+        $elseif machineIs('128k','+2A','+3') then
+          uint8 *spt=(speccy->memory7f & 0x8)?speccy->ram[7]:speccy->ram[5];
+
+          pixel=spt[p];
+          attr=spt[b];
+        $end
+      }
+    }
+
+
+    t++;
+  }
+
+  return buffer;
+}
+$end
+
+$end

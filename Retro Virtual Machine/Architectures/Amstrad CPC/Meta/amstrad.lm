@@ -1,0 +1,824 @@
+#import "[=$ include $]"
+
+#include <stdio.h>
+
+#define kDelta 20
+#define kSoundTape 0.05
+#define kVHOLD 40
+#define kHHOLD 2
+
+$if machineIs('464') then
+uint8 rvmCPCMode0T[256][2]={
+  $for i=0,255 do
+  {[=$bit.bor(
+       bit.bor(
+        bit.rshift(bit.band(i,0x20),3),
+        bit.rshift(bit.band(i,0x80),7)),
+       bit.bor(
+        bit.rshift(bit.band(i,0x8),2),
+        bit.lshift(bit.band(i,0x2),2)))$]
+   ,[=$bit.bor(
+        bit.bor(
+          bit.rshift(bit.band(i,0x10),2),
+          bit.rshift(bit.band(i,0x40),6)),
+        bit.bor(
+          bit.rshift(bit.band(i,0x4),1),
+          bit.lshift(bit.band(i,0x1),3)))$] 
+  },
+  $end
+};
+
+uint8 rvmCPCMode1T[256][4]={
+  $for i=0,255 do
+  {[=$bit.bor(
+       bit.rshift(bit.band(i,0x80),7),
+       bit.rshift(bit.band(i,0x8),2))$],
+   [=$bit.bor(
+       bit.rshift(bit.band(i,0x40),6),
+       bit.rshift(bit.band(i,0x4),1))$],
+   [=$bit.bor(
+       bit.rshift(bit.band(i,0x20),5),
+       bit.band(i,0x2))$],
+   [=$bit.bor(
+       bit.rshift(bit.band(i,0x10),4),
+       bit.lshift(bit.band(i,0x1),1))$]},
+  $end
+};
+
+
+uint32 gateArrayPalette[32]=
+{
+  0XFF6B7D6E, //#40
+  0XFF6D7B6E, //#41
+  0XFF6BF300, //#42
+  0XFF6DF3F3, //#43
+
+  0XFF6B0200, //#44
+  0XFF6802F0, //#45
+  0XFF687800, //#46
+  0XFF6B7DF3, //#47
+
+  0XFF6802F3, //#48
+  0XFF6BF3F3, //#49
+  0XFF0DF3F3, //#4A
+  0XFFF9F3FF, //#4B
+
+  0XFF0605F3, //#4C
+  0XFFF402F4, //#4D
+  0XFF0D7DF3, //#4E
+  0XFFF980FA, //#4F
+
+  0XFF680200, //#50
+  0XFF6BF302, //#51
+  0XFF01F002, //#52
+  0XFFF2F30F, //#53
+
+  0xFF010200, //#54
+  0XFFF4020C, //#55
+  0XFF017802, //#56
+  0XFFF47B0C, //#57
+
+  0XFF680269, //#58
+  0XFF6BD371, //#59
+  0XFF04F571, //#5A
+  0XFFF4F271, //#5B
+
+  0XFF01026C, //#5C
+  0XFFF2026C, //#5D
+  0XFF017B6E, //#5E
+  0XFFF67B6E, //#5F
+};
+$end
+
+$if machineIs('464','664') then
+$local function stepFrame(type)
+uint32* rvm[=$name$][=$type$]([=$structName$]* amstrad,bool fast,uint32 *buffer)
+{
+  crtc* crtc=amstrad->crtc;
+
+  amstrad->lastAudio=3840; //Dummy
+  amstrad->soundIndex=0;
+
+  $if type=='Frame' then
+  while(1)
+  {
+  $end
+  if(!fast && amstrad->mE)
+  {
+    //if((crtc->output & 0x1f)==0x10)
+    if(!(amstrad->controlLines & 0x7) && crtc->output & 0x10)
+    {
+      switch(amstrad->videoMode)
+      {
+        case 0:
+        {
+          //printf("Adreess: %x\n",amstrad->ma);
+          uint8* ind=rvmCPCMode0T[amstrad->byteL];
+          if((amstrad->cycle&0x1))
+          {
+            uint c=amstrad->palette[ind[0]];
+            //c=0xff008000;
+            *(buffer++)=c;
+            *(buffer++)=c;
+            *(buffer++)=c;
+            *(buffer++)=c;
+            break;
+          }
+          else
+          {
+            uint c=amstrad->palette[ind[1]];
+            //c=0xff000080;
+            *(buffer++)=c;
+            *(buffer++)=c;
+            *(buffer++)=c;
+            *(buffer++)=c;
+            break;
+          }
+        }
+
+        case 1:
+        {
+          uint8* ind=rvmCPCMode1T[amstrad->byteL];
+          if((amstrad->cycle&0x1))
+          {
+            uint c=amstrad->palette[ind[0]];
+            *(buffer++)=c;
+            *(buffer++)=c;
+
+            c=amstrad->palette[ind[1]];
+            *(buffer++)=c;
+            *(buffer++)=c;
+          }
+          else
+          {
+            uint c=amstrad->palette[ind[2]];
+            *(buffer++)=c;
+            *(buffer++)=c;
+
+            c=amstrad->palette[ind[3]];
+            *(buffer++)=c;
+            *(buffer++)=c;
+          }
+          break;
+        }
+
+        case 2:
+        {
+          uint8 p=amstrad->byteL;
+          if((amstrad->cycle & 0x1))
+          {
+            *(buffer++)=(p & 0x80) ? amstrad->palette[1] : amstrad->palette[0];
+            *(buffer++)=(p & 0x40) ? amstrad->palette[1] : amstrad->palette[0];
+            *(buffer++)=(p & 0x20) ? amstrad->palette[1] : amstrad->palette[0];
+            *(buffer++)=(p & 0x10) ? amstrad->palette[1] : amstrad->palette[0];
+          }
+          else
+          {
+            *(buffer++)=(p & 0x8) ? amstrad->palette[1] : amstrad->palette[0];
+            *(buffer++)=(p & 0x4) ? amstrad->palette[1] : amstrad->palette[0];
+            *(buffer++)=(p & 0x2) ? amstrad->palette[1] : amstrad->palette[0];
+            *(buffer++)=(p & 0x1) ? amstrad->palette[1] : amstrad->palette[0];  
+          }
+                         
+          break;
+        }
+
+        case 3:
+        {
+          //TODO
+          break;
+        }
+      }
+    }
+    else
+    {
+      uint c=(amstrad->controlLines & 0x7)? 0xff000000: amstrad->border;
+      
+      *(buffer++)=c;
+      *(buffer++)=c;
+      *(buffer++)=c;
+      *(buffer++)=c;
+    }
+  }
+
+  //Monitor aqui.
+  if(amstrad->monPx>30)
+  {
+    amstrad->mE=1;
+
+    if(amstrad->monPx>222)
+    {
+      amstrad->mE=0;
+
+      if(amstrad->monPx>256-kHHOLD)
+      {
+        //printf("Line: %d px: %d, hcc:%d\n",amstrad->monLi,amstrad->monPx,crtc->hcc);
+        if((amstrad->controlLines & 0x3)==0x2 || amstrad->monPx>=256+kHHOLD)
+        {
+          
+          //bd=buffer;
+          //amstrad->mE=1;
+          amstrad->monLi++;
+          amstrad->monPx=-1;  //0xffffffff-3;
+
+          if(amstrad->waitHS)
+          {
+            amstrad->waitHS=0;
+            //amstrad->mE=1;
+            amstrad->monLi=0;
+            amstrad->monPx=0; //xffffffff-3;
+
+            //printf("Frame\n");
+            
+            amstrad->so=amstrad->soc=0;
+            if(!fast) amstrad->mixer->reset(amstrad->mixer);
+
+            $if type=='Frame' then
+            return buffer;
+            $end
+          }
+        }
+      }
+    }
+  }
+
+  //Vertical
+  if(amstrad->monLi>287)
+  {
+    amstrad->mE=0;
+
+    if(amstrad->monLi>312-kVHOLD)
+    {
+      if(!amstrad->waitHS && (amstrad->vsync==1/*crtc->output & 0xc)==0x8 */|| amstrad->monLi>312+kVHOLD))
+      {
+        // if(amstrad->vsync==1)
+        //   printf("Sync: vcc:%d hcc:%d monPx:%d monLi:%d\n",amstrad->crtc->vcc,amstrad->crtc->hcc,amstrad->monPx,amstrad->monLi);
+        // else 
+        //   printf("No sync monPx:%d monLi:%d\n",amstrad->monPx,amstrad->monLi);
+        amstrad->waitHS=1;
+      }
+    }
+  }
+
+  amstrad->monPx+=1;
+
+  if(!fast)
+  {
+    if((amstrad->so++)>=amstrad->soc)
+    {
+      double idelta=(amstrad->soc-(amstrad->so-1));
+      double delta=(1-idelta);
+
+      amstrad->soundChannels[0]+=amstrad->ay->audioHandle.channel[0]*idelta;
+      amstrad->soundChannels[1]+=amstrad->ay->audioHandle.channel[1]*idelta;
+      amstrad->soundChannels[2]+=amstrad->ay->audioHandle.channel[2]*idelta;
+
+      amstrad->soundChannels[3]+=((amstrad->level)?kSoundTape:0.0)*idelta;
+
+      double la,ra;
+      amstrad->mixer->step(amstrad->mixer,amstrad->soundChannels,&la,&ra);
+
+      int16_t ll=(int16_t)((la)*0x7000);
+      int16_t rr=(int16_t)((ra)*0x7000);
+
+      $if machineIs('664') then
+      if(amstrad->upd765->motorStatus)
+      {
+        int16_t m=*amstrad->motorSound;
+        
+        if((++amstrad->motorSound)>=amstrad->motorLast)
+          amstrad->motorSound=amstrad->motor;
+
+        if(amstrad->upd765->sstate==8)
+        {
+
+          m+=*amstrad->seekSound;
+          
+          if((++amstrad->seekSound)>=amstrad->seekLast)
+            amstrad->seekSound=amstrad->seek;          
+        }
+        
+        ll+=m; rr+=m;
+      }
+      $end
+
+      amstrad->audioBuffer[amstrad->soundIndex++]=rr;
+      amstrad->audioBuffer[amstrad->soundIndex++]=ll;
+
+      amstrad->soundChannels[0]=amstrad->ay->audioHandle.channel[0]*delta;
+      amstrad->soundChannels[1]=amstrad->ay->audioHandle.channel[1]*delta;
+      amstrad->soundChannels[2]=amstrad->ay->audioHandle.channel[2]*delta;
+
+      amstrad->soundChannels[3]=((amstrad->level)?kSoundTape:0.0)*delta;
+
+      amstrad->soc+=kDelta;
+    }
+    else
+    {
+      amstrad->soundChannels[0]+=amstrad->ay->audioHandle.channel[0];
+      amstrad->soundChannels[1]+=amstrad->ay->audioHandle.channel[1];
+      amstrad->soundChannels[2]+=amstrad->ay->audioHandle.channel[2]; 
+      amstrad->soundChannels[3]+=((amstrad->level)?kSoundTape:0.0);
+    }
+  }
+
+  $if machineIs('664') then
+  if(amstrad->upd765->power)
+  {
+    amstrad->upd765->handle.step((rvmDeviceT*)amstrad->upd765);
+    if(amstrad->upd765->led[0] || amstrad->upd765->led[2]) amstrad->ledA++;
+    if(amstrad->upd765->led[1] || amstrad->upd765->led[3]) amstrad->ledB++;
+  }
+  $end
+
+  if(amstrad->cassetteDecoder)
+  {
+    if(amstrad->cassetteDecoder->running)
+    {
+      if(!amstrad->cassetteT)
+      {
+        uint l=amstrad->level;
+        
+        amstrad->cassetteT=amstrad->cassetteDecoder->step(amstrad->cassetteDecoder,&l);
+        //if((amstrad->controlLines & 0x8))
+          amstrad->level=l;
+
+
+        //NSLog(@"T:%d l:%d",amstrad->cassetteT,amstrad->level);
+        if(!amstrad->cassetteT) {
+          //amstrad->cassetteRunning=NO;
+          amstrad->level=0;
+
+        }
+     
+        if(amstrad->cassetteT==0xffffffff)
+        {
+          amstrad->cassetteDecoder->running=NO;
+          amstrad->cassetteT=0;
+        }
+      }
+      else
+        amstrad->cassetteT--;
+    }
+    else if(amstrad->cassetteDecoder->recording)
+    {
+      //amstrad->cassetteDecoder->stepRec(amstrad->cassetteDecoder,amstrad->mic);
+    }
+    else
+    {
+      amstrad->level=0;
+    }
+  }
+
+
+  if(!amstrad->T)
+  {
+    z80_step(amstrad->cpu,amstrad->gaInterrupt,0);
+    amstrad->T=amstrad->cpu->T;
+  }
+
+  amstrad->T--;
+
+  amstrad->controlLines&=0xfffffffd;
+  if(!(amstrad->cycle & 0x3))
+  {
+    
+    crtc->step(amstrad->crtc); //Paso crtc;
+
+    if(!fast) amstrad->ay->handle.step((rvmDeviceT*)amstrad->ay);
+
+    //if(!amstrad->vsSense && amstrad->crtc->vsync)
+    if((crtc->output & 0xc)==0xc )
+    {
+      amstrad->gaIntDelay=2;
+      if(!amstrad->vsync) {
+        //printf("vsync on: vcc:%d hcc:%d monPx:%d monLi:%d\n",amstrad->crtc->vcc,amstrad->crtc->hcc,amstrad->monPx,amstrad->monLi);
+        amstrad->controlLines|=0x4;
+        amstrad->vsync=24;
+      } 
+    }
+
+    if(amstrad->hsyncDelay)
+    {
+      if(!--amstrad->hsyncDelay)
+      {
+        if((amstrad->controlLines & 0x1))
+        {
+          amstrad->controlLines=(amstrad->controlLines & 0xffffffc) |0x2;
+        }
+        else
+        {
+          amstrad->controlLines=(amstrad->controlLines & 0xffffffc) |0x3;
+          amstrad->hsyncDelay=2;
+        }
+      }
+    }
+
+    if((crtc->output & 0x3)==0x3) //rising
+      amstrad->hsyncDelay=4;
+
+    if((crtc->output & 0x3)==0x2 && (amstrad->controlLines & 0x1)) //falling
+    {
+      amstrad->hsyncDelay=0;
+      amstrad->controlLines=(amstrad->controlLines & 0xffffffc) | 0x2;
+
+      
+    }
+    //amstrad->vsSense=amstrad->crtc->vsync;
+
+    if((crtc->output & 0x3)==0x2)
+    {
+      if(amstrad->vsync) amstrad->vsync--;
+      if(amstrad->vsync==1) amstrad->controlLines&=0xfffffffb;
+
+      amstrad->videoMode=amstrad->gateArray & 0x3;
+      amstrad->gaIntLine++;
+
+      if(amstrad->gaIntDelay)
+      {
+        amstrad->gaIntDelay--;
+
+        if(!amstrad->gaIntDelay)
+        {
+          if(amstrad->gaIntLine>=32)
+          {
+            //printf("Interrupt2 vcc:%d vlc:%d hcc:%d monPx:%d monLi:%d\n",amstrad->crtc->vcc,amstrad->crtc->vlc,amstrad->crtc->hcc,amstrad->monPx,amstrad->monLi);
+            amstrad->gaInterrupt=1;
+          }
+
+          amstrad->gaIntLine=0;
+        }
+      }
+      else
+      {
+        if(amstrad->gaIntLine==52)
+        {
+          //printf("Interrupt vcc:%d vlc:%d hcc:%d monPx:%d monLi:%d\n",amstrad->crtc->vcc,amstrad->crtc->vlc,amstrad->crtc->hcc,amstrad->monPx,amstrad->monLi);
+          amstrad->gaInterrupt=1;
+          amstrad->gaIntLine=0;
+        }
+      }
+    }
+  }
+
+  if((crtc->output & 0x10) && !(amstrad->cycle&0x1))
+  {
+    amstrad->ma=((crtc->ma & 0x3ff)<<1) | ((crtc->ra&0x7)<<11) | ((crtc->ma & 0x3000)<<2) | ((amstrad->cycle & 0x2)>>1);
+    amstrad->byteL=amstrad->videoRam[amstrad->ma];
+  }
+
+  amstrad->cycle++;
+  
+  $if type=='Frame' then
+  }
+  $else
+
+  return buffer;
+  $end
+}
+$end
+
+$stepFrame('Frame')
+
+$stepFrame('Step')
+
+uint8 rvm[=$name$]In(z80* z80,uint16 a)
+{
+  rvm[=$name$]S *amstrad=z80->tag;
+
+  //PPI
+  if(!(a & 0x0800))
+  {
+    uint16 port=a & 0x0300;
+
+    switch(port)
+    {
+      case 0:
+        //A
+        if((amstrad->ppiControl & 0x70)==0x10)
+          return amstrad->ppiA;
+          //return amstrad->ay->handle.in((rvmDeviceT*)amstrad->ay,amstrad->aySelect);
+      case 0x100:
+        if((amstrad->ppiControl & 0x6)==0x2) //B input mode 0
+          return 0x1e | ((amstrad->crtc->output & 0x4)>>2) | ((amstrad->level)?0x80:0x0);
+      case 0x200:
+        //rvm[=$name$]Out(z80,0xf500,amstrad->ppiA);
+        //rvm[=$name$]Out(z80,0xf700,amstrad->ppiC);       
+        return amstrad->ppiC;
+      default:
+        return 0xff;
+    }
+  }
+
+  $if machineIs('664') then
+
+  if((a & 0x581)==0x101) //data
+  {
+    return amstrad->upd765->handle.in((rvmDeviceT*)amstrad->upd765,1);
+  }
+
+  if((a & 0x581)==0x100) //status
+  {
+    return amstrad->upd765->handle.in((rvmDeviceT*)amstrad->upd765,0);
+  }
+
+  $end
+
+  return 0xff;
+}
+$end
+
+
+$if machineIs('464','664','6128') then
+void rvm[=$name$]Out(z80* z80,uint16 a,uint8 v)
+{
+  rvm[=$name$]S *amstrad=z80->tag;
+  // if(a==0xbd0e)
+  //   printf("stub\n");
+  //PPI
+  if(!(a & 0x0800))
+  {
+    uint16 port=a & 0x0300;
+
+    switch(port)
+    {
+      case 0:
+        //A
+        if((amstrad->ppiControl & 0x70)==0x0)
+        {
+          amstrad->ppiA=v;
+          if(amstrad->ayMode==0x2)
+            amstrad->ay->handle.out((rvmDeviceT*)amstrad->ay,amstrad->aySelect,v);
+          else if(amstrad->ayMode==0x3)
+            amstrad->aySelect=v & 0xf;
+        } 
+      case 0x100:
+        break;
+      case 0x200:
+      //printf("v:%x %x\n",v,amstrad->controlLines);
+        
+        if((amstrad->ppiControl & 0x69)==0x0)
+        {
+          amstrad->keyboardLine=v & 0xf;     
+          amstrad->ppiC=v;
+          amstrad->ayMode=(v & 0xC0)>>6;
+
+          if(amstrad->ayMode==1)
+            amstrad->ppiA=amstrad->ay->handle.in((rvmDeviceT*)amstrad->ay,amstrad->aySelect);
+          else
+          {
+            if(amstrad->ayMode==2)
+              amstrad->ay->handle.out((rvmDeviceT*)amstrad->ay,amstrad->aySelect,amstrad->ppiA);
+            else
+              if(amstrad->ayMode==3)
+                amstrad->aySelect=amstrad->ppiA;
+          }
+
+          //if(amstrad->cassetteDecoder)
+          //{
+
+          if((v & 0x10))
+          {
+            //printf("motor on\n");
+            amstrad->controlLines|=0x8;
+          }
+            //amstrad->cassetteDecoder->running=true;
+          else
+          {
+            //printf("motor off\n");
+            amstrad->controlLines&=0xfffffff7;
+          }
+            //amstrad->cassetteDecoder->running=false;
+          //}
+               
+        }
+        break;
+      case 0x300:
+      {
+        if(v & 0x80)
+        {
+          amstrad->ppiControl=v;
+          rvm[=$name$]Out(z80,0xf400,0);
+          rvm[=$name$]Out(z80,0xf600,0);
+        }
+        else
+        {
+          //printf("Bit %x\n",v);
+          uint8 mask=0x1<<((v & 0xe)>>1);
+          amstrad->ppiC=(v&0x1)? amstrad->ppiC | mask : amstrad->ppiC & ~mask;
+          rvm[=$name$]Out(z80,0xf600,amstrad->ppiC);
+        }
+        break;
+      }
+    }  
+  }
+
+  if((a & 0xc000)==0x4000) //Gate Array
+  {
+    uint8 function=v & 0xc0;
+
+    switch(function)
+    {
+      case 0: //Pen select
+        amstrad->penS=v;
+        break;
+      case 0x40: //Pen Change
+        if(amstrad->penS & 0x10)
+        {
+          amstrad->border=gateArrayPalette[v & 0x1f];
+        }
+        else
+        {
+          amstrad->palette[amstrad->penS & 0xf]=gateArrayPalette[v & 0x1f];
+        }
+        break;
+      case 0x80:
+        amstrad->gateArray=v;
+        if(v & 0x10)
+          amstrad->gaIntLine=0;
+        break;
+      case 0xc0:
+        $if machineIs('6128') then
+        {
+          uint8 mode=v & 0x7;
+
+          if(mode<4)
+          {
+            if(mode<2)
+            {
+              amstrad->bank[0]=amstrad->ram[0];
+              amstrad->bank[1]=amstrad->ram[1];
+              amstrad->bank[2]=amstrad->ram[2];
+              
+              if(!mode)
+              {
+                amstrad->bank[3]=amstrad->ram[3];    
+              }
+              else
+              {
+                amstrad->bank[3]=amstrad->ram[7];    
+              }
+            }  
+            else
+            {
+              if(mode==2)
+              {
+                amstrad->bank[0]=amstrad->ram[4];    
+                amstrad->bank[1]=amstrad->ram[5];    
+                amstrad->bank[2]=amstrad->ram[6];    
+                amstrad->bank[3]=amstrad->ram[7];    
+              }
+              else
+              {
+                
+                amstrad->bank[0]=amstrad->ram[0];    
+                amstrad->bank[1]=amstrad->ram[3];    
+                amstrad->bank[2]=amstrad->ram[2];    
+                amstrad->bank[3]=amstrad->ram[7];    
+              }
+            }
+          }
+          else
+          {
+            amstrad->bank[0]=amstrad->ram[0];    
+            amstrad->bank[1]=amstrad->ram[mode];    
+            amstrad->bank[2]=amstrad->ram[2];    
+            amstrad->bank[3]=amstrad->ram[3];       
+          }
+        }
+          $end
+        break;
+        
+    }
+  } 
+
+  //Crtc
+  if((a & 0x4000)==0)
+  {
+    uint16 select=a & 0x0300;
+
+    switch(select)
+    {
+      case 0x0000:
+        amstrad->crtcS=v;
+        break;
+      case 0x0100:
+        amstrad->crtc->regs[amstrad->crtcS]=v;
+        break;
+    }
+  }
+
+  //Rom selection
+  if((a & 0x2000)==0)
+  {
+    amstrad->romSelect=v;
+  }
+
+  $if machineIs('664','6128') then
+  if((a & 0x580)==0) //Motor
+  {
+    amstrad->upd765->handle.out((rvmDeviceT*)amstrad->upd765,0xffff,(v & 0x1));
+  }
+
+  if((a & 0x581)==0x101) //Data
+  {
+    amstrad->upd765->handle.out((rvmDeviceT*)amstrad->upd765,1,v); 
+  }
+  $end
+} 
+
+
+//************************************
+//       Memory Get function
+//************************************
+uint8 rvm[=$name$]Get(z80 *z,uint16 a)
+{
+  rvm[=$name$]S *amstrad=z->tag;
+
+  uint16 page=a & 0xc000;
+
+  switch(page)
+  {
+    case 0x0000:
+      if(!(amstrad->gateArray & 0x4))
+        return amstrad->firmware[a & 0x3fff];
+      break;
+    case 0xC000:
+      if(!(amstrad->gateArray & 0x8))
+      $if machineIs('664','6128') then
+      {
+        if(amstrad->romSelect==7)
+          return amstrad->rom[1][a & 0x3fff];
+        else
+          return amstrad->rom[0][a & 0x3fff];
+      }
+      $else
+        return amstrad->rom[0][a & 0x3fff];
+      $end
+      break;
+  }
+
+  $if machineIs('6128') then
+  return amstrad->bank[page>>14][a & 0x3fff];
+  $else
+  return amstrad->videoRam[a];
+  $end
+}
+
+$end
+
+$if machineIs('464') then
+void rvm[=$name$]Ack(z80* z80)
+{
+  rvm[=$name$]S *amstrad=z80->tag;
+
+  amstrad->gaInterrupt=0;
+  amstrad->gaIntLine&=0x1f;
+}
+
+uint8 rvm[=$name$]BusInt(z80* z80)
+{
+  return 0xff;
+}
+
+//Memory contention
+uint rvm[=$name$]Contention(z80 *z,uint16 a)
+{
+  rvm[=$name$]S *amstrad=z->tag;
+  return 3-(amstrad->cycle & 0x3);
+}
+
+uint rvm[=$name$]ZeroContention(z80 *z,uint16 a)
+{
+  return 0;
+}
+
+uint rvm[=$name$]IOContention(z80 *z,uint16 a)
+{
+  rvm[=$name$]S *amstrad=z->tag;
+  return 3-((amstrad->cycle+1) & 0x3);
+}
+
+uint8 rvm[=$name$]Keyboard(rvmAY3819XT *ay,uint16 a)
+{
+  rvm[=$name$]S *amstrad=ay->tag;
+
+  uint8 k=amstrad->keyboard[amstrad->keyboardLine];
+  //if(k!=0xff) printf("KeyDown: %x line: %x\n",k,amstrad->keyboardLine);
+  return k;
+}
+$end
+
+$if machineIs('464','6128') then
+//Memory interface
+void rvm[=$name$]Set(z80 *z,uint16 a,uint8 v)
+{
+  rvm[=$name$]S *amstrad=z->tag;
+
+  $if machineIs('6128') then
+  amstrad->bank[(a & 0xc000)>>14][a & 0x3fff]=v;
+  $else
+  amstrad->videoRam[a]=v;
+  $end
+}
+$end

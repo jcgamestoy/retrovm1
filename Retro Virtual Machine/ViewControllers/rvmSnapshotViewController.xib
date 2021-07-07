@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="rvmSnapshotViewController">
+            <connections>
+                <outlet property="mini" destination="J8S-W9-uzx" id="FmM-DK-ZxS"/>
+                <outlet property="placeHolder" destination="otB-aE-2Cp" id="J6X-I5-tQj"/>
+                <outlet property="snapButton" destination="1II-NG-SNC" id="4vQ-ia-mIZ"/>
+                <outlet property="snaps" destination="eP0-M9-bMB" id="0wm-8m-kcb"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY" customClass="rvmBackgroundView">
+            <rect key="frame" x="0.0" y="0.0" width="822" height="507"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="otB-aE-2Cp">
+                    <rect key="frame" x="160" y="110" width="503" height="377"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="otB-aE-2Cp" secondAttribute="height" multiplier="4:3" id="vSt-uw-WD0"/>
+                    </constraints>
+                </customView>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="1II-NG-SNC">
+                    <rect key="frame" x="376" y="26" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="UqJ-gn-Xan"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Iss-83-RfH" customClass="rvmTexturedButton">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="imageName" value="snapB"/>
+                        </userDefinedRuntimeAttributes>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onSnapshot:" target="-2" id="NGS-Gq-Dkw"/>
+                    </connections>
+                </button>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="eP0-M9-bMB" customClass="rvmBox">
+                    <rect key="frame" x="38" y="26" width="71" height="70"/>
+                    <subviews>
+                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J8S-W9-uzx" customClass="rvmImageView">
+                            <rect key="frame" x="5" y="5" width="60" height="60"/>
+                        </customView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="71" id="7dj-6F-uQ7"/>
+                        <constraint firstAttribute="height" constant="70" id="e9u-nb-dgB"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                            <color key="value" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadious">
+                            <real key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="otB-aE-2Cp" secondAttribute="centerX" id="EIC-yy-G5B"/>
+                <constraint firstAttribute="bottom" secondItem="otB-aE-2Cp" secondAttribute="bottom" constant="110" id="F9u-40-TbB"/>
+                <constraint firstItem="eP0-M9-bMB" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="38" id="PHc-vR-Ffv"/>
+                <constraint firstAttribute="bottom" secondItem="eP0-M9-bMB" secondAttribute="bottom" constant="26" id="Vik-Um-n3f"/>
+                <constraint firstItem="1II-NG-SNC" firstAttribute="top" secondItem="otB-aE-2Cp" secondAttribute="bottom" constant="14" id="WAx-K6-FSn"/>
+                <constraint firstAttribute="centerX" secondItem="1II-NG-SNC" secondAttribute="centerX" id="fSy-pp-Qic"/>
+                <constraint firstItem="otB-aE-2Cp" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="nq7-H4-Eek"/>
+                <constraint firstAttribute="bottom" secondItem="1II-NG-SNC" secondAttribute="bottom" constant="26" id="vEo-iL-5Ye"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                    <color key="value" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor2">
+                    <color key="value" white="0.30003597861842107" alpha="1" colorSpace="calibratedWhite"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="129" y="289.5"/>
+        </customView>
+    </objects>
+</document>
