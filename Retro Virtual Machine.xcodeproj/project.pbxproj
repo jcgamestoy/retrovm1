@@ -1478,7 +1478,6 @@
 				ORGANIZATIONNAME = "Juan Carlos González Amestoy";
 				TargetAttributes = {
 					88EFF02C1854F5110066DF6B = {
-						DevelopmentTeam = TNP49M7S5T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1880,10 +1879,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Retro Virtual Machine/Retro Virtual Machine.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TNP49M7S5T;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Retro Virtual Machine/Retro Virtual Machine-Prefix.pch";
@@ -1906,10 +1905,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Retro Virtual Machine/Retro Virtual Machine.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TNP49M7S5T;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Retro Virtual Machine/Retro Virtual Machine-Prefix.pch";
